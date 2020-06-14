@@ -86,3 +86,25 @@ a {
     border-bottom: 3px solid #000000;
     margin-bottom: 10px;
 }
+
+footer{
+    display: flex;
+    margin: 0 0;
+    padding: 0 10px;
+    background-color: #182F1A;  
+}
+
+.footer-text{
+    width: 70%
+}
+.footer-icons{
+    width: 30%;
+    padding: 15px 10px 5px 0px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.social-icons{
+    margin-left: 10px;
+    margin-right: 10px;
+}

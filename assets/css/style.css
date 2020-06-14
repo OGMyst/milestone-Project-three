@@ -1,15 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap: 400, 500, 600, 700');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap: 400, 500, 600, 700|Josefin+Sans&display=swap');
 body {
     background-color: #06061A;
     margin: 0 auto;
     font-family: 'Noto Serif', serif;
 }
 
-h1{
-    margin: 0 auto;
-}
-
+h1, 
 a {
+    margin: 0 auto;
     text-decoration: none;
     color: #DCAE0B;
 }
@@ -18,15 +16,17 @@ a {
     width: 100%;
     height: 100px;
     background-color: #182F1A;
-    position: fixed;
+    /* position: fixed; */
+    overflow: hidden;
     display: flex;
-    padding: 10px 20px;
+    padding: 10px 0;
 }
 
 .logo{
     font-size: 150%;
     width: 75%;
     line-height: 75px;
+    margin-left: 10px;
 }
 
 .addmovie-container{
@@ -44,4 +44,12 @@ a {
     border-radius: 10px;
     display: flex;
     justify-content: center;
+}
+
+.title{
+    margin-top: 150px;
+    display: flex;
+    justify-content: center;
+    font-size: 200%;
+    font-family: 'Josefin Sans', sans-serif;
 }

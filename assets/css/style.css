@@ -56,4 +56,33 @@ a {
 .explore-container{
     display: flex;
     justify-content: center;
+    margin-bottom: 150px;
+}
+
+.page-line{
+    height: 10px;
+    background-color: #182F1A;
+    margin-bottom: 20px;
+}
+
+.calendar-header{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#calendar-container{
+    display: flex;
+    justify-content: center;
+}
+
+#calendar{
+    width: 90%;
+    background-color: #E3E3E3;
+}
+
+.month{
+    width: 100%;
+    border-bottom: 3px solid #000000;
+    margin-bottom: 10px;
 }

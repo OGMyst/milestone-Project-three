@@ -25,21 +25,21 @@ a {
 
 .logo{
     font-size: 150%;
-    width: 80%;
+    width: 75%;
     line-height: 75px;
 }
 
-.explore-container{
+.addmovie-container{
     line-height: 45px;
-    padding: 20px;
-    width: 20%;
+    padding-top: 20px;
+    width: 25%;
     display: flex;
     justify-content: center;
 }
 
-.explore-box{
+.addmovie-box{
     background-color: #5A0A0A;
-    width: 150px;
+    width: 220px;
     height: 45px;
     border-radius: 10px;
     display: flex;

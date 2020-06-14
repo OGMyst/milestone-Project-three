@@ -12,12 +12,19 @@ a {
     color: #DCAE0B;
 }
 
+.maroon-box{
+    background-color: #5A0A0A;
+    width: 220px;
+    height: 45px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+}
+
 .navigation{
-    width: 100%;
     height: 100px;
     background-color: #182F1A;
     /* position: fixed; */
-    overflow: hidden;
     display: flex;
     padding: 10px 0;
 }
@@ -37,19 +44,16 @@ a {
     justify-content: center;
 }
 
-.addmovie-box{
-    background-color: #5A0A0A;
-    width: 220px;
-    height: 45px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-}
-
 .title{
     margin-top: 150px;
+    margin-bottom: 40px;
     display: flex;
     justify-content: center;
     font-size: 200%;
     font-family: 'Josefin Sans', sans-serif;
+}
+
+.explore-container{
+    display: flex;
+    justify-content: center;
 }

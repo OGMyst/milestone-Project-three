@@ -38,7 +38,7 @@
 
     <div id="calendar-container">
         <div id="calendar">
-            <div class="month">{{ month_select }}</div>
+            <div id="month"></div>
         </div>
     </div>
     <!--------------------------------- FOOTER ----------------------------->
@@ -54,6 +54,7 @@
             <a href="https://facebook.com" target="_blank" class="social-icons"><i class="fab fa-facebook-f fa-lg"></i></a>
         </div>
     </footer>
-    <script src="https://kit.fontawesome.com/318689fbdb.js"></script>
+    <script src="../assets/js/index.js"></script>
+    <script href="{{url_for('static', filename='js/index/js')}}"></script>
 </body>
 </html>

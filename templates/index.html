@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Po-Tay-Toes</title>
-    <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css"/>
 </head>
 <body>
 <!-------------------------------- NAVBAR ------------------------------>
@@ -38,7 +38,7 @@
 
     <div id="calendar-container">
         <div id="calendar">
-            <div class="month"></div>
+            <div class="month">{{ month_select }}</div>
         </div>
     </div>
     <!--------------------------------- FOOTER ----------------------------->

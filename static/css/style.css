@@ -58,7 +58,7 @@ a {
     justify-content: center;
     margin-bottom: 150px;
 }
-
+/* -------------------------------CALENDER SECTION--------------------------- */
 .page-line{
     height: 10px;
     background-color: #182F1A;
@@ -91,6 +91,17 @@ a {
     justify-content: center;
 }
 
+#day-labels{
+    display: flex;
+    justify-content: center;
+}
+ .week-days{
+    width: 14%;
+    display: flex;
+    justify-content: center;
+
+ }
+/* -------------------------------FOOTER------------------------------- */
 footer{
     display: flex;
     margin: 0 0;

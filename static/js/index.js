@@ -18,6 +18,6 @@ function daysOfTheWeek(){
     let weekDays;
     for(i = 0; i < 7; i++){
         weekDays = days[i];
-        document.getElementById("calendar").innerHTML += "<div class='week-days'>" + weekDays + "</div>"
+        document.getElementById("day-labels").innerHTML += "<div class='week-days'>" + weekDays + "</div>"
     }
 };

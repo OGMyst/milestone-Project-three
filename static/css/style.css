@@ -102,7 +102,19 @@ a {
     display: flex;
     justify-content: center;
 
- }
+}
+
+#calendar-days{
+    width: 100%;
+}
+
+.calendar-cell{
+    width: 14%;
+}
+
+.calendar-cell-text{
+    font-size: 100%
+}
 /* -------------------------------FOOTER------------------------------- */
 footer{
     display: flex;

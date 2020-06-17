@@ -8,6 +8,11 @@ def home():
     return render_template("index.html")
 
 
+@app.route('/add_movie')
+def add_movie():
+    return render_template('addmovie.html')
+
+
 @app.route('/home')
 def filler():
     return url_for("index.html")

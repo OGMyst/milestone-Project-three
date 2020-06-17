@@ -37,7 +37,7 @@ function showCalendar(month, year) {
     for (let i = 0; i < 6; i++) {
         let row = document.createElement("tr");
 
-        for (let j = 1; j < 7; j++) {
+        for (let j = 1; j < 8; j++) {
             if (i === 0 && j < firstDay) {
                 let cell = document.createElement("td");
                 let cellText = document.createTextNode("");

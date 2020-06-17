@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap: 400, 500, 600, 700|Josefin+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap: 400, 500, 600, 700|Josefin+Sans&display=swap|Balsamiq+Sans:400, 500, 600, 700');
 body {
     background-color: #06061A;
     margin: 0 auto;
@@ -58,7 +58,31 @@ a {
     justify-content: center;
     margin-bottom: 150px;
 }
-/* -------------------------------CALENDER SECTION--------------------------- */
+/* -------------------------------FOOTER------------------------------- */
+footer{
+    display: flex;
+    margin: 0 0;
+    padding: 0 10px;
+    background-color: #182F1A;  
+}
+
+.footer-text{
+    width: 70%
+}
+.footer-icons{
+    width: 30%;
+    padding: 15px 10px 5px 0px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.social-icons{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/* -------------------------------INDEX.HTML--------------------------- */
+/* -------------------CALENDER SECTION------------------ */
 .page-line{
     height: 10px;
     background-color: #182F1A;
@@ -120,25 +144,30 @@ a {
 .calendar-cell-text{
     font-size: 100%
 }
-/* -------------------------------FOOTER------------------------------- */
-footer{
+
+/* -------------------------------ADDMOVIE.HTML--------------------------- */
+#add-movie-container{
+    margin: 20px 0;
     display: flex;
-    margin: 0 0;
-    padding: 0 10px;
-    background-color: #182F1A;  
+    justify-content: center;
 }
 
-.footer-text{
-    width: 70%
-}
-.footer-icons{
-    width: 30%;
-    padding: 15px 10px 5px 0px;
+#add-movie-form{
+    width: 90%;
+    background-color: #E3E3E3;
+    padding: 10px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
-.social-icons{
-    margin-left: 10px;
-    margin-right: 10px;
+.input-field{
+    width: 95%;
+}
+
+#plot_summary{
+    font-family: 'Balsamiq Sans', cursive;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #000000;
 }

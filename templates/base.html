@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PO - TAY - TOES!</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css"/>
+</head>
+<body>
+    <!-------------------------------- NAVBAR ------------------------------>
+    <div class="navigation">
+        <div class="logo">
+            <h1><a href="{{url_for('home')}}">PTT</a></h1>
+        </div>
+        <div class="addmovie-container">
+            <div class="maroon-box">
+                <h1><a href="{{url_for('add_movie')}}">Add Movie</a></h1>
+            </div>
+        </div>
+    </div>
+
+    {% block content %} {% endblock %}
+
+    <!--------------------------------- FOOTER ----------------------------->
+    <footer>
+        <div class="footer-text">
+            <p>Interested in seeing more?<span class="footer-span"> Come check out my other work and 
+            see what I'm up to through my social media</span></p>
+        </div>
+        <div class="footer-icons">
+            <a href="https://github.com" target="_blank" class="social-icons"><i class="fab fa-github fa-lg"></i></a>
+            <a href="https://twitter.com" target="_blank" class="social-icons"><i class="fab fa-twitter fa-lg"></i></a>
+            <a href="https://instagram.com" target="_blank" class="social-icons"><i class="fab fa-instagram fa-lg"></i></a>
+            <a href="https://facebook.com" target="_blank" class="social-icons"><i class="fab fa-facebook-f fa-lg"></i></a>
+        </div>
+    </footer>
+    <script src="https://kit.fontawesome.com/318689fbdb.js"></script>
+    <script src="{{url_for('static', filename='js/index.js')}}"></script>
+</body>
+</html>

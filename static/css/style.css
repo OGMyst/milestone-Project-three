@@ -156,18 +156,19 @@ footer{
     width: 90%;
     background-color: #E3E3E3;
     padding: 10px;
-    display: flex;
-    justify-content: center;
 }
 
 .input-field{
-    width: 95%;
-}
-
-#plot_summary{
     font-family: 'Balsamiq Sans', cursive;
+    font-weight: 700;
     width: 100%;
     padding: 10px;
     border-radius: 5px;
     border: 2px solid #000000;
+    
+}
+
+.input-container{
+    margin-left: 4%;
+    width: 90%;   
 }

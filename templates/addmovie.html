@@ -2,13 +2,44 @@
 <div id="add-movie-container">
     <div class="row">
         <form class="col s12" id="add-movie-form">
-            <div class="input-field col s12">
+            <div class="input-field col s6">
                 <input id="film_name" type="text" class="validate" name="film-name">
                 <label for="film_name">Film Name</label>
+            </div>
+            <div class="input-field col s6">
+                <select>
+                <option value="" disabled selected>Genre</option>
+                <option value="1">Action</option>
+                <option value="2">Adventure</option>
+                <option value="3">Comedy</option>
+                <option value="4">Crime</option>
+                <option value="5">Drama</option>
+                <option value="6">Fantasy</option>
+                <option value="7">Historical</option>
+                <option value="8">Horror</option>
+                <option value="9">Mystery</option>
+                <option value="10">Romance</option>
+                <option value="11">Science fiction</option>
+                <option value="12">Thriller</option>
+                <option value="13">Western</option>
+                <option value="14">Animation</option>
+                </select>
+                <label>Genre</label>
+            </div>
+            <div class="input-field col s6">
+                <input placeholder="Duration" id="duration" type="text" class="validate">
+                <label for="duration">Duration</label>
+            </div>
+            <div class="input-field col s6">
+                <input placeholder="URL" id="movie_poster_url" type="text" class="validate">
+                <label for="movie_poster_url">Movie Poster URL</label>
             </div>
             <div class="input-field col s12">
                 <textarea id="textarea1" class="materialize-textarea" name="plot_summary"></textarea>
                 <label for="textarea1">Plot Summary</label>
+            </div>
+            <div>
+            <input type="submit" value="Submit" id="submit">
             </div>
         </form>
     </div>        

@@ -4,6 +4,11 @@ document.addEventListener("DOMContentLoaded", function() {
     showCalendar(month, year)
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems, options);
+  });
+
 let today = new Date();
 let month = today.getMonth();
 let year = today.getFullYear();

@@ -154,9 +154,7 @@ footer{
 
 /* -------------------------------ADDMOVIE.HTML--------------------------- */
 #add-movie-container{
-    margin: 20px 0;
-    display: flex;
-    justify-content: center;
+    margin: 20px 5%;
 }
 
 #add-movie-form{
@@ -165,17 +163,7 @@ footer{
     padding: 10px;
 }
 
-.input-box{
+.input-field{
     font-family: 'Balsamiq Sans', cursive;
     font-weight: 700;
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 2px solid #000000;
-    
-}
-
-.input-container{
-    margin-left: 4%;
-    width: 90%;   
 }

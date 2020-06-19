@@ -1,27 +1,16 @@
 {% extends 'base.html'%}{% block content %} 
 <div id="add-movie-container">
-    <form id="add-movie-form">
-        <div class="input-container">
-            <label for="#">Film Name</label>
-            <input type="text" name="film-name" class="input-box">
-        </div>
-        <div class="input-container">
-            <label>Plot Summary</label>
-            <textarea class="input-box" name="plot_summary" type="text" rows="6">
-            </textarea>
-        </div>
-    </form>
-
-  <div class="row">
-    <form class="col s12">
-      <div class="row">
-        <div class="input-field col s12">
-          <textarea id="textarea1" class="materialize-textarea"></textarea>
-          <label for="textarea1">Textarea</label>
-        </div>
-      </div>
-    </form>
-  </div>
-        
+    <div class="row">
+        <form class="col s12" id="add-movie-form">
+            <div class="input-field col s12">
+                <input id="film_name" type="text" class="validate" name="film-name">
+                <label for="film_name">Film Name</label>
+            </div>
+            <div class="input-field col s12">
+                <textarea id="textarea1" class="materialize-textarea" name="plot_summary"></textarea>
+                <label for="textarea1">Plot Summary</label>
+            </div>
+        </form>
+    </div>        
 </div>
 {% endblock %}

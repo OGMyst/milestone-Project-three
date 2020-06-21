@@ -188,3 +188,32 @@ textarea{
     border-radius: 10px;
     color: #DCAE0B; 
 }
+
+/* -------------------------------FILMS.HTML--------------------------- */
+#film-container{
+    display: flex;
+    justify-content: center;
+    margin: 40px 0px;
+}
+
+.film-card{
+    margin: 0 20px;
+    display: flex;
+    width: 20%;
+    height: 125px;
+    border-radius: 10px;
+    background-color: #E3E3E3;
+}
+
+.film-poster{
+    margin: 10px;
+    width: 70px;
+}
+
+.film-info{
+    margin: 10px;
+}
+
+.film-info p{
+    margin: 0 0 5px;
+}

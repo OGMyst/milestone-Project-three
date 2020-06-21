@@ -1,0 +1,16 @@
+{% extends 'base.html'%}{% block content %} 
+
+<div id="film-container">
+    {% for category in films %}
+    <div class="film-card">
+        <img class="film-poster" src="{{category.theatrical_poster_url}}" alt="Poster Unavailable"/>
+        <div class="film-info">
+            <p>{{category.film_name}}</p>
+            <p>{{category.genre}}</p>
+            <p>{{category.duration}} mins</p>
+            <p>{{category.release_date}}</p>         
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

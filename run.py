@@ -41,7 +41,7 @@ def insert_film():
 def filler():
     hello = env
     return hello
-    return url_for("index.html")
+    return url_for("index.html", films=mongo.db.film_info.find())
 
 
 if __name__ == '__main__':

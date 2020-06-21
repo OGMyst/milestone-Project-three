@@ -2,13 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     calendarMonth();
     daysOfTheWeek();
     showCalendar(month, year)
-    var elems = document.querySelectorAll('select');
-    var instances = M.FormSelect.init(elems, options);
 });
-
-$(document).ready(function(){
-    $('select').formSelect();
-  });
 
 let today = new Date();
 let month = today.getMonth();

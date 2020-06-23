@@ -4,15 +4,25 @@
     {% for category in films %}
     <div class="film-card">
         <div class="poster-box">
-            <a href="{{url_for('film_info', film_id=category._id)}}">
+            <a href="">
                 <img class="film-poster" src="{{category.theatrical_poster_url}}" alt="Poster Unavailable"/>
             </a>
         </div>
         <div class="film-info">
-            <p>{{category.film_name}}</p>
-            <p>{{category.genre}}</p>
-            <p>{{category.duration}} mins</p>
-            <p>{{category.release_date}}</p>         
+            <p id="name-of-film">{{category.film_name}}</p>
+            <p id="genre-of-film">{{category.genre}}</p>
+            <p id="duration-of-film">{{category.duration}} mins</p>
+            <p id="date-of-film">{{category.release_date}}</p> 
+            <div class="change-box">
+                <div class="change-film">
+                    <h1 class="change-text">Edit Film</h1>
+                </div>
+            </div>
+            <div class="change-box">
+                <div class="change-film">
+                    <h1 class="change-text">Delete Film</h1>
+                </div>
+            </div>        
         </div>
     </div>
     {% endfor %}

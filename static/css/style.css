@@ -211,8 +211,17 @@ textarea{
     background-color: #E3E3E3;
 }
 
+.poster-box{
+    width: 100px;
+    padding: 10px; 
+    text-align: center;
+}
+
+.poster-box a{
+    font-size: 100%;
+}
+
 .film-poster{
-    margin: 10px;
     width: 70px;
 }
 
@@ -221,9 +230,33 @@ textarea{
 }
 
 .film-info p{
-    margin: 0 0 5px;
+    margin: 0;
 }
 
+#date-of-film,
+#duration-of-film{
+    display: none;
+}
+
+.change-box{
+    padding-bottom: 5px;    
+}
+
+.change-film{
+    width: 100px;
+    background-color: #5A0A0A;
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.change-text{
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 600;
+    font-size: 100%;
+    margin: 0 auto;
+    color: #DCAE0B;    
+}
 /*------------MODAL------------ */
 #modal-background{
     background: rgba(0, 0, 0, 0.6);
@@ -231,7 +264,7 @@ textarea{
     width:100%;
     position: absolute;
     top: 0;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 }

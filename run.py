@@ -1,7 +1,6 @@
 import os
 from flask import Flask, render_template, url_for, redirect, request
 from flask_pymongo import PyMongo
-from bson.objectid import ObjectId
 
 if os.path.exists("env.py"):
     import env
@@ -36,7 +35,6 @@ def insert_film():
     film = mongo.db.film_info
     film.insert_one(request.form.to_dict())
     return redirect(url_for('add_movie'))
-
 
 
 @app.route('/home')

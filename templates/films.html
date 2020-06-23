@@ -3,7 +3,11 @@
 <div id="film-container">
     {% for category in films %}
     <div class="film-card">
-        <img class="film-poster" src="{{category.theatrical_poster_url}}" alt="Poster Unavailable"/>
+        <div class="poster-box">
+            <a href="{{url_for('film_info', film_id=category._id)}}">
+                <img class="film-poster" src="{{category.theatrical_poster_url}}" alt="Poster Unavailable"/>
+            </a>
+        </div>
         <div class="film-info">
             <p>{{category.film_name}}</p>
             <p>{{category.genre}}</p>
@@ -12,5 +16,14 @@
         </div>
     </div>
     {% endfor %}
+    <div id="modal-background">
+        <div id="modal-card">
+            <div id="poster-side">
+            </div>
+            <div id="info-side">
+            </div>
+            <div id="close-modal">&times</div>
+        </div>
+    </div>
 </div>
 {% endblock %}

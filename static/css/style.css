@@ -5,6 +5,10 @@ body{
     font-family: 'Noto Serif', serif;
 }
 
+h1, 
+p{
+    margin:0;
+}
 .materialize-override, 
 a {
     font-weight: 700;
@@ -116,7 +120,7 @@ footer{
 
 #month{
     width: 100%;
-    padding: 10px 0;
+    padding: 20px 0 30px;
     text-shadow: 1px 1px 1px #000000;
     border-bottom: 3px solid #000000;
     /* margin-bottom: 10px; */
@@ -131,7 +135,7 @@ footer{
     border-bottom: 3px solid #000000;
 }
  .week-days{
-    width: 14%;
+    width: 14.2%;
     display: flex;
     justify-content: center;
 
@@ -144,7 +148,9 @@ footer{
 .calendar-cell{
     width: 14%;
     height: 120px;
-    border: 3px solid #000000;
+    border-bottom: 3px solid #000000;
+    border-right: 3px solid #000000;
+    
 }
 
 .calendar-cell-text{
@@ -193,7 +199,7 @@ textarea{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 40px 0px;
+    padding: 40px 0px;
 }
 
 .film-card{
@@ -216,4 +222,81 @@ textarea{
 
 .film-info p{
     margin: 0 0 5px;
+}
+
+/*------------MODAL------------ */
+#modal-background{
+    background: rgba(0, 0, 0, 0.6);
+    height: 100%;
+    width:100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#modal-card{
+    width: 650px;
+    height: 300px;
+    background: #E3E3E3;
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+}
+
+#close-modal{
+    font-size: 30px;
+    position: absolute;
+    right: 10px;
+    top: -5px;
+}
+/* -------------------------------FILMINFO.HTML--------------------------- */
+
+#sidenav {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  overflow-x: hidden;
+  padding-top: 80px;
+}
+
+#film-title{
+    margin: 80px 0 40px 160px;
+}
+
+#film-info-container,
+.image-container, 
+.button-container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.sidebar-button{
+    width:100px;
+    height: 40px;
+    padding: 2px;
+    font-family: 'Noto Serif', serif;
+    background-color: #5A0A0A;
+    font-size: 150%;
+    border-radius: 10px;
+    color: #DCAE0B; 
+    text-align: center;
+    
+}
+
+.sidebar-button p{
+    margin: 0
+}
+
+#film-info-container{
+    padding-left: 160px;
+}
+
+#plot-summary-container{
+    width: 60%;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #E3E3E3;
 }

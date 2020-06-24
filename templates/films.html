@@ -9,12 +9,12 @@
             </a>
         </div>
         <div class="film-info">
-            <p id="name-of-film">{{category.film_name}}</p>
-            <p id="genre-of-film">{{category.genre}}</p>
-            <p id="duration-of-film">{{category.duration}} mins</p>
-            <p id="date-of-film">{{category.release_date}}</p> 
+            <p class="name-of-film">{{category.film_name}}</p>
+            <p class="genre-of-film">{{category.genre}}</p>
+            <p class="duration-of-film">{{category.duration}} mins</p>
+            <p class="date-of-film">{{category.release_date}}</p> 
             <div class="view-more-box">
-                <div class="view-more">
+                <div class="view-more" onclick="viewMoreModal(`{{category.film_name}}`)"> <!-- -->
                     <h1 class="view-more-text">View More</h1>
                 </div>
             </div>
@@ -34,11 +34,13 @@
     <div id="modal-background">
         <div id="modal-card">
             <div id="poster-side">
+            <img id="expanded-card-image"/>
             </div>
             <div id="info-side">
             </div>
-            <div id="close-modal">&times</div>
+            <div id="close-modal" onclick="closeModal()">&times</div>
         </div>
     </div>
 </div>
+<script src="{{url_for('static', filename='js/films.js')}}"></script>
 {% endblock %}

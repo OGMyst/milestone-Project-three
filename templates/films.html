@@ -11,32 +11,43 @@
         <div class="film-info">
             <p class="name-of-film">{{category.film_name}}</p>
             <p class="genre-of-film">{{category.genre}}</p>
-            <p class="duration-of-film">{{category.duration}} mins</p>
-            <p class="date-of-film">{{category.release_date}}</p> 
+            <p class="duration-of-film hidden">{{category.duration}} mins</p>
+            <p class="date-of-film hidden">{{category.release_date}}</p> 
+            <p class="plot-summary hidden">{{category.plot_summary}}</p> 
+
             <div class="view-more-box">
-                <div class="view-more" onclick="viewMoreModal(`{{category.film_name}}`)"> <!-- -->
+                <div class="view-more" onclick="viewMoreModal()">
                     <h1 class="view-more-text">View More</h1>
                 </div>
             </div>
-            <!-- <div class="change-box">
-                <div class="change-film">
-                    <h1 class="change-text">Edit Film</h1>
-                </div>
-            </div>
-            <div class="change-box">
-                <div class="change-film">
-                    <h1 class="change-text">Delete Film</h1>
-                </div>
-            </div>         -->
+            <!--        -->
         </div>
     </div>
     {% endfor %}
     <div id="modal-background">
         <div id="modal-card">
             <div id="poster-side">
-            <img id="expanded-card-image"/>
+                <img id="expanded-card-image" class="expanded-card-elements"/>
+                <div id="change-boxes">
+                    <div class="change-box">
+                        <div class="change-film">
+                            <h1 class="change-text">Edit Film</h1>
+                        </div>
+                    </div>
+                    <div class="change-box">
+                        <div class="change-film">
+                            <h1 class="change-text">Delete Film</h1>
+                        </div>
+                    </div>
+                </div>  
             </div>
             <div id="info-side">
+                <div id="expanded-title-box" class="expanded-card-elements">
+                    <h5 id="expanded-card-title" class="expanded-card-text"></h5>
+                </div>
+                <div id="expanded-summary-box" class="expanded-card-elements">
+                    <p id="expanded-plot-summary" class="expanded-card-text"></p>
+                </div>
             </div>
             <div id="close-modal" onclick="closeModal()">&times</div>
         </div>

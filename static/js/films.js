@@ -17,7 +17,17 @@ function giveCurrentCardId(){
 
 function displayFilmInfo(){
     let parentId = document.getElementById("current-card");
-    let posterelement = $(parentId).find("img");
+
+    let posterElement = $(parentId).find("img");
+    let titleElement = $(parentId).find(".name-of-film");
+    let summaryElement = $(parentId).find(".plot-summary");
+    console.log(summaryElement)
     let expandedCardImage = document.getElementById("expanded-card-image")
-    expandedCardImage.src = posterelement[0].src
+    let expandedCardTitle = document.getElementById("expanded-card-title")
+    let expandedCardSummary = document.getElementById("expanded-plot-summary")
+
+    expandedCardImage.src = posterElement[0].src;
+    expandedCardTitle.innerHTML = titleElement[0].innerHTML;
+    expandedCardSummary.innerHTML = summaryElement[0].innerHTML;
+   
 }

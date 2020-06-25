@@ -328,7 +328,15 @@ textarea{
 }
 
 #expanded-summary-box{
-    padding-top: 10px;
+    padding: 10px 0 20px;
+}
+
+#required-information-box{
+    font-weight: 600;
+}
+
+.inline-info-boxes{
+    width: 33%;
 }
 
 #close-modal{

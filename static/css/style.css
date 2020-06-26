@@ -183,15 +183,33 @@ textarea{
     justify-content: center;
 } */
 
+#submit-or-add{
+    display: flex;
+    width: 90%;
+    background-color: #E3E3E3;
+    padding-bottom: 20px;
+}
+
+.add-submit-box{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+#add-more{
+    padding-top: 5px;
+}
+
+#add-more,
 #submit{
     font-family: 'Noto Serif', serif;
     background-color: #5A0A0A;
     width: 150px;
     height: 45px;
-    margin: 20px 0px 20px 43%;
     font-size: 150%;
     border-radius: 10px;
     color: #DCAE0B; 
+    text-align: center;
 }
 
 /* -------------------------------FILMS.HTML--------------------------- */
@@ -281,7 +299,10 @@ textarea{
 }
 
 #poster-side{
-    /* width: 30%; */
+    min-width: 30%;
+}
+
+#expanded-poster-box{
     max-width: 200px;
 }
 
@@ -290,9 +311,7 @@ textarea{
 }
 
 .change-box{
-    display: flex;
-    justify-content: center;
-    padding-bottom: 5px;    
+    padding-bottom: 5px; 
 }
 
 .change-film{
@@ -345,55 +364,4 @@ textarea{
     right: 10px;
     top: -5px;
     cursor: pointer;
-}
-
-
-/* -------------------------------FILMINFO.HTML--------------------------- */
-
-#sidenav {
-  height: 100%;
-  width: 160px;
-  position: fixed;
-  overflow-x: hidden;
-  padding-top: 80px;
-}
-
-#film-title{
-    margin: 80px 0 40px 160px;
-}
-
-#film-info-container,
-.image-container, 
-.button-container{
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.sidebar-button{
-    width:100px;
-    height: 40px;
-    padding: 2px;
-    font-family: 'Noto Serif', serif;
-    background-color: #5A0A0A;
-    font-size: 150%;
-    border-radius: 10px;
-    color: #DCAE0B; 
-    text-align: center;
-    
-}
-
-.sidebar-button p{
-    margin: 0
-}
-
-#film-info-container{
-    padding-left: 160px;
-}
-
-#plot-summary-container{
-    width: 60%;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: #E3E3E3;
 }

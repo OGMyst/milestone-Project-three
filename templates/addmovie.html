@@ -42,10 +42,52 @@
                 <textarea id="textarea1" class="materialize-textarea" name="plot_summary"></textarea>
                 <label for="textarea1">Plot Summary</label>
             </div>
-            <div>
-            <input type="submit" value="Submit" id="submit" name="action">
+            <div id="directors">
+                <div class="input-field col s6">
+                    <input type="text" class="director validate" name="director">
+                    <label for="director">Director</label>
+                </div>
+            </div>
+            <div id="producers">
+                <div class="input-field col s6">
+                    <input type="text" class="producer validate" name="producer">
+                    <label for="producer">Producer</label>
+                </div>
+            </div>
+            <div id="screenplay-by">
+                <div class="input-field col s6">
+                    <input type="text" class="screenplay validate" name="screenplay">
+                    <label for="screenplay">Screenplay</label>
+                </div>
+            </div>
+            <div id="story-by">
+                <div class="input-field col s6">
+                    <input type="text" class="story validate" name="story">
+                    <label for="story">Story</label>
+                </div>
+            </div>
+            <div id="starring">
+                <div class="input-field col s6">
+                    <input type="text" class="starring validate" name="starring">
+                    <label for="starring">starring</label>
+                </div>
+                <div class="input-field col s6">
+                    <input type="text" class="starring validate" name="starring">
+                    <label for="starring">Starring</label>
+                </div>
             </div>
         </form>
+        <div id="submit-or-add">
+                <div class="add-submit-box">
+                    <div id="add-more">
+                        <p id="add-text">Add More</p>
+                    </div>
+                </div>
+                <div class="add-submit-box">
+                    <input type="submit" value="Submit" id="submit" name="action">
+                </div>
+            </div>
     </div>        
 </div>
+<script src="{{url_for('static', filename='js/addmovie.js')}}"></script>
 {% endblock %}

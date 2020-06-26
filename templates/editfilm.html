@@ -1,14 +1,14 @@
-{% extends 'base.html'%}{% block content %} 
+{% extends 'base.html'%}{% block content %}
 <div id="add-movie-container">
     <div class="row">
-        <form class="col s12" id="add-movie-form" action="{{ url_for('insert_film') }}" method="POST">
+        <form class="col s12" id="add-movie-form" action="{{ url_for('update_film', film_id=film._id) }}" method="POST">
             <div class="input-field col s6">
                 <input id="film_name" type="text" class="validate" name="film_name">
-                <label for="film_name">Film Name</label>
+                <label for="film_name">{{film.film_name}}</label>
             </div>
             <div class="input-field col s6">
                 <select name="genre">
-                <option value="" disabled selected>Genre</option>
+                <option value="" disabled selected>{{film.genre}}</option>
                 <option value="Action">Action</option>
                 <option value="Adventure">Adventure</option>
                 <option value="Animation">Animation</option>
@@ -27,40 +27,40 @@
             </div>
             <div class="input-field col s6">
                 <input id="duration" type="text" class="validate" name="duration">
-                <label for="duration">Duration</label>
+                <label for="duration">{{film.duration}}</label>
             </div>
             <div class="input-field col s6">
                 <input id="release_date" type="text" class="validate" name="release_date">
-                <label for="release_date">Release Date</label>
+                <label for="release_date">{{film.release_date}}</label>
             </div>
             <div class="input-field col s12">
                 <input id="movie_poster_url" type="text" class="validate" name="theatrical_poster_url">
-                <label for="movie_poster_url">Film Poster URL</label>
+                <label for="movie_poster_url">{{film.theatrical_poster_url}}</label>
             </div>
             <div class="input-field col s12">
                 <textarea id="textarea1" class="materialize-textarea" name="plot_summary"></textarea>
-                <label for="textarea1">Plot Summary</label>
+                <label for="textarea1">{{film.plot_summary}}</label>
             </div>
             <div id="additional-info">
                 <div class="input-field col s6">
                     <input type="text" class="director validate" name="director">
-                    <label for="director">Director</label>
+                    <label for="director">{{film.director}}</label>
                 </div>
                 <div class="input-field col s6">
                     <input type="text" class="producer validate" name="producer">
-                    <label for="producer">Producer</label>
+                    <label for="producer">{{film.producer}}</label>
                 </div>
                 <div class="input-field col s6">
                     <input type="text" class="screenplay validate" name="screenplay">
-                    <label for="screenplay">Screenplay By</label>
+                    <label for="screenplay">{{film.screenplay}}</label>
                 </div>
                 <div class="input-field col s6">
                     <input type="text" class="story validate" name="story">
-                    <label for="story">Story By</label>
+                    <label for="story">{{film.story}}</label>
                 </div>
                 <div class="input-field col s12">
                     <input type="text" class="starring validate" name="starring">
-                    <label for="starring">Starring</label>
+                    <label for="starring">{{film.starring}}</label>
                 </div>
             </div>
         </form>

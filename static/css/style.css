@@ -166,6 +166,7 @@ footer{
     width: 90%;
     background-color: #E3E3E3;
     padding: 20px 10px 10px;
+    border-radius: 10px 10px 0 0;
 }
 
 .input-field{
@@ -183,11 +184,15 @@ textarea{
     justify-content: center;
 } */
 
+#add-submit{
+    border-radius: 0 0 10px 10px;
+}
+
 .form-styling{
     display: flex;
     width: 90%;
     background-color: #E3E3E3;
-    padding-bottom: 20px;
+    padding-bottom: 20px;   
 }
 
 #notification-box{
@@ -218,6 +223,7 @@ textarea{
     border-radius: 10px;
     color: #DCAE0B; 
     text-align: center;
+    cursor: pointer;
 }
 
 /* -------------------------------FILMS.HTML--------------------------- */

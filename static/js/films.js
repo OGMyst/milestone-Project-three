@@ -16,6 +16,7 @@ function giveCurrentCardId(){
 }
 
 function displayFilmInfo(){
+    let editFilm = document.getElementById("edit-film-link")
     let parentId = document.getElementById("current-card");
 
     let posterElement = $(parentId).find("img");
@@ -25,6 +26,7 @@ function displayFilmInfo(){
     let durationElement = $(parentId).find(".duration-of-film");
     let dateElement = $(parentId).find(".date-of-film");
 
+    let editFilmButton = document.getElementById("edit")
     let expandedCardImage = document.getElementById("expanded-card-image");
     let expandedCardTitle = document.getElementById("expanded-card-title");
     let expandedCardSummary = document.getElementById("expanded-plot-summary");
@@ -32,11 +34,13 @@ function displayFilmInfo(){
     let expandedCardDuration = document.getElementById("expanded-duration");
     let expandedCardDate = document.getElementById("expanded-date");
 
+    editFilmButton.href = editFilm.href;
     expandedCardImage.src = posterElement[0].src;
     expandedCardTitle.innerHTML = titleElement[0].innerHTML;
     expandedCardSummary.innerHTML = summaryElement[0].innerHTML;
     expandedCardGenre.innerHTML = "Genre: " + genreElement[0].innerHTML;
     expandedCardDuration.innerHTML = "Duration: " + durationElement[0].innerHTML;
     expandedCardDate.innerHTML = "Date: " + dateElement[0].innerHTML;
-   
+    console.log(posterElement)
+    console.log(editFilm)
 }

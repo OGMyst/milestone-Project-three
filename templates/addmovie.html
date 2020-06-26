@@ -24,7 +24,6 @@
                 <option value="Thriller">Thriller</option>
                 <option value="Western">Western</option>
                 </select>
-                <label>Genre</label>
             </div>
             <div class="input-field col s6">
                 <input id="duration" type="text" class="validate" name="duration">
@@ -36,55 +35,46 @@
             </div>
             <div class="input-field col s12">
                 <input id="movie_poster_url" type="text" class="validate" name="theatrical_poster_url">
-                <label for="movie_poster_url">Movie Poster URL</label>
+                <label for="movie_poster_url">Film Poster URL</label>
             </div>
             <div class="input-field col s12">
                 <textarea id="textarea1" class="materialize-textarea" name="plot_summary"></textarea>
                 <label for="textarea1">Plot Summary</label>
             </div>
-            <div id="directors">
-                <div class="input-field col s6">
-                    <input type="text" class="director validate" name="director">
-                    <label for="director">Director</label>
-                </div>
+            <div class="input-field col s6">
+                <input type="text" class="director validate" name="director">
+                <label for="director">Director</label>
             </div>
-            <div id="producers">
-                <div class="input-field col s6">
-                    <input type="text" class="producer validate" name="producer">
-                    <label for="producer">Producer</label>
-                </div>
+            <div class="input-field col s6">
+                <input type="text" class="producer validate" name="producer">
+                <label for="producer">Producer</label>
             </div>
-            <div id="screenplay-by">
-                <div class="input-field col s6">
-                    <input type="text" class="screenplay validate" name="screenplay">
-                    <label for="screenplay">Screenplay</label>
-                </div>
+            <div class="input-field col s6">
+                <input type="text" class="screenplay validate" name="screenplay">
+                <label for="screenplay">Screenplay By</label>
             </div>
-            <div id="story-by">
-                <div class="input-field col s6">
-                    <input type="text" class="story validate" name="story">
-                    <label for="story">Story</label>
-                </div>
+            <div class="input-field col s6">
+                <input type="text" class="story validate" name="story">
+                <label for="story">Story By</label>
             </div>
-            <div id="starring">
-                <div class="input-field col s6">
-                    <input type="text" class="starring validate" name="starring">
-                    <label for="starring">starring</label>
-                </div>
-                <div class="input-field col s6">
-                    <input type="text" class="starring validate" name="starring">
-                    <label for="starring">Starring</label>
-                </div>
+            <div class="input-field col s12">
+                <input type="text" class="starring validate" name="starring">
+                <label for="starring">Starring</label>
             </div>
         </form>
-        <div id="submit-or-add">
+        <div class="form-styling" id="notification-box">
+            <p id="notification-text">
+            In the case of multiple writers, actors etc please place a "," between names
+            </p>
+        </div>
+        <div class="form-styling">
                 <div class="add-submit-box">
                     <div id="add-more">
                         <p id="add-text">Add More</p>
                     </div>
                 </div>
                 <div class="add-submit-box">
-                    <input type="submit" value="Submit" id="submit" name="action">
+                    <input type="submit" value="Submit" id="submit" name="action" onclick="submitForm()" />
                 </div>
             </div>
     </div>        

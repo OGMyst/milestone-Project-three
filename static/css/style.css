@@ -165,7 +165,7 @@ footer{
 #add-movie-form{
     width: 90%;
     background-color: #E3E3E3;
-    padding: 10px;
+    padding: 20px 10px 10px;
 }
 
 .input-field{
@@ -183,11 +183,19 @@ textarea{
     justify-content: center;
 } */
 
-#submit-or-add{
+.form-styling{
     display: flex;
     width: 90%;
     background-color: #E3E3E3;
     padding-bottom: 20px;
+}
+
+#notification-box{
+    padding-left: 21px;
+    padding-bottom: 40px;
+    font-family: 'Balsamiq Sans', cursive;
+    font-weight: 600;
+    font-size: 120%;
 }
 
 .add-submit-box{

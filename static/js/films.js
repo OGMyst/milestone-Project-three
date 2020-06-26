@@ -41,6 +41,4 @@ function displayFilmInfo(){
     expandedCardGenre.innerHTML = "Genre: " + genreElement[0].innerHTML;
     expandedCardDuration.innerHTML = "Duration: " + durationElement[0].innerHTML;
     expandedCardDate.innerHTML = "Date: " + dateElement[0].innerHTML;
-    console.log(posterElement)
-    console.log(editFilm)
 }

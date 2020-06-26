@@ -3,12 +3,12 @@
     <div class="row">
         <form class="col s12" id="add-movie-form" action="{{ url_for('update_film', film_id=film._id) }}" method="POST">
             <div class="input-field col s6">
-                <input id="film_name" type="text" class="validate" name="film_name">
-                <label for="film_name">{{film.film_name}}</label>
+                <input id="film_name" type="text" class="validate" name="film_name" value="{{film.film_name}}" disabled selected>
+                <label for="film_name">Film Name</label>
             </div>
             <div class="input-field col s6">
                 <select name="genre">
-                <option value="" disabled selected>{{film.genre}}</option>
+                <option value="Genre" disabled selected>{{film.genre}}</option>
                 <option value="Action">Action</option>
                 <option value="Adventure">Adventure</option>
                 <option value="Animation">Animation</option>
@@ -24,43 +24,44 @@
                 <option value="Thriller">Thriller</option>
                 <option value="Western">Western</option>
                 </select>
+                <label for="genre">Genre</label>
             </div>
             <div class="input-field col s6">
-                <input id="duration" type="text" class="validate" name="duration">
-                <label for="duration">{{film.duration}}</label>
+                <input id="duration" type="text" class="validate" name="duration" value="{{film.duration}}">
+                <label for="duration">Duration</label>
             </div>
             <div class="input-field col s6">
-                <input id="release_date" type="text" class="validate" name="release_date">
-                <label for="release_date">{{film.release_date}}</label>
+                <input id="release_date" type="text" class="validate" name="release_date" value="{{film.release_date}}">
+                <label for="release_date">Release Date <em>(DD/MM/YYYY)</em></label>
             </div>
             <div class="input-field col s12">
-                <input id="movie_poster_url" type="text" class="validate" name="theatrical_poster_url">
-                <label for="movie_poster_url">{{film.theatrical_poster_url}}</label>
+                <input id="movie_poster_url" type="text" class="validate" name="theatrical_poster_url" value="{{film.theatrical_poster_url}}">
+                <label for="movie_poster_url">Poster URL</label>
             </div>
             <div class="input-field col s12">
-                <textarea id="textarea1" class="materialize-textarea" name="plot_summary"></textarea>
-                <label for="textarea1">{{film.plot_summary}}</label>
+                <textarea id="textarea1" class="materialize-textarea" name="plot_summary">{{film.plot_summary}}</textarea>
+                <label for="textarea1">Plot Summary</label>
             </div>
             <div id="additional-info">
                 <div class="input-field col s6">
-                    <input type="text" class="director validate" name="director">
-                    <label for="director">{{film.director}}</label>
+                    <input type="text" class="director validate" name="director" value="{{film.director}}">
+                    <label for="director">Director</label>
                 </div>
                 <div class="input-field col s6">
-                    <input type="text" class="producer validate" name="producer">
-                    <label for="producer">{{film.producer}}</label>
+                    <input type="text" class="producer validate" name="producer" value="{{film.producer}}">
+                    <label for="producer">Producer</label>
                 </div>
                 <div class="input-field col s6">
-                    <input type="text" class="screenplay validate" name="screenplay">
-                    <label for="screenplay">{{film.screenplay}}</label>
+                    <input type="text" class="screenplay validate" name="screenplay" value="{{film.screenplay}}">
+                    <label for="screenplay"> Screenplay by</label>
                 </div>
                 <div class="input-field col s6">
-                    <input type="text" class="story validate" name="story">
-                    <label for="story">{{film.story}}</label>
+                    <input type="text" class="story validate" name="story" value="{{film.story}}">
+                    <label for="story">Story By</label>
                 </div>
                 <div class="input-field col s12">
-                    <input type="text" class="starring validate" name="starring">
-                    <label for="starring">{{film.starring}}</label>
+                    <input type="text" class="starring validate" name="starring" value="{{film.starring}}">
+                    <label for="starring">Starring</label>
                 </div>
             </div>
         </form>

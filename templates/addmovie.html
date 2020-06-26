@@ -41,25 +41,27 @@
                 <textarea id="textarea1" class="materialize-textarea" name="plot_summary"></textarea>
                 <label for="textarea1">Plot Summary</label>
             </div>
-            <div class="input-field col s6">
-                <input type="text" class="director validate" name="director">
-                <label for="director">Director</label>
-            </div>
-            <div class="input-field col s6">
-                <input type="text" class="producer validate" name="producer">
-                <label for="producer">Producer</label>
-            </div>
-            <div class="input-field col s6">
-                <input type="text" class="screenplay validate" name="screenplay">
-                <label for="screenplay">Screenplay By</label>
-            </div>
-            <div class="input-field col s6">
-                <input type="text" class="story validate" name="story">
-                <label for="story">Story By</label>
-            </div>
-            <div class="input-field col s12">
-                <input type="text" class="starring validate" name="starring">
-                <label for="starring">Starring</label>
+            <div id="additional-info">
+                <div class="input-field col s6">
+                    <input type="text" class="director validate" name="director">
+                    <label for="director">Director</label>
+                </div>
+                <div class="input-field col s6">
+                    <input type="text" class="producer validate" name="producer">
+                    <label for="producer">Producer</label>
+                </div>
+                <div class="input-field col s6">
+                    <input type="text" class="screenplay validate" name="screenplay">
+                    <label for="screenplay">Screenplay By</label>
+                </div>
+                <div class="input-field col s6">
+                    <input type="text" class="story validate" name="story">
+                    <label for="story">Story By</label>
+                </div>
+                <div class="input-field col s12">
+                    <input type="text" class="starring validate" name="starring">
+                    <label for="starring">Starring</label>
+                </div>
             </div>
         </form>
         <div class="form-styling" id="notification-box">
@@ -69,7 +71,7 @@
         </div>
         <div class="form-styling">
                 <div class="add-submit-box">
-                    <div id="add-more">
+                    <div id="add-more" onclick="showMoreInputs()">
                         <p id="add-text">Add More</p>
                     </div>
                 </div>

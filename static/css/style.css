@@ -336,6 +336,7 @@ textarea{
     border-radius: 5px;
 }
 
+#edit,
 .change-text{
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 600;
@@ -370,6 +371,19 @@ textarea{
 
 .inline-info-boxes{
     width: 33%;
+}
+
+#extra-info{
+    display: flex;
+}
+
+.extra-info-box{
+    width: 50%;
+    padding: 10px;
+}
+
+#director-and-co span{
+    font-weight: 600;
 }
 
 #close-modal{

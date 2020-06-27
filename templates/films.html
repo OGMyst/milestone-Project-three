@@ -1,6 +1,8 @@
 {% extends 'base.html'%}{% block content %} 
 
 <div id="film-container">
+
+    <!--------------------------------------------------- FILM CARD ----------------------------------------------->
     {% for film in film %}
     <div class="film-card">
         <div class="poster-box">
@@ -14,7 +16,11 @@
             <p class="duration-of-film hidden">{{film.duration}} mins</p>
             <p class="date-of-film hidden">{{film.release_date}}</p> 
             <p class="plot-summary hidden">{{film.plot_summary}}</p> 
-
+            <p class="director hidden">{{film.director}}</p>
+            <p class="producer hidden">{{film.producer}}</p>
+            <p class="screenplay hidden">{{film.screenplay}}</p>
+            <p class="story hidden">{{film.story}}</p>
+            <p class="starring hidden">{{film.starring}}</p>
             <div class="view-more-box">
                 <div class="view-more" onclick="viewMoreModal()">
                     <h1 class="view-more-text">View More</h1>
@@ -22,10 +28,13 @@
             </div>
         </div>
     </div>
+    <!--To allow js file to access each film_id-->
     <a id="edit-film-link" href="{{url_for('edit_film', film_id=film._id)}}"></a>
     {% endfor %}
+    <!------------------------------------------------------- MODAL ---------------------------------------------->
     <div id="modal-background">
         <div id="modal-card">
+            <!--------------------POSTER SIDE---------------------->
             <div id="poster-side">
                 <div id="expanded-poster-box">
                     <img id="expanded-card-image" class="expanded-card-elements"/>
@@ -45,6 +54,8 @@
                     </div>
                 </div>  
             </div>
+
+            <!--------------------INFO SIDE---------------------->
             <div id="info-side">
                 <div id="expanded-title-box" class="expanded-card-elements">
                     <h5 id="expanded-card-title" class="expanded-card-text"></h5>
@@ -63,6 +74,15 @@
                         <p id="expanded-date" class="expanded-card-text"></p>
                     </div>
                 </div>
+
+                <!-----------------EXTRA INFO------------------>
+                <div id="extra-info">
+                    <div id="director-and-co" class="extra-info-box">
+                    </div>
+                    <div id="actors" class="extra-info-box">
+                    </div>
+                </div>
+
             </div>
             <div id="close-modal" onclick="closeModal()">&times</div>
         </div>

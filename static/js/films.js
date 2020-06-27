@@ -18,6 +18,7 @@ function giveCurrentCardId(){
 function displayFilmInfo(){
     let editFilm = document.getElementById("edit-film-link")
     let parentId = document.getElementById("current-card");
+    displayExtraInfo();
 
     let posterElement = $(parentId).find("img");
     let titleElement = $(parentId).find(".name-of-film");
@@ -41,4 +42,25 @@ function displayFilmInfo(){
     expandedCardGenre.innerHTML = "Genre: " + genreElement[0].innerHTML;
     expandedCardDuration.innerHTML = "Duration: " + durationElement[0].innerHTML;
     expandedCardDate.innerHTML = "Date: " + dateElement[0].innerHTML;
+
+function displayExtraInfo(){
+    
+    let directorElement = $(parentId).find(".director");
+    let producerElement = $(parentId).find(".producer");
+    let screenplayElement = $(parentId).find(".screenplay");
+    let storyElement = $(parentId).find(".story");
+    let starringElement = $(parentId).find(".starring");
+
+    let extraInfoLeft = document.getElementById("director-and-co");
+    let extraInforight = document.getElementById("actors");
+
+    let directorContent = `<p> <span>Director: </span>${directorElement[0].innerHTML}</p>`
+    let producerContent = `<p> <span>Produced by: </span> ${producerElement[0].innerHTML}</p>`
+    let screenplayContent = `<p> <span>Screenplay by: </span> ${screenplayElement[0].innerHTML}</p>`
+    let storyContent = `<p> <span>Story by: </span>${storyElement[0].innerHTML}</p>`
+    let starringContent = `<p> <span>Starring: </span>${starringElement[0].innerHTML}</p>`
+
+    $(extraInfoLeft).append(directorContent, producerContent, screenplayContent, storyContent)
+    $(extraInforight).append(starringContent)
 }
+};

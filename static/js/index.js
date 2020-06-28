@@ -99,7 +99,7 @@ function previousmonth() {
 
 function insertImagesToCalendar(){
     let numberOfDaysInMonth = document.getElementsByClassName("date-text");
-    let eachCell = document.getElementsByClassName("calendar-cell");
+    let eachOccupiedCell = document.getElementsByClassName("calendar-cell-div");
     let formatedMonth = MONTHS_IN_DATE_FORMAT[month]
     let releaseDatesClass = document.getElementsByClassName("dates-for-calendar");
     let filmPosters = document.getElementsByClassName("posters-for-calendar");
@@ -115,14 +115,16 @@ function insertImagesToCalendar(){
 
     for(i = 0; i < releaseDatesClass.length; i++){
         releaseDates.push(releaseDatesClass[i].innerHTML);
+        
     }
-
+    
     for(i = 0; i < releaseDates.length; i++){
         for(j = 1; j <= allDaysInMonth.length; j++){
             
             if(releaseDates[i] === allDaysInMonth[j]){
-
-                let eachImage = $(eachCell[j]).find("img");
+                
+                let eachImage = $(eachOccupiedCell[j]).find("img");
+                console.log($(eachOccupiedCell[j]));
                 (eachImage[0]).src = filmPosters[i].innerHTML;
                 $(eachImage).css("display", "block")
             }

@@ -7,10 +7,17 @@ document.addEventListener("DOMContentLoaded", function() {
 let today = new Date();
 let month = today.getMonth();
 let year = today.getFullYear();
+
+const DAYS = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09",
+              "10", "11", "12", "13", "14", "15", "16", "17", "18", "19",
+              "20", "21", "22", "23", "24", "25", "26", "27", "28", "29",
+              "30", "31"]
+    
 let monthNames = ["January", "February", "March", "April",
                   "May", "June", "July", "August", "September",
                   "Octboer", "November", "Decemeber"];
 let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+
 let weekDays;
 
 function calendarMonth(){ 
@@ -50,9 +57,13 @@ function showCalendar(month, year) {
             }
             else {
                 let cell = document.createElement("td");
-                let cellText = document.createTextNode(date);
+                let pTag = document.createElement("p")
+                let cellText = date;
                 cell.classList.add("calendar-cell")
-                cell.appendChild(cellText);
+                cell.append(pTag);
+                pTag.append(cellText)
+                cell.id = date;
+                pTag.classList.add("date-text")
                 row.appendChild(cell);
                 date++;
             }
@@ -72,3 +83,4 @@ function previousmonth() {
     month = (month === 0) ? 11 : month - 1;
     showCalendar(month, year);
 }
+

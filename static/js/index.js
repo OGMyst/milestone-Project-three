@@ -8,10 +8,12 @@ let today = new Date();
 let month = today.getMonth();
 let year = today.getFullYear();
 
-const DAYS = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09",
-              "10", "11", "12", "13", "14", "15", "16", "17", "18", "19",
-              "20", "21", "22", "23", "24", "25", "26", "27", "28", "29",
-              "30", "31"]
+const DAYS_IN_DATE_FORMAT = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09",
+                             "10", "11", "12", "13", "14", "15", "16", "17", "18", "19",
+                             "20", "21", "22", "23", "24", "25", "26", "27", "28", "29",
+                             "30", "31"]
+
+const MONTHS_IN_DATE_FORMAT = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12",]
     
 let monthNames = ["January", "February", "March", "April",
                   "May", "June", "July", "August", "September",
@@ -33,7 +35,9 @@ function daysOfTheWeek(){
 };
 
 function showCalendar(month, year) {
+
     calendarMonth();
+
     let firstDay = (new Date(year, month)).getDay();
     let daysInMonth = 32 - new Date(year, month, 32).getDate();
     let tbl = document.getElementById("calendar-days");
@@ -57,19 +61,27 @@ function showCalendar(month, year) {
             }
             else {
                 let cell = document.createElement("td");
+                let div = document.createElement("div");
                 let pTag = document.createElement("p")
+                let image = document.createElement("img");
                 let cellText = date;
-                cell.classList.add("calendar-cell")
-                cell.append(pTag);
-                pTag.append(cellText)
+                cell.classList.add("calendar-cell");
+                image.classList.add("calendar-image");
+                div.classList.add("calendar-cell-div")
+                cell.append(div);
+                div.append(pTag);
+                pTag.append(cellText);
+                div.append(image);                
                 cell.id = date;
-                pTag.classList.add("date-text")
+                image.id = date;
+                pTag.classList.add("date-text");
                 row.appendChild(cell);
                 date++;
             }
         }
         tbl.appendChild(row); // appending each row into calendar body.
     }
+    insertImagesToCalendar();
 }
 
 function nextmonth() {
@@ -84,3 +96,34 @@ function previousmonth() {
     showCalendar(month, year);
 }
 
+function insertImagesToCalendar(){
+    let numberOfDaysInMonth = document.getElementsByClassName("date-text");
+    let eachCell = document.getElementsByClassName("calendar-cell");
+    let formatedMonth = MONTHS_IN_DATE_FORMAT[month]
+    let releaseDatesClass = document.getElementsByClassName("dates-for-calendar");
+    let filmPosters = document.getElementsByClassName("posters-for-calendar");
+    
+    let allDaysInMonth = [];
+    let releaseDates = [];
+
+    
+    for(i = 1; i <= numberOfDaysInMonth.length; i++){
+        eachDate = DAYS_IN_DATE_FORMAT[i] + "/" + formatedMonth + "/" + year; 
+        allDaysInMonth.push(eachDate);
+    }
+
+    for(i = 0; i < releaseDatesClass.length; i++){
+        releaseDates.push(releaseDatesClass[i].innerHTML);
+    }
+
+    for(i = 0; i < releaseDates.length; i++){
+        for(j = 1; j <= allDaysInMonth.length; j++){
+            
+            if(releaseDates[i] === allDaysInMonth[j]){
+
+                let eachImage = $(eachCell[j]).find("img");
+                (eachImage[0]).src = filmPosters[i].innerHTML;
+            }
+        }
+    }
+}

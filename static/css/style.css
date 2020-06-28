@@ -171,8 +171,16 @@ footer{
     
 }
 
-.calendar-cell-text{
-    font-size: 100%
+.date-text{
+    font-size: 120%;
+    position: relative;
+    top: -34px;
+    cursor: pointer;
+    width: 20px;
+}
+
+.calendar-image{
+    width: 50px;
 }
 
 /* -------------------------------ADDMOVIE.HTML--------------------------- */

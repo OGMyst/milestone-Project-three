@@ -29,6 +29,11 @@
             </table>
         </div>
     </div>
-    
+    <div class="hidden">
+    {% for film in film %}
+        <p class="posters-for-calendar">{{film.theatrical_poster_url}}</p>
+        <p class="dates-for-calendar">{{film.release_date}}</p>
+    {% endfor %}
+    </div>
 <script src="{{url_for('static', filename='js/index.js')}}"></script>   
 {% endblock %}

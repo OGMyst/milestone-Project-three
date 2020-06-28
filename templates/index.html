@@ -19,7 +19,11 @@
 
     <div id="calendar-container">
         <div id="calendar">
-            <div id="month"></div>
+            <div id="calendar-nav">
+                <i class="fas fa-chevron-left" onclick="previousmonth()"></i>
+                <div id="month"></div>
+                <i class="fas fa-chevron-right" onclick="nextmonth()"></i>
+            </div>
             <div id="day-labels"></div>
             <table id="calendar-days">
             </table>

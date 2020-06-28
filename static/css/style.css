@@ -118,14 +118,32 @@ footer{
     border: 3px solid #182F1A;
 }
 
-#month{
+#calendar-nav{
     width: 100%;
+    display: flex;
+    justify-content: center;
     padding: 20px 0 30px;
     text-shadow: 1px 1px 1px #000000;
     border-bottom: 3px solid #000000;
-    /* margin-bottom: 10px; */
-    display: flex;
-    justify-content: center;
+}
+
+.fa-chevron-left{
+    margin-top: 25px;
+    margin-right: 70px;
+    cursor: pointer;
+    font-size: 2.5em;
+}
+
+.fa-chevron-right{
+    margin-top: 25px;
+    margin-left: 60px;
+    cursor: pointer;
+    font-size: 2.5em;
+}
+
+#month h1{
+    color: #DCAE0B;
+    text-shadow: 1px 2px 1px #000000;
 }
 
 #day-labels{
@@ -361,6 +379,9 @@ textarea{
     margin: 0 auto;
 }
 
+#expanded-card-title{
+    font-weight: 600;
+}
 #expanded-summary-box{
     padding: 10px 0 20px;
 }
@@ -382,8 +403,14 @@ textarea{
     padding: 10px;
 }
 
-#director-and-co span{
+.extra-info-text{
+    font-size: 90%;
+    padding-bottom: 5px;
+}
+
+.big-and-bold{
     font-weight: 600;
+    font-size: 110%;
 }
 
 #close-modal{

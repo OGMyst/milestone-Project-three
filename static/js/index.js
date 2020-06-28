@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() { 
-    calendarMonth();
+    // calendarMonth();
     daysOfTheWeek();
     showCalendar(month, year)
 });
@@ -26,7 +26,7 @@ function daysOfTheWeek(){
 };
 
 function showCalendar(month, year) {
-
+    calendarMonth();
     let firstDay = (new Date(year, month)).getDay();
     let daysInMonth = 32 - new Date(year, month, 32).getDate();
     let tbl = document.getElementById("calendar-days");
@@ -59,4 +59,16 @@ function showCalendar(month, year) {
         }
         tbl.appendChild(row); // appending each row into calendar body.
     }
+}
+
+function nextmonth() {
+    year = (month === 11) ? year + 1 : year;
+    month = (month + 1) % 12;
+    showCalendar(month, year);
+}
+
+function previousmonth() {
+    year = (month === 0) ? year - 1 : year;
+    month = (month === 0) ? 11 : month - 1;
+    showCalendar(month, year);
 }

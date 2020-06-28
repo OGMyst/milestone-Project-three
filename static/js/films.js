@@ -53,12 +53,13 @@ function displayExtraInfo(){
 
     let extraInfoLeft = document.getElementById("director-and-co");
     let extraInforight = document.getElementById("actors");
+    let pTagandSpanClass = `<p class="extra-info-text"> <span class="big-and-bold">`
 
-    let directorContent = `<p> <span>Director: </span>${directorElement[0].innerHTML}</p>`
-    let producerContent = `<p> <span>Produced by: </span> ${producerElement[0].innerHTML}</p>`
-    let screenplayContent = `<p> <span>Screenplay by: </span> ${screenplayElement[0].innerHTML}</p>`
-    let storyContent = `<p> <span>Story by: </span>${storyElement[0].innerHTML}</p>`
-    let starringContent = `<p> <span>Starring: </span>${starringElement[0].innerHTML}</p>`
+    let directorContent = `${pTagandSpanClass}Director: </span>${directorElement[0].innerHTML}</p>`
+    let producerContent = `${pTagandSpanClass}Produced by: </span> ${producerElement[0].innerHTML}</p>`
+    let screenplayContent = `${pTagandSpanClass}Screenplay by: </span> ${screenplayElement[0].innerHTML}</p>`
+    let storyContent = `${pTagandSpanClass}Story by: </span>${storyElement[0].innerHTML}</p>`
+    let starringContent = `${pTagandSpanClass}Starring: </span>${starringElement[0].innerHTML}</p>`
 
     $(extraInfoLeft).append(directorContent, producerContent, screenplayContent, storyContent)
     $(extraInforight).append(starringContent)

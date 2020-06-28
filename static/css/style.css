@@ -163,24 +163,35 @@ footer{
     width: 100%;
 }
 
+.calendar-row{
+    height: 120px;
+}
+
 .calendar-cell{
     width: 14%;
-    height: 120px;
     border-bottom: 3px solid #000000;
     border-right: 3px solid #000000;
+    padding: 0 5px;
+    vertical-align: text-top;
     
+}
+
+.calendar-cell-div{
+    width: 100%;
 }
 
 .date-text{
     font-size: 120%;
     position: relative;
-    top: -34px;
     cursor: pointer;
     width: 20px;
 }
 
 .calendar-image{
+    margin-top: 3px;
+    margin-left: 22px;
     width: 50px;
+    display: none;
 }
 
 /* -------------------------------ADDMOVIE.HTML--------------------------- */

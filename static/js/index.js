@@ -47,6 +47,7 @@ function showCalendar(month, year) {
     let date = 1;
     for (let i = 0; i < 6; i++) {
         let row = document.createElement("tr");
+        row.classList.add("calendar-row");
 
         for (let j = 1; j < 8; j++) {
             if (i === 0 && j < firstDay) {
@@ -123,6 +124,7 @@ function insertImagesToCalendar(){
 
                 let eachImage = $(eachCell[j]).find("img");
                 (eachImage[0]).src = filmPosters[i].innerHTML;
+                $(eachImage).css("display", "block")
             }
         }
     }

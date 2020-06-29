@@ -45,7 +45,7 @@ function showCalendar(month, year) {
     tbl.innerHTML = "";
     // creating all cells
     let date = 1;
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 5; i++) {
         let row = document.createElement("tr");
         row.classList.add("calendar-row");
 
@@ -64,23 +64,21 @@ function showCalendar(month, year) {
                 let cell = document.createElement("td");
                 let div = document.createElement("div");
                 let pTag = document.createElement("p")
-                let image = document.createElement("img");
+                
                 let cellText = date;
                 cell.classList.add("calendar-cell");
-                image.classList.add("calendar-image");
+                
                 div.classList.add("calendar-cell-div")
                 cell.append(div);
                 div.append(pTag);
                 pTag.append(cellText);
-                div.append(image);                
-                cell.id = date;
-                image.id = date;
                 pTag.classList.add("date-text");
                 row.appendChild(cell);
                 date++;
             }
         }
         tbl.appendChild(row); // appending each row into calendar body.
+        
     }
     insertImagesToCalendar();
 }
@@ -122,12 +120,14 @@ function insertImagesToCalendar(){
         for(j = 1; j <= allDaysInMonth.length; j++){
             
             if(releaseDates[i] === allDaysInMonth[j]){
-                
-                let eachImage = $(eachOccupiedCell[j]).find("img");
-                console.log($(eachOccupiedCell[j]));
-                (eachImage[0]).src = filmPosters[i].innerHTML;
-                $(eachImage).css("display", "block")
+                let image = document.createElement("img")
+                let div = eachOccupiedCell[j];  
+
+                image.classList.add("calendar-image")
+                image.src = filmPosters[i].innerHTML;
+                div.append(image);                
             }
         }
     }
+    
 }

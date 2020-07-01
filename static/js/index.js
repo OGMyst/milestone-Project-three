@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() { 
-    // calendarMonth();
     daysOfTheWeek();
     showCalendar(month, year)
 });
@@ -105,7 +104,6 @@ function insertImagesToCalendar(){
     let allDaysInMonth = [];
     let releaseDates = [];
 
-    
     for(i = 1; i <= numberOfDaysInMonth.length; i++){
         eachDate = DAYS_IN_DATE_FORMAT[i] + "/" + formatedMonth + "/" + year; 
         allDaysInMonth.push(eachDate);

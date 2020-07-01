@@ -9,6 +9,7 @@ h1,
 p{
     margin:0;
 }
+
 .materialize-override, 
 a {
     font-weight: 700;
@@ -328,6 +329,7 @@ textarea{
 }
 
 /*------------MODAL------------ */
+#confirm-modal-background,
 #modal-background{
     background: rgba(0, 0, 0, 0.6);
     height: 100%;
@@ -339,7 +341,7 @@ textarea{
     align-items: center;
 }
 
-#modal-card{
+.modal-card{
     width: 60%;
     max-height: 400px;
     background: #E3E3E3;
@@ -438,4 +440,43 @@ textarea{
     right: 10px;
     top: -5px;
     cursor: pointer;
+}
+
+/* -------------------CONFIRM DELETE MODAL---------------- */
+
+#confirm-card{
+    display: block;
+    width: 45%
+}
+
+#confirm-box-container{
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#message-box{
+    text-align: center;
+    padding: 20px 0 30px;
+}
+
+.confirm-wrapper{
+    width: 40%;
+    display: flex;
+    justify-content: center
+}
+
+.confirm-boxes{
+    background-color: #5A0A0A;
+    padding: 5px;
+    width: 100px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+#no{
+    margin: 0 auto;
+    color: #DCAE0B;
+    font-weight: 700;
+    font-size: 200%;
 }

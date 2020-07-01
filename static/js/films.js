@@ -46,8 +46,10 @@ function displayFilmInfo(){
     expandedCardGenre.innerHTML = "Genre: " + genreElement[0].innerHTML;
     expandedCardDuration.innerHTML = "Duration: " + durationElement[0].innerHTML;
     expandedCardDate.innerHTML = "Date: " + dateElement[0].innerHTML;
+};
 
 function displayExtraInfo(){
+    let parentId = document.getElementById("current-card");
     
     //Film content
     let directorElement = $(parentId).find(".director");
@@ -71,7 +73,6 @@ function displayExtraInfo(){
     //append content into sctructure
     $(extraInfoLeft).append(directorContent, producerContent, screenplayContent, storyContent)
     $(extraInforight).append(starringContent)
-}
 };
 
 function clearExtraInfo(){
@@ -80,6 +81,20 @@ function clearExtraInfo(){
 
     extraInfoLeft.innerHTML = "";
     extraInforight.innerHTML ="";
+};
+
+function confirmDeleteMessage(){
+    $("#confirm-modal-background").css("display", "flex");
+    $("#modal-background").css("display", "none");
+
+    let confirmMessageElement = document.getElementById("confirm-message");
+    let filmName = document.getElementById("expanded-card-title").innerHTML;
     
+    confirmMessageElement.innerHTML = `Are you sure you want to delete the information for ${filmName}`;
+}
+
+function returnToModal(){
+    $("#confirm-modal-background").css("display", "none");
+    $("#modal-background").css("display", "flex");
 
 }

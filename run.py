@@ -64,6 +64,12 @@ def update_film(film_id):
     return redirect(url_for('films'))
 
 
+@app.route('/delete_film/<film_id>')
+def delete_film(film_id):
+    mongo.db.film_info.remove({'_id': ObjectId(film_id)})
+    return redirect(url_for('films'))
+
+
 @app.route('/home')
 def filler():
     hello = env

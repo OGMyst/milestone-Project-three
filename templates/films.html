@@ -33,7 +33,7 @@
     {% endfor %}
     <!------------------------------------------------------- MODAL ---------------------------------------------->
     <div id="modal-background">
-        <div id="modal-card">
+        <div class="modal-card">
             <!--------------------POSTER SIDE---------------------->
             <div id="poster-side">
                 <div id="expanded-poster-box">
@@ -42,12 +42,13 @@
                         <div class="change-box">
                             <div class="change-film">
                                 <h1 class="change-text">
+                                <!-- href for editfilm.html is above modal and inserted with js -->
                                 <a id="edit">Edit Film</a>
                                 </h1>
                             </div>
                         </div>
                         <div class="change-box">
-                            <div class="change-film">
+                            <div class="change-film" onclick="confirmDeleteMessage()">
                                 <h1 class="change-text">Delete Film</h1>
                             </div>
                         </div>
@@ -85,6 +86,29 @@
 
             </div>
             <div id="close-modal" onclick="closeModal()">&times</div>
+        </div>
+    </div>
+
+    <!-- CONFIRM DELETE MODAL -->
+    <div id="confirm-modal-background">
+        <div class="modal-card" id="confirm-card">
+            <div id="message-box">
+                <p id="confirm-message"></p>
+            </div>
+            <div id="confirm-box-container">
+                <div class="confirm-wrapper">
+                    <div class="confirm-boxes">
+                        <a id="delete">
+                            <p id="yes">Yes</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="confirm-wrapper">
+                    <div class="confirm-boxes" onclick="returnToModal()">
+                        <p id="no">No</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

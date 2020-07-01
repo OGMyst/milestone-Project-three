@@ -3,7 +3,7 @@
     <div class="row">
         <form class="col s12" id="add-movie-form" action="{{ url_for('update_film', film_id=film._id) }}" method="POST">
             <div class="input-field col s6">
-                <input id="film_name" type="text" class="validate" name="film_name" value="{{film.film_name}}" disabled selected>
+                <input id="film_name" type="text" class="validate" name="film_name" value="{{film.film_name}}">
                 <label for="film_name">Film Name</label>
             </div>
             <div class="input-field col s6">

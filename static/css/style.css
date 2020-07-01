@@ -79,7 +79,8 @@ footer{
 }
 
 .footer-text{
-    width: 70%
+    width: 70%;
+    margin: 10px 0;
 }
 .footer-icons{
     width: 30%;
@@ -347,6 +348,7 @@ textarea{
     background: #E3E3E3;
     padding: 10px;
     border-radius: 10px;
+    border: 2px solid #000000;
     display: flex;
     position: relative;
 }
@@ -359,12 +361,14 @@ textarea{
     max-width: 200px;
 }
 
-#change-boxes{
+#change-wrapper{
     padding: 10px 0;
+
 }
 
 .change-box{
     padding-bottom: 5px; 
+    cursor: pointer;
 }
 
 .change-film{
@@ -460,6 +464,11 @@ textarea{
     padding: 20px 0 30px;
 }
 
+#confirm-message span{
+    color: #DCAE0B;
+    font-size: 120%;
+}
+
 .confirm-wrapper{
     width: 40%;
     display: flex;
@@ -472,6 +481,7 @@ textarea{
     width: 100px;
     text-align: center;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 #no{

@@ -17,18 +17,19 @@ function giveCurrentCardId(){
 }
 
 function displayFilmInfo(){
-    let editFilm = document.getElementById("edit-film-link")
+    // let editFilm = document.getElementById("edit-film-link")
     let parentId = document.getElementById("current-card");
     displayExtraInfo();
 
     //Film content
+    let editFilm = $(parentId).find(".edit-film-link")
     let posterElement = $(parentId).find("img");
     let titleElement = $(parentId).find(".name-of-film");
     let summaryElement = $(parentId).find(".plot-summary");
     let genreElement = $(parentId).find(".genre-of-film");
     let durationElement = $(parentId).find(".duration-of-film");
     let dateElement = $(parentId).find(".date-of-film");
-
+    console.log(editFilm)
     //Modal tags
     let editFilmButton = document.getElementById("edit")
     let expandedCardImage = document.getElementById("expanded-card-image");
@@ -39,7 +40,7 @@ function displayFilmInfo(){
     let expandedCardDate = document.getElementById("expanded-date");
 
     //Input content to modal
-    editFilmButton.href = editFilm.href;
+    editFilmButton.href = editFilm[0].href;
     expandedCardImage.src = posterElement[0].src;
     expandedCardTitle.innerHTML = titleElement[0].innerHTML;
     expandedCardSummary.innerHTML = summaryElement[0].innerHTML;
@@ -90,7 +91,7 @@ function confirmDeleteMessage(){
     let confirmMessageElement = document.getElementById("confirm-message");
     let filmName = document.getElementById("expanded-card-title").innerHTML;
     
-    confirmMessageElement.innerHTML = `Are you sure you want to delete the information for ${filmName}`;
+    confirmMessageElement.innerHTML = `Are you sure you want to delete the information for <span>${filmName}</span>`;
 }
 
 function returnToModal(){

@@ -88,9 +88,13 @@ function confirmDeleteMessage(){
     $("#confirm-modal-background").css("display", "flex");
     $("#modal-background").css("display", "none");
 
+    let parentId = document.getElementById("current-card");
+    let deleteFilm = $(parentId).find(".delete-film-link")
+    let deleteFilmButton = document.getElementById("delete-film")
     let confirmMessageElement = document.getElementById("confirm-message");
     let filmName = document.getElementById("expanded-card-title").innerHTML;
     
+    deleteFilmButton.href = deleteFilm[0].href;
     confirmMessageElement.innerHTML = `Are you sure you want to delete the information for <span>${filmName}</span>`;
 }
 

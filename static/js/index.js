@@ -121,7 +121,7 @@ function insertImagesToCalendar(){
                 let image = document.createElement("img")
                 let div = eachOccupiedCell[j];  
 
-                image.classList.add("calendar-image")
+                image.classList.add("calendar-image", "grow")
                 image.src = filmPosters[i].innerHTML;
                 div.append(image);                
             }

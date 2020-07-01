@@ -196,6 +196,14 @@ footer{
     border: 3px solid #000000
 }
 
+.grow { 
+    transition: all .2s ease-in-out; 
+}
+
+.grow:hover { 
+    transform: scale(3); 
+}
+
 /* -------------------------------ADDMOVIE.HTML--------------------------- */
 #add-movie-container{
     margin: 20px 0 20px 8%;

@@ -108,6 +108,11 @@ footer{
     margin-bottom: 20px;
 }
 
+#month{
+    min-width: 340px;
+    text-align: center;
+}
+
 #calendar-container{
     display: flex;
     justify-content: center;
@@ -137,16 +142,30 @@ footer{
 
 .fa-chevron-left{
     margin-top: 25px;
-    margin-right: 70px;
+    margin-right: 20px;
     cursor: pointer;
     font-size: 2.5em;
 }
 
 .fa-chevron-right{
     margin-top: 25px;
-    margin-left: 60px;
+    margin-left: 20px;
     cursor: pointer;
     font-size: 2.5em;
+}
+
+#previous-year{
+    font-size: 1.5em;
+    margin-top: 10px;
+    margin-right: 13px;
+    cursor: pointer;
+}
+
+#next-year{
+    margin-top: 10px;
+    margin-left: 11px;
+    cursor: pointer;
+    font-size: 1.5em;
 }
 
 #month,

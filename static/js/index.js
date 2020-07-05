@@ -91,6 +91,15 @@ function previousmonth() {
     showCalendar(month, year);
 }
 
+function nextyear() {
+    year =  year + 1  
+    showCalendar(month, year);
+}
+
+function previousyear() {
+    year =  year - 1
+    showCalendar(month, year);
+}
 function insertImagesToCalendar(){
     let numberOfDaysInMonth = document.getElementsByClassName("date-text");
     let eachOccupiedCell = document.getElementsByClassName("calendar-cell-div");

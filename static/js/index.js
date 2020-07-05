@@ -3,39 +3,36 @@ document.addEventListener("DOMContentLoaded", function() {
     showCalendar(month, year)
 });
 
-let today = new Date();
-let month = today.getMonth();
-let year = today.getFullYear();
-
 const DAYS_IN_DATE_FORMAT = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09",
                              "10", "11", "12", "13", "14", "15", "16", "17", "18", "19",
                              "20", "21", "22", "23", "24", "25", "26", "27", "28", "29",
                              "30", "31"]
-
-const MONTHS_IN_DATE_FORMAT = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12",]
-    
-let monthNames = ["January", "February", "March", "April",
+const MONTHS_IN_DATE_FORMAT = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12",]    
+const MONTHNAMES = ["January", "February", "March", "April",
                   "May", "June", "July", "August", "September",
-                  "Octboer", "November", "Decemeber"];
-let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
-
+                  "October", "November", "Decemeber"];
+const DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+let today = new Date();
+let month = today.getMonth();
+let year = today.getFullYear();
 let weekDays;
 
-function calendarMonth(){ 
-    currentMonth = monthNames[month];
-    document.getElementById("month").innerHTML = "<h1>" + currentMonth + "</h1>";    
+function calendarMonthAndYear(){ 
+    currentMonth = MONTHNAMES[month];
+    document.getElementById("month").innerHTML = "<h1>" + currentMonth + "</h1>";
+    document.getElementById("year").innerHTML = "<h4>" + year + "</h4>";    
 };
 
 function daysOfTheWeek(){    
     for(i = 0; i < 7; i++){
-        weekDays = days[i];
+        weekDays = DAYS[i];
         document.getElementById("day-labels").innerHTML += "<div class='week-days'>" + weekDays + "</div>"
     }
 };
 
 function showCalendar(month, year) {
 
-    calendarMonth();
+    calendarMonthAndYear();
 
     let firstDay = (new Date(year, month)).getDay();
     let daysInMonth = 32 - new Date(year, month, 32).getDate();

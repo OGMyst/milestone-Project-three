@@ -5,7 +5,8 @@ body{
     font-family: 'Noto Serif', serif;
 }
 
-h1, 
+h1,
+h4, 
 p{
     margin:0;
 }
@@ -120,12 +121,17 @@ footer{
     border: 3px solid #182F1A;
 }
 
+#calendar-year,
 #calendar-nav{
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 20px 0 30px;
+    padding: 20px 0px 10px;
     text-shadow: 1px 1px 1px #000000;
+}   
+
+#calendar-year{
+    padding: 0px 0 5px;
     border-bottom: 3px solid #000000;
 }
 
@@ -143,7 +149,8 @@ footer{
     font-size: 2.5em;
 }
 
-#month h1{
+#month,
+#year{
     color: #DCAE0B;
     text-shadow: 1px 2px 1px #000000;
 }

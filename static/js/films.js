@@ -95,7 +95,7 @@ function confirmDeleteMessage(){
     let filmName = document.getElementById("expanded-card-title").innerHTML;
     
     deleteFilmButton.href = deleteFilm[0].href;
-    confirmMessageElement.innerHTML = `Are you sure you want to delete the information for <span>${filmName}</span>`;
+    confirmMessageElement.innerHTML = `Are you sure you want to delete the information for <span class="mellow-yellow">${filmName}</span>`;
 }
 
 function returnToModal(){

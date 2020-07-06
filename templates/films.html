@@ -1,7 +1,9 @@
 {% extends 'base.html'%}{% block content %} 
+<div class="header">
+    <h1 class="mellow-yellow">Films</h1>
+</div>
 
 <div id="film-container" class="flex-center">
-
     <!--------------------------------------------------- FILM CARD ----------------------------------------------->
     {% for film in film %}
     <div class="film-card">
@@ -23,7 +25,7 @@
             <p class="starring hidden">{{film.starring}}</p>
             <div class="view-more-box">
                 <div class="view-more" onclick="viewMoreModal()">
-                    <h1 class="view-more-text">View More</h1>
+                    <h1 class="view-more-text mellow-yellow">View More</h1>
                 </div>
             </div>
         </div>
@@ -45,13 +47,13 @@
                             <div class="change-film">
                                 <h1 class="change-text">
                                 <!-- href for editfilm.html is above modal and inserted with js -->
-                                <a id="edit">Edit Film</a>
+                                <a id="edit" class="mellow-yellow">Edit Film</a>
                                 </h1>
                             </div>
                         </div>
                         <div class="change-box">
                             <div class="change-film" onclick="confirmDeleteMessage()">
-                                <h1 class="change-text">Delete Film</h1>
+                                <h1 class="change-text mellow-yellow">Delete Film</h1>
                             </div>
                         </div>
                     </div>
@@ -101,13 +103,13 @@
                 <div class="confirm-wrapper flex-center">
                     <div class="confirm-boxes">
                         <a id="delete-film">
-                            <p id="confirm-delete">Yes</p>
+                            <p id="confirm-delete" class="mellow-yellow">Yes</p>
                         </a>
                     </div>
                 </div>
-                <div class="confirm-wrapper">
+                <div class="confirm-wrapper flex-center">
                     <div class="confirm-boxes" onclick="returnToModal()">
-                        <p id="stop-delete">No</p>
+                        <p id="stop-delete" class="mellow-yellow">No</p>
                     </div>
                 </div>
             </div>

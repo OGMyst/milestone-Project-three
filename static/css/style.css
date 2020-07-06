@@ -10,6 +10,11 @@ body{
     justify-content: center;
 }
 
+.mellow-yellow{
+    color: #DCAE0B;
+    margin: 0 0;
+}
+
 h1,
 h4, 
 p{
@@ -20,9 +25,7 @@ p{
 a {
     font-weight: 700;
     font-size: 200%;
-    margin: 0 auto;
     text-decoration: none;
-    color: #DCAE0B;
 }
 
 .font-size{
@@ -162,7 +165,6 @@ footer{
 
 #month,
 #year{
-    color: #DCAE0B;
     text-shadow: 1px 2px 1px #000000;
 }
 
@@ -224,12 +226,11 @@ footer{
 }
 
 .header h1{
-    color: #DCAE0B;
     text-shadow: 4px 4px 1px #000000;
 }
 
 #add-movie-container{
-    margin: 20px 0 20px 8%;
+    margin: 20px 0 60px 8%;
 }
 
 #add-movie-form{
@@ -285,8 +286,7 @@ textarea{
     width: 150px;
     height: 45px;
     font-size: 150%;
-    border-radius: 10px;
-    color: #DCAE0B; 
+    border-radius: 10px; 
     text-align: center;
     cursor: pointer;
 }
@@ -349,8 +349,6 @@ textarea{
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 600;
     font-size: 100%;
-    margin: 0 auto;
-    color: #DCAE0B; 
 }
 
 /*------------MODAL------------ */
@@ -407,13 +405,10 @@ textarea{
 .change-text{
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 600;
-    font-size: 110%;
-    margin: 0 auto;
-    color: #DCAE0B;    
+    font-size: 110%; 
 }
 
 #info-side{
-    /* width: 70%; */
     padding: 10px;
 }
 
@@ -423,7 +418,6 @@ textarea{
 
 .expanded-card-text{
     text-align: center;
-    margin: 0 auto;
 }
 
 #expanded-card-title{
@@ -485,7 +479,6 @@ textarea{
 }
 
 #confirm-message span{
-    color: #DCAE0B;
     font-size: 120%;
 }
 
@@ -503,8 +496,6 @@ textarea{
 }
 
 #stop-delete{
-    margin: 0 auto;
-    color: #DCAE0B;
     font-weight: 700;
     font-size: 200%;
 }

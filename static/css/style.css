@@ -36,8 +36,6 @@ a {
 .maroon-box{
     text-align: center;
     background-color: #5A0A0A;
-    width: 220px;
-    height: 45px;
     border-radius: 10px;
 }
 
@@ -59,6 +57,11 @@ a {
     line-height: 45px;
     padding-top: 20px;
     width: 25%;
+}
+
+.add-film-box{
+    width: 220px;
+    height: 45px;
 }
 
 .title{
@@ -282,12 +285,9 @@ textarea{
 #add-more,
 #submit{
     font-family: 'Noto Serif', serif;
-    background-color: #5A0A0A;
     width: 150px;
     height: 45px;
     font-size: 150%;
-    border-radius: 10px; 
-    text-align: center;
     cursor: pointer;
 }
 
@@ -338,9 +338,7 @@ textarea{
 
 .view-more{
     width: 100px;
-    background-color: #5A0A0A;
     padding: 5px;
-    text-align: center;
     border-radius: 5px;
     cursor: pointer;
 }
@@ -395,9 +393,7 @@ textarea{
 
 .change-film{
     width: 100%;
-    background-color: #5A0A0A;
     padding: 5px;
-    text-align: center;
     border-radius: 5px;
 }
 
@@ -487,10 +483,8 @@ textarea{
 }
 
 .confirm-boxes{
-    background-color: #5A0A0A;
     padding: 5px;
     width: 100px;
-    text-align: center;
     border-radius: 5px;
     cursor: pointer;
 }

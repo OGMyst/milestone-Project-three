@@ -38,7 +38,7 @@ a {
     background-color: #5A0A0A;
     border-radius: 10px;
 }
-
+/* ----------------------------------------BASE.HTML-------------------------------------- */
 .navigation{
     height: 100px;
     background-color: #182F1A;
@@ -63,19 +63,7 @@ a {
     width: 220px;
     height: 45px;
 }
-
-.title{
-    margin-top: 150px;
-    margin-bottom: 40px;
-    font-size: 200%;
-    font-family: 'Josefin Sans', sans-serif;
-}
-
-.explore-container{
-    margin-bottom: 150px;
-}
-
-/* -------------------------------FOOTER------------------------------- */
+/* --------------------------FOOTER-------------------------- */
 footer{
     display: flex;
     margin: 0 0;
@@ -98,8 +86,17 @@ footer{
     margin-left: 10px;
     margin-right: 10px;
 }
-
 /* -------------------------------INDEX.HTML--------------------------- */
+.title{
+    margin-top: 150px;
+    margin-bottom: 40px;
+    font-size: 200%;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.explore-container{
+    margin-bottom: 150px;
+}
 /* -------------------CALENDER SECTION------------------ */
 .page-line{
     height: 10px;
@@ -221,7 +218,6 @@ footer{
 .grow:hover { 
     transform: scale(3); 
 }
-
 /* -------------------------------ADDMOVIE.HTML--------------------------- */
 .header{
     text-align: center;
@@ -290,7 +286,6 @@ textarea{
     font-size: 150%;
     cursor: pointer;
 }
-
 /* -------------------------------FILMS.HTML--------------------------- */
 #film-container{
     flex-wrap: wrap;
@@ -348,7 +343,6 @@ textarea{
     font-weight: 600;
     font-size: 100%;
 }
-
 /*------------MODAL------------ */
 #confirm-modal-background,
 #modal-background{
@@ -457,7 +451,6 @@ textarea{
     top: -5px;
     cursor: pointer;
 }
-
 /* -------------------CONFIRM DELETE MODAL---------------- */
 
 #confirm-card{

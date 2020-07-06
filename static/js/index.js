@@ -26,7 +26,7 @@ function calendarMonthAndYear(){
 function daysOfTheWeek(){    
     for(i = 0; i < 7; i++){
         weekDays = DAYS[i];
-        document.getElementById("day-labels").innerHTML += "<div class='week-days'>" + weekDays + "</div>"
+        document.getElementById("day-labels").innerHTML += "<div class='week-days flex-center'>" + weekDays + "</div>"
     }
 };
 

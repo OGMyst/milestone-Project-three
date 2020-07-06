@@ -1,35 +1,35 @@
 {% extends 'base.html'%}{% block content %} 
     <!--------------------------------- TITLE ------------------------------>
-    <div class="title">
+    <div class="title flex-center">
         <h1 class="materialize-override">PO - TAY - TOES!</h1>
     </div>
-    <div class="explore-container">
-        <div class="maroon-box">
+    <div class="explore-container flex-center">
+        <div class="maroon-box flex-center">
             <h1 class="materialize-override"><a href="{{url_for('films')}}" class="font-size">Explore</a></h1>
         </div>
     </div>
     <!-------------------------------- CALENDER ---------------------------->
     <div class="page-line"></div>
 
-    <div class="calendar-header">
+    <div class="calendar-header flex-center">
         <h1 class="materialize-override">Film Release Calendar</h1>
     </div>
 
     <div class="page-line"></div>
 
-    <div id="calendar-container">
+    <div id="calendar-container" class="flex-center">
         <div id="calendar">
-            <div id="calendar-nav">
+            <div id="calendar-nav" class="flex-center">
                 <i class="fas fa-chevron-left" onclick="previousmonth()"></i>
                 <div id="month"></div>
                 <i class="fas fa-chevron-right" onclick="nextmonth()"></i>
             </div>
-            <div id="calendar-year">
+            <div id="calendar-year" class="flex-center">
                 <i class="fas fa-chevron-left" id="previous-year" onclick="previousyear()"></i>
                 <div id="year"></div>
                 <i class="fas fa-chevron-right" id="next-year" onclick="nextyear()"></i>
             </div>
-            <div id="day-labels"></div>
+            <div id="day-labels" class="flex-center"></div>
             <table id="calendar-days">
             </table>
         </div>

@@ -5,6 +5,11 @@ body{
     font-family: 'Noto Serif', serif;
 }
 
+.flex-center{
+    display: flex;
+    justify-content: center;
+}
+
 h1,
 h4, 
 p{
@@ -26,18 +31,16 @@ a {
 }
 
 .maroon-box{
+    text-align: center;
     background-color: #5A0A0A;
     width: 220px;
     height: 45px;
     border-radius: 10px;
-    display: flex;
-    justify-content: center;
 }
 
 .navigation{
     height: 100px;
     background-color: #182F1A;
-    /* position: fixed; */
     display: flex;
     padding: 10px 0;
 }
@@ -53,24 +56,19 @@ a {
     line-height: 45px;
     padding-top: 20px;
     width: 25%;
-    display: flex;
-    justify-content: center;
 }
 
 .title{
     margin-top: 150px;
     margin-bottom: 40px;
-    display: flex;
-    justify-content: center;
     font-size: 200%;
     font-family: 'Josefin Sans', sans-serif;
 }
 
 .explore-container{
-    display: flex;
-    justify-content: center;
     margin-bottom: 150px;
 }
+
 /* -------------------------------FOOTER------------------------------- */
 footer{
     display: flex;
@@ -83,6 +81,7 @@ footer{
     width: 70%;
     margin: 10px 0;
 }
+
 .footer-icons{
     width: 30%;
     display: flex;
@@ -103,8 +102,6 @@ footer{
 }
 
 .calendar-header{
-    display: flex;
-    justify-content: center;
     margin-bottom: 20px;
 }
 
@@ -114,8 +111,6 @@ footer{
 }
 
 #calendar-container{
-    display: flex;
-    justify-content: center;
     margin-bottom: 20px;
 }
 
@@ -128,8 +123,6 @@ footer{
 #calendar-year,
 #calendar-nav{
     width: 100%;
-    display: flex;
-    justify-content: center;
     padding: 20px 0px 10px;
     text-shadow: 1px 1px 1px #000000;
 }   
@@ -174,16 +167,12 @@ footer{
 }
 
 #day-labels{
-    display: flex;
-    justify-content: center;
     padding: 10px 0;
     border-bottom: 3px solid #000000;
 }
- .week-days{
-    width: 14.2%;
-    display: flex;
-    justify-content: center;
 
+.week-days{
+    width: 14.2%;
 }
 
 #calendar-days{
@@ -199,8 +188,7 @@ footer{
     border-bottom: 3px solid #000000;
     border-right: 3px solid #000000;
     padding: 0 5px;
-    vertical-align: text-top;
-    
+    vertical-align: text-top;  
 }
 
 .calendar-cell-div{
@@ -235,7 +223,6 @@ footer{
     padding: 30px 0;
 }
 
-
 .header h1{
     color: #DCAE0B;
     text-shadow: 4px 4px 1px #000000;
@@ -263,11 +250,6 @@ textarea{
     font-family: 'Balsamiq Sans', cursive;
 }
 
-/* #submit-container{
-    display: flex;
-    justify-content: center;
-} */
-
 #add-submit{
     border-radius: 0 0 10px 10px;
 }
@@ -290,8 +272,6 @@ textarea{
 
 .add-submit-box{
     width: 50%;
-    display: flex;
-    justify-content: center;
 }
 
 #add-more{
@@ -313,9 +293,7 @@ textarea{
 
 /* -------------------------------FILMS.HTML--------------------------- */
 #film-container{
-    display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     padding: 40px 0px;
 }
 
@@ -441,8 +419,6 @@ textarea{
 
 .expanded-card-elements{
     width: 100%;
-    display: flex;
-    justify-content: center;
 }
 
 .expanded-card-text{
@@ -501,8 +477,6 @@ textarea{
 
 #confirm-box-container{
     padding-bottom: 20px;
-    display: flex;
-    justify-content: center;
 }
 
 #message-box{
@@ -517,8 +491,6 @@ textarea{
 
 .confirm-wrapper{
     width: 40%;
-    display: flex;
-    justify-content: center
 }
 
 .confirm-boxes{

@@ -1,6 +1,6 @@
 {% extends 'base.html'%}{% block content %} 
 
-<div id="film-container">
+<div id="film-container" class="flex-center">
 
     <!--------------------------------------------------- FILM CARD ----------------------------------------------->
     {% for film in film %}
@@ -39,7 +39,7 @@
             <!--------------------POSTER SIDE---------------------->
             <div id="poster-side">
                 <div id="expanded-poster-box">
-                    <img id="expanded-card-image" class="expanded-card-elements"/>
+                    <img id="expanded-card-image" class="expanded-card-elements flex-center"/>
                     <div id="change-wrapper">
                         <div class="change-box">
                             <div class="change-film">
@@ -97,8 +97,8 @@
             <div id="message-box">
                 <p id="confirm-message"></p>
             </div>
-            <div id="confirm-box-container">
-                <div class="confirm-wrapper">
+            <div id="confirm-box-container" class="flex-center">
+                <div class="confirm-wrapper flex-center">
                     <div class="confirm-boxes">
                         <a id="delete-film">
                             <p id="confirm-delete">Yes</p>

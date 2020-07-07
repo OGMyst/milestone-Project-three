@@ -351,6 +351,7 @@ textarea{
     width:100%;
     position: absolute;
     top: 0;
+    bottom: 0;
     display: none;
     justify-content: center;
     align-items: center;
@@ -523,5 +524,53 @@ textarea{
 .calendar-image{
     margin-left: 1px;
     width: 90%;
+}
+
+/*------------------------------ADDFILM.HTML-------------------------------*/
+#add-more, #submit{
+    width: 130px;
+}
+
+/*------------------------------FILMS.HTML-------------------------------*/
+.film-card{
+    width:100%;
+}
+
+#confirm-modal-background, #modal-background{
+    height: 200%;
+}
+
+.modal-card{
+    width: 90%;
+    max-height: 100%;
+    display: block;
+}
+
+#poster-side{
+    min-width: 100%;  
+    padding-top: 10px;
+}
+
+#expanded-poster-box{
+    min-width: 100%;
+}
+
+#expanded-card-image{
+    max-width: 40%;
+    margin-left: 30%;
+    padding-bottom: 10px;
+}
+
+.change-box{
+    width: 90%;
+    margin-left: 5%;
+}
+
+#info-side{
+    padding-top: 0;
+}
+
+#confirm-card{
+    width: 80%;
 }
 }

@@ -54,8 +54,7 @@ a {
 }
 
 .addmovie-container{
-    line-height: 45px;
-    padding-top: 20px;
+    padding-top: 12px;
     width: 25%;
 }
 
@@ -88,6 +87,7 @@ footer{
 }
 /* -------------------------------INDEX.HTML--------------------------- */
 .title{
+    text-align: center;
     margin-top: 150px;
     margin-bottom: 40px;
     font-size: 200%;
@@ -485,4 +485,43 @@ textarea{
 #stop-delete{
     font-weight: 700;
     font-size: 200%;
+}
+
+/*-----------------------------------------PHONE MEDIA QUERY-----------------------------------------*/
+/*------------------------------BASE.HTML-------------------------------*/
+@media only screen and (max-width: 767px){
+.logo{
+    width:30%;
+}
+
+.addmovie-container{
+    width: 70%;
+}
+
+.footer-span{
+    display: none;
+}
+/*------------------------------INDEX.HTML-------------------------------*/
+#month{
+    min-width: 240px;
+}
+
+#month h1{
+    font-size: 3em;
+}
+
+.fa-chevron-left{
+    margin-top: 15px;
+    margin-right: 10px;
+}
+
+.fa-chevron-right{
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+.calendar-image{
+    margin-left: 1px;
+    width: 90%;
+}
 }

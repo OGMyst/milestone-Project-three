@@ -92,6 +92,7 @@ footer{
     margin-bottom: 40px;
     font-size: 200%;
     font-family: 'Josefin Sans', sans-serif;
+    text-shadow: 4px 4px 1px #000000
 }
 
 .explore-container{

@@ -1,19 +1,11 @@
-function viewMoreModal(editFilm, film_poster, producer, director, duration, film_name, genre, release_date, screenplay, story, starring, plot_summary){
-    const film = {editFilm, film_poster, producer, director, duration, film_name, genre, release_date, screenplay, story, starring, plot_summary}
+function viewMoreModal(edit_film, delete_film, film_poster, producer, director, duration, film_name, genre, release_date, screenplay, story, starring, plot_summary){
+    const film = {edit_film, delete_film, film_poster, producer, director, duration, film_name, genre, release_date, screenplay, story, starring, plot_summary};
     $("#modal-background").css("display", "flex");
-    giveCurrentCardId();
     displayFilmInfo(film);
 };
 
 function closeModal(){
     $("#modal-background").css("display", "none");
-    document.getElementById("current-card").id = "not-current";
-}
-
-function giveCurrentCardId(){
-    let identifyInstance = event.target
-    let findCurrentParent = $(identifyInstance).parents(".film-card")
-    findCurrentParent[0].id = "current-card";
 }
 
 function displayFilmInfo(film){
@@ -29,12 +21,12 @@ function displayFilmInfo(film){
                                                     <div class="change-film maroon-box">
                                                         <h1 class="change-text">
                                                         <!-- href for editfilm.html is above modal and inserted with js -->
-                                                        <a href="${film.editFilm}"id="edit" class="mellow-yellow">Edit Film</a>
+                                                        <a href="${film.edit_film}"id="edit" class="mellow-yellow">Edit Film</a>
                                                         </h1>
                                                     </div>
                                                 </div>
                                                 <div class="change-box">
-                                                    <div class="change-film maroon-box" onclick="confirmDeleteMessage()">
+                                                    <div class="change-film maroon-box" onclick="confirmDeleteMessage('${film.delete_film}', '${film.film_name}')">
                                                         <h1 class="change-text mellow-yellow">Delete Film</h1>
                                                     </div>
                                                 </div>
@@ -81,22 +73,35 @@ function displayFilmInfo(film){
 };
 
 
-function confirmDeleteMessage(){
+function confirmDeleteMessage(deleteFilm, name){
     $("#confirm-modal-background").css("display", "flex");
     $("#modal-background").css("display", "none");
-
-    let parentId = document.getElementById("current-card");
-    let deleteFilm = $(parentId).find(".delete-film-link")
-    let deleteFilmButton = document.getElementById("delete-film")
-    let confirmMessageElement = document.getElementById("confirm-message");
-    let filmName = document.getElementById("expanded-card-title").innerHTML;
-    
-    deleteFilmButton.href = deleteFilm[0].href;
-    confirmMessageElement.innerHTML = `Are you sure you want to delete the information for <span class="mellow-yellow">${filmName}</span>`;
-}
+    let confirmDeleteModal = document.getElementById("confirm-modal-background");
+    confirmDeleteModal.innerHTML = 
+    `<div class="modal-card" id="confirm-card">
+            <div id="message-box">
+                <p id="confirm-message">
+                Are you sure you want to delete the information for <span class="mellow-yellow">${name}</span>
+                </p>
+            </div>
+            <div id="confirm-box-container" class="flex-center">
+                <div class="confirm-wrapper flex-center">
+                    <div class="confirm-boxes maroon-box">
+                        <a id="delete-film" href="${deleteFilm}">
+                            <p id="confirm-delete" class="mellow-yellow">Yes</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="confirm-wrapper flex-center">
+                    <div class="confirm-boxes maroon-box" onclick="returnToModal()">
+                        <p id="stop-delete" class="mellow-yellow">No</p>
+                    </div>
+                </div>
+            </div>
+        </div>`;
+};
 
 function returnToModal(){
     $("#confirm-modal-background").css("display", "none");
     $("#modal-background").css("display", "flex");
-
 }

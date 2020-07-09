@@ -23,7 +23,7 @@
             <p class="story hidden">{{film.story}}</p>
             <p class="starring hidden">{{film.starring}}</p>
             <div class="view-more-box">
-                <div class="view-more maroon-box" onclick="viewMoreModal(`{{url_for('edit_film', film_id=film._id)}}`, '{{film.theatrical_poster_url}}', '{{film.producer}}', '{{film.director}}', '{{film.duration}}', '{{film.film_name}}', '{{film.genre}}', '{{film.release_date}}', '{{film.screenplay}}', '{{film.story}}', '{{film.starring}}', '{{film.plot_summary}}')">
+                <div class="view-more maroon-box" onclick="viewMoreModal(`{{url_for('edit_film', film_id=film._id)}}`, `{{url_for('delete_film',film_id=film._id)}}`, '{{film.theatrical_poster_url}}', '{{film.producer}}', '{{film.director}}', '{{film.duration}}', '{{film.film_name}}', '{{film.genre}}', '{{film.release_date}}', '{{film.screenplay}}', '{{film.story}}', '{{film.starring}}', `{{film.plot_summary}}`)">
                     <h1 class="view-more-text mellow-yellow">View More</h1>
                 </div>
             </div>
@@ -39,7 +39,7 @@
 
     <!-- CONFIRM DELETE MODAL -->
     <div id="confirm-modal-background">
-        <div class="modal-card" id="confirm-card">
+        <!-- <div class="modal-card" id="confirm-card">
             <div id="message-box">
                 <p id="confirm-message"></p>
             </div>
@@ -57,7 +57,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
 <script src="{{url_for('static', filename='js/films.js')}}"></script>

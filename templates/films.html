@@ -2,10 +2,9 @@
 <div class="header">
     <h1 class="mellow-yellow">Films</h1>
 </div>
-
 <div id="film-container" class="flex-center">
     <!--------------------------------------------------- FILM CARD ----------------------------------------------->
-    {% for film in film %}
+    {% for film in films %}
     <div class="film-card">
         <div class="poster-box">
             <a href="">
@@ -24,7 +23,7 @@
             <p class="story hidden">{{film.story}}</p>
             <p class="starring hidden">{{film.starring}}</p>
             <div class="view-more-box">
-                <div class="view-more maroon-box" onclick="viewMoreModal()">
+                <div class="view-more maroon-box" onclick="viewMoreModal('{{film.producer}}', '{{film.director}}', '{{film.duration}}', '{{film.film_name}}', '{{film.genre}}', '{{film.release_date}}', '{{film.screenplay}}', '{{film.story}}', '{{film.starring}}', '{{film.duration}}')">
                     <h1 class="view-more-text mellow-yellow">View More</h1>
                 </div>
             </div>

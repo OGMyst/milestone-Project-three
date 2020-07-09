@@ -1,4 +1,6 @@
-function viewMoreModal(){   
+function viewMoreModal(producer, director, duration, film_name, genre, release_date, screenplay, story, starring){
+    const film = {producer, director, duration, film_name, genre, release_date, screenplay, story, starring}
+    console.log(film)
     $("#modal-background").css("display", "flex");
     giveCurrentCardId();
     displayFilmInfo();
@@ -17,7 +19,6 @@ function giveCurrentCardId(){
 }
 
 function displayFilmInfo(){
-    // let editFilm = document.getElementById("edit-film-link")
     let parentId = document.getElementById("current-card");
     displayExtraInfo();
 
@@ -29,7 +30,7 @@ function displayFilmInfo(){
     let genreElement = $(parentId).find(".genre-of-film");
     let durationElement = $(parentId).find(".duration-of-film");
     let dateElement = $(parentId).find(".date-of-film");
-    console.log(editFilm)
+
     //Modal tags
     let editFilmButton = document.getElementById("edit")
     let expandedCardImage = document.getElementById("expanded-card-image");

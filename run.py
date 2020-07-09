@@ -28,7 +28,7 @@ def add_movie():
 
 @app.route('/films')
 def films():
-    return render_template('films.html', film=mongo.db.film_info.find())
+    return render_template('films.html', films=mongo.db.film_info.find())
 
 
 @app.route('/insert_film', methods=['POST'])

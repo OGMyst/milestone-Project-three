@@ -1,15 +1,13 @@
-function viewMoreModal(producer, director, duration, film_name, genre, release_date, screenplay, story, starring){
-    const film = {producer, director, duration, film_name, genre, release_date, screenplay, story, starring}
-    console.log(film)
+function viewMoreModal(editFilm, film_poster, producer, director, duration, film_name, genre, release_date, screenplay, story, starring, plot_summary){
+    const film = {editFilm, film_poster, producer, director, duration, film_name, genre, release_date, screenplay, story, starring, plot_summary}
     $("#modal-background").css("display", "flex");
     giveCurrentCardId();
-    displayFilmInfo();
+    displayFilmInfo(film);
 };
 
 function closeModal(){
     $("#modal-background").css("display", "none");
     document.getElementById("current-card").id = "not-current";
-    clearExtraInfo();
 }
 
 function giveCurrentCardId(){
@@ -18,72 +16,70 @@ function giveCurrentCardId(){
     findCurrentParent[0].id = "current-card";
 }
 
-function displayFilmInfo(){
-    let parentId = document.getElementById("current-card");
-    displayExtraInfo();
-
-    //Film content
-    let editFilm = $(parentId).find(".edit-film-link")
-    let posterElement = $(parentId).find("img");
-    let titleElement = $(parentId).find(".name-of-film");
-    let summaryElement = $(parentId).find(".plot-summary");
-    let genreElement = $(parentId).find(".genre-of-film");
-    let durationElement = $(parentId).find(".duration-of-film");
-    let dateElement = $(parentId).find(".date-of-film");
-
-    //Modal tags
-    let editFilmButton = document.getElementById("edit")
-    let expandedCardImage = document.getElementById("expanded-card-image");
-    let expandedCardTitle = document.getElementById("expanded-card-title");
-    let expandedCardSummary = document.getElementById("expanded-plot-summary");
-    let expandedCardGenre = document.getElementById("expanded-genre");
-    let expandedCardDuration = document.getElementById("expanded-duration");
-    let expandedCardDate = document.getElementById("expanded-date");
-
-    //Input content to modal
-    editFilmButton.href = editFilm[0].href;
-    expandedCardImage.src = posterElement[0].src;
-    expandedCardTitle.innerHTML = titleElement[0].innerHTML;
-    expandedCardSummary.innerHTML = summaryElement[0].innerHTML;
-    expandedCardGenre.innerHTML = "Genre: " + genreElement[0].innerHTML;
-    expandedCardDuration.innerHTML = "Duration: " + durationElement[0].innerHTML;
-    expandedCardDate.innerHTML = "Date: " + dateElement[0].innerHTML;
-};
-
-function displayExtraInfo(){
-    let parentId = document.getElementById("current-card");
-    
-    //Film content
-    let directorElement = $(parentId).find(".director");
-    let producerElement = $(parentId).find(".producer");
-    let screenplayElement = $(parentId).find(".screenplay");
-    let storyElement = $(parentId).find(".story");
-    let starringElement = $(parentId).find(".starring");
-
-    //Modal layout structure
-    let extraInfoLeft = document.getElementById("director-and-co");
-    let extraInforight = document.getElementById("actors");
+function displayFilmInfo(film){
+    let getModalBackground = document.getElementById("modal-background");
     let pTagandSpanClass = `<p class="extra-info-text"> <span class="big-and-bold">`
+    getModalBackground.innerHTML = `<div class="modal-card">
+                                    <!--------------------POSTER SIDE---------------------->
+                                    <div id="poster-side">
+                                        <div id="expanded-poster-box">
+                                            <img src="${film.film_poster}"id="expanded-card-image" class="expanded-card-elements flex-center"/>
+                                            <div id="change-wrapper">
+                                                <div class="change-box">
+                                                    <div class="change-film maroon-box">
+                                                        <h1 class="change-text">
+                                                        <!-- href for editfilm.html is above modal and inserted with js -->
+                                                        <a href="${film.editFilm}"id="edit" class="mellow-yellow">Edit Film</a>
+                                                        </h1>
+                                                    </div>
+                                                </div>
+                                                <div class="change-box">
+                                                    <div class="change-film maroon-box" onclick="confirmDeleteMessage()">
+                                                        <h1 class="change-text mellow-yellow">Delete Film</h1>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>  
+                                    </div>
 
-    //Input content to variables
-    let directorContent = `${pTagandSpanClass}Director: </span>${directorElement[0].innerHTML}</p>`
-    let producerContent = `${pTagandSpanClass}Produced by: </span> ${producerElement[0].innerHTML}</p>`
-    let screenplayContent = `${pTagandSpanClass}Screenplay by: </span> ${screenplayElement[0].innerHTML}</p>`
-    let storyContent = `${pTagandSpanClass}Story by: </span>${storyElement[0].innerHTML}</p>`
-    let starringContent = `${pTagandSpanClass}Starring: </span>${starringElement[0].innerHTML}</p>`
+                                    <!--------------------INFO SIDE---------------------->
+                                    <div id="info-side">
+                                        <div id="expanded-title-box" class="expanded-card-elements">
+                                            <h5 id="expanded-card-title" class="expanded-card-text">${film.film_name}</h5>
+                                        </div>
+                                        <div id="expanded-summary-box" class="expanded-card-elements">
+                                            <p id="expanded-plot-summary" class="expanded-card-text">${film.plot_summary}</p>
+                                        </div>
+                                        <div id="required-information-box" class="expanded-card-elements flex-center">
+                                            <div id="expanded-genre-box" class="inline-info-boxes">
+                                                <p id="expanded-genre" class="expanded-card-text"> Genre: ${film.genre}</p>
+                                            </div>
+                                            <div id="expanded-duration-box" class="inline-info-boxes">
+                                                <p id="expanded-duration" class="expanded-card-text">Duration: ${film.duration}</p>
+                                            </div>
+                                            <div id="expanded-date-box" class="inline-info-boxes">
+                                                <p id="expanded-date" class="expanded-card-text">Date: ${film.release_date}</p>
+                                            </div>
+                                        </div>
 
-    //append content into sctructure
-    $(extraInfoLeft).append(directorContent, producerContent, screenplayContent, storyContent)
-    $(extraInforight).append(starringContent)
+                                        <!-----------------EXTRA INFO------------------>
+                                        <div id="extra-info">
+                                            <div id="director-and-co" class="extra-info-box">
+                                                ${pTagandSpanClass}Director: </span>${film.director}</p>
+                                                ${pTagandSpanClass}Produced by: </span> ${film.producer}</p>
+                                                ${pTagandSpanClass}Screenplay by: </span> ${film.screenplay}</p>
+                                                ${pTagandSpanClass}Story by: </span>${film.story}</p>
+                                            </div>
+                                            <div id="actors" class="extra-info-box">
+                                                ${pTagandSpanClass}Starring: </span>${film.starring}</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div id="close-modal" onclick="closeModal()">&times</div>
+                                </div>`
 };
 
-function clearExtraInfo(){
-    let extraInfoLeft = document.getElementById("director-and-co");
-    let extraInforight = document.getElementById("actors");
-
-    extraInfoLeft.innerHTML = "";
-    extraInforight.innerHTML ="";
-};
 
 function confirmDeleteMessage(){
     $("#confirm-modal-background").css("display", "flex");

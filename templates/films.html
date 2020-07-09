@@ -23,7 +23,7 @@
             <p class="story hidden">{{film.story}}</p>
             <p class="starring hidden">{{film.starring}}</p>
             <div class="view-more-box">
-                <div class="view-more maroon-box" onclick="viewMoreModal('{{film.producer}}', '{{film.director}}', '{{film.duration}}', '{{film.film_name}}', '{{film.genre}}', '{{film.release_date}}', '{{film.screenplay}}', '{{film.story}}', '{{film.starring}}', '{{film.duration}}')">
+                <div class="view-more maroon-box" onclick="viewMoreModal(`{{url_for('edit_film', film_id=film._id)}}`, '{{film.theatrical_poster_url}}', '{{film.producer}}', '{{film.director}}', '{{film.duration}}', '{{film.film_name}}', '{{film.genre}}', '{{film.release_date}}', '{{film.screenplay}}', '{{film.story}}', '{{film.starring}}', '{{film.plot_summary}}')">
                     <h1 class="view-more-text mellow-yellow">View More</h1>
                 </div>
             </div>
@@ -35,60 +35,6 @@
     {% endfor %}
     <!------------------------------------------------------- MODAL ---------------------------------------------->
     <div id="modal-background">
-        <div class="modal-card">
-            <!--------------------POSTER SIDE---------------------->
-            <div id="poster-side">
-                <div id="expanded-poster-box">
-                    <img id="expanded-card-image" class="expanded-card-elements flex-center"/>
-                    <div id="change-wrapper">
-                        <div class="change-box">
-                            <div class="change-film maroon-box">
-                                <h1 class="change-text">
-                                <!-- href for editfilm.html is above modal and inserted with js -->
-                                <a id="edit" class="mellow-yellow">Edit Film</a>
-                                </h1>
-                            </div>
-                        </div>
-                        <div class="change-box">
-                            <div class="change-film maroon-box" onclick="confirmDeleteMessage()">
-                                <h1 class="change-text mellow-yellow">Delete Film</h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>  
-            </div>
-
-            <!--------------------INFO SIDE---------------------->
-            <div id="info-side">
-                <div id="expanded-title-box" class="expanded-card-elements">
-                    <h5 id="expanded-card-title" class="expanded-card-text"></h5>
-                </div>
-                <div id="expanded-summary-box" class="expanded-card-elements">
-                    <p id="expanded-plot-summary" class="expanded-card-text"></p>
-                </div>
-                <div id="required-information-box" class="expanded-card-elements flex-center">
-                    <div id="expanded-genre-box" class="inline-info-boxes">
-                        <p id="expanded-genre" class="expanded-card-text"></p>
-                    </div>
-                    <div id="expanded-duration-box" class="inline-info-boxes">
-                        <p id="expanded-duration" class="expanded-card-text"></p>
-                    </div>
-                    <div id="expanded-date-box" class="inline-info-boxes">
-                        <p id="expanded-date" class="expanded-card-text"></p>
-                    </div>
-                </div>
-
-                <!-----------------EXTRA INFO------------------>
-                <div id="extra-info">
-                    <div id="director-and-co" class="extra-info-box">
-                    </div>
-                    <div id="actors" class="extra-info-box">
-                    </div>
-                </div>
-
-            </div>
-            <div id="close-modal" onclick="closeModal()">&times</div>
-        </div>
     </div>
 
     <!-- CONFIRM DELETE MODAL -->

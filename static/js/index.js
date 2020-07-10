@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() { 
     daysOfTheWeek();
     showCalendar(month, year)
+    
 });
 
 const DAYS_IN_DATE_FORMAT = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09",
@@ -76,7 +77,8 @@ function showCalendar(month, year) {
         tbl.appendChild(row); // appending each row into calendar body.
         
     }
-    insertImagesToCalendar();
+    // insertImagesToCalendar();
+    getFilmData();
 }
 
 function nextmonth() {
@@ -100,7 +102,7 @@ function previousyear() {
     year =  year - 1
     showCalendar(month, year);
 }
-function insertImagesToCalendar(){
+function insertImagesToCalendar(edit_film, delete_film, film_poster, producer, director, duration, film_name, genre, release_date, screenplay, story, starring, plot_summary){
     let numberOfDaysInMonth = document.getElementsByClassName("date-text");
     let eachOccupiedCell = document.getElementsByClassName("calendar-cell-div");
     let formatedMonth = MONTHS_IN_DATE_FORMAT[month]
@@ -120,18 +122,44 @@ function insertImagesToCalendar(){
         
     }
     
-    for(i = 0; i < releaseDates.length; i++){
+    // for(i = 0; i < releaseDates.length; i++){
         for(j = 1; j <= allDaysInMonth.length; j++){
             
-            if(releaseDates[i] === allDaysInMonth[j]){
-                let image = document.createElement("img")
+            if(release_date === allDaysInMonth[j]){ 
+                let image = document.createElement("img");   
+                image.setAttribute("onclick",`viewMoreModal('${edit_film}', '${delete_film}', '${film_poster}', '${producer}', '${director}', '${duration}', '${film_name}', '${genre}', '${release_date}', '${screenplay}', '${story}', '${starring}', "${plot_summary}")`);
+
+               
                 let div = eachOccupiedCell[j];  
 
                 image.classList.add("calendar-image", "grow")
-                image.src = filmPosters[i].innerHTML;
+                image.src = film_poster;
                 div.append(image);                
-            }
+            } 
         }
+    // }   
+}
+
+function getFilmData(){
+    let filmData = document.getElementsByClassName("film-data")
+    // let filmChildren = $(filmData).children()
+    for(x=0; x < filmData.length; x++){
+        let findIndividualInfo = $(filmData[x]).children()
+        let edit_film = findIndividualInfo[0].innerHTML;
+        let delete_film = findIndividualInfo[1].innerHTML;
+        let film_poster = findIndividualInfo[2].innerHTML;
+        let producer = findIndividualInfo[3].innerHTML;
+        let director = findIndividualInfo[4].innerHTML;
+        let duration = findIndividualInfo[5].innerHTML;
+        let film_name = findIndividualInfo[6].innerHTML;
+        let genre = findIndividualInfo[7].innerHTML;
+        let release_date = findIndividualInfo[8].innerHTML;
+        let screenplay = findIndividualInfo[9].innerHTML;
+        let story = findIndividualInfo[10].innerHTML;
+        let starring = findIndividualInfo[11].innerHTML;
+        let plot_summary = findIndividualInfo[12].innerHTML;
+        insertImagesToCalendar(edit_film, delete_film, film_poster, producer, director, duration, film_name, genre, release_date, screenplay, story, starring, plot_summary)
+        
     }
     
 }

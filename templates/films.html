@@ -36,29 +36,10 @@
     <!------------------------------------------------------- MODAL ---------------------------------------------->
     <div id="modal-background">
     </div>
-
     <!-- CONFIRM DELETE MODAL -->
     <div id="confirm-modal-background">
-        <!-- <div class="modal-card" id="confirm-card">
-            <div id="message-box">
-                <p id="confirm-message"></p>
-            </div>
-            <div id="confirm-box-container" class="flex-center">
-                <div class="confirm-wrapper flex-center">
-                    <div class="confirm-boxes maroon-box">
-                        <a id="delete-film">
-                            <p id="confirm-delete" class="mellow-yellow">Yes</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="confirm-wrapper flex-center">
-                    <div class="confirm-boxes maroon-box" onclick="returnToModal()">
-                        <p id="stop-delete" class="mellow-yellow">No</p>
-                    </div>
-                </div>
-            </div>
-        </div> -->
     </div>
 </div>
+<script src="{{url_for('static', filename='js/paginate.js')}}"></script>
 <script src="{{url_for('static', filename='js/modal.js')}}"></script>
 {% endblock %}

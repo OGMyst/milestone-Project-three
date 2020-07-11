@@ -2,15 +2,23 @@
 <div class="header">
     <h1 class="mellow-yellow">Films</h1>
 </div>
-  <ul class="pagination">
-    <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-    <li class="active"><a href="#!">1</a></li>
-    <li class="waves-effect"><a href="#!">2</a></li>
-    <li class="waves-effect"><a href="#!">3</a></li>
-    <li class="waves-effect"><a href="#!">4</a></li>
-    <li class="waves-effect"><a href="#!">5</a></li>
-    <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-  </ul>           
+<nav aria-label="Page navigation example flex-center">
+    <ul class="pagination">
+        <li class="page-item">
+        <a class="page-link" onclick="previousPage()" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+        </a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+        <a class="page-link" onclick="nextPage()" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+        </a>
+        </li>
+    </ul>
+</nav>          
 <div id="film-container" class="flex-center">
     <!--------------------------------------------------- FILM CARD ----------------------------------------------->
     {% for film in films %}

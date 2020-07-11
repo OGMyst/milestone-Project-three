@@ -38,6 +38,14 @@ a {
     background-color: #5A0A0A;
     border-radius: 10px;
 }
+
+nav{
+    background-color: inherit;
+    display: flex;
+    justify-content: center;
+    box-shadow: none;
+}
+
 /* ----------------------------------------BASE.HTML-------------------------------------- */
 .navigation{
     height: 100px;

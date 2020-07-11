@@ -77,7 +77,6 @@ function showCalendar(month, year) {
         tbl.appendChild(row); // appending each row into calendar body.
         
     }
-    // insertImagesToCalendar();
     getFilmData();
 }
 
@@ -102,47 +101,34 @@ function previousyear() {
     year =  year - 1
     showCalendar(month, year);
 }
+
 function insertImagesToCalendar(edit_film, delete_film, film_poster, producer, director, duration, film_name, genre, release_date, screenplay, story, starring, plot_summary){
     let numberOfDaysInMonth = document.getElementsByClassName("date-text");
     let eachOccupiedCell = document.getElementsByClassName("calendar-cell-div");
-    let formatedMonth = MONTHS_IN_DATE_FORMAT[month]
-    let releaseDatesClass = document.getElementsByClassName("dates-for-calendar");
-    let filmPosters = document.getElementsByClassName("posters-for-calendar");
-    
+    let formatedMonth = MONTHS_IN_DATE_FORMAT[month]    
     let allDaysInMonth = [];
-    let releaseDates = [];
 
     for(i = 1; i <= numberOfDaysInMonth.length; i++){
         eachDate = DAYS_IN_DATE_FORMAT[i] + "/" + formatedMonth + "/" + year; 
         allDaysInMonth.push(eachDate);
     }
 
-    for(i = 0; i < releaseDatesClass.length; i++){
-        releaseDates.push(releaseDatesClass[i].innerHTML);
-        
-    }
-    
-    // for(i = 0; i < releaseDates.length; i++){
-        for(j = 1; j <= allDaysInMonth.length; j++){
+    for(j = 1; j <= allDaysInMonth.length; j++){
             
-            if(release_date === allDaysInMonth[j]){ 
-                let image = document.createElement("img");   
-                image.setAttribute("onclick",`viewMoreModal('${edit_film}', '${delete_film}', '${film_poster}', '${producer}', '${director}', '${duration}', '${film_name}', '${genre}', '${release_date}', '${screenplay}', '${story}', '${starring}', "${plot_summary}")`);
+        if(release_date === allDaysInMonth[j]){ 
+            let image = document.createElement("img"); 
+            let div = eachOccupiedCell[j];   
 
-               
-                let div = eachOccupiedCell[j];  
-
-                image.classList.add("calendar-image", "grow")
-                image.src = film_poster;
-                div.append(image);                
-            } 
-        }
-    // }   
+            image.setAttribute("onclick",`viewMoreModal('${edit_film}', '${delete_film}', '${film_poster}', '${producer}', '${director}', '${duration}', '${film_name}', '${genre}', '${release_date}', '${screenplay}', '${story}', '${starring}', "${plot_summary}")`);
+            image.classList.add("calendar-image", "grow")
+            image.src = film_poster;
+            div.append(image);                
+        } 
+    }
 }
 
 function getFilmData(){
     let filmData = document.getElementsByClassName("film-data")
-    // let filmChildren = $(filmData).children()
     for(x=0; x < filmData.length; x++){
         let findIndividualInfo = $(filmData[x]).children()
         let edit_film = findIndividualInfo[0].innerHTML;

@@ -46,6 +46,10 @@ nav{
     box-shadow: none;
 }
 
+.pagination li a{
+    display: block;
+}
+
 /* ----------------------------------------BASE.HTML-------------------------------------- */
 .navigation{
     height: 100px;

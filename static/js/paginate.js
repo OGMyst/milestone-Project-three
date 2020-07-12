@@ -39,8 +39,7 @@ function paginationButton (pageNumber) {
     let aTag = document.createElement('a');
 
     if (current_page == pageNumber) pageSelector.classList.add('active');
-    pageSelector.classList.add('page-item')
-    aTag.classList.add('page-link')
+    pageSelector.classList.add('waves-effect')
     aTag.onclick = function() { 
         jumpToPage(pageNumber);
         };
@@ -78,7 +77,4 @@ function changeActivePage(newPage){
     
     currentPageElement[0].classList.remove('active');
     parentOfList[(newPage - 1)].classList.add("active");
-    console.log(parentOfList)
-    
-    
 }

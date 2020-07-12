@@ -39,7 +39,7 @@ a {
     border-radius: 10px;
 }
 
-nav{
+/* nav{
     background-color: inherit;
     display: flex;
     justify-content: center;
@@ -48,7 +48,7 @@ nav{
 
 .pagination li a{
     display: block;
-}
+} */
 
 /* ----------------------------------------BASE.HTML-------------------------------------- */
 .navigation{

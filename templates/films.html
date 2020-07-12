@@ -2,20 +2,10 @@
 <div class="header">
     <h1 class="mellow-yellow">Films</h1>
 </div>
-<nav aria-label="Page navigation example flex-center">
+<div class="flex-center">
     <ul class="pagination" id="paginate">
-        <!-- <li class="page-item" id="previous-page">
-            <a class="page-link" onclick="previousPage()" aria-label="Previous" >
-                <span aria-hidden="true">&laquo;</span>
-            </a>
-        </li> -->
-        <!-- <li class="page-item" id="next-page">
-            <a class="page-link" onclick="nextPage()" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-            </a>
-        </li> -->
-    </ul>
-</nav>          
+    </ul>  
+</div>                 
 <div id="film-container" class="flex-center">
     <!--------------------------------------------------- FILM CARD ----------------------------------------------->
     {% for film in films %}

@@ -1,6 +1,6 @@
 let filmCards = document.getElementsByClassName("film-card");
 let current_page = 1;
-let filmPerPage = 2;
+let filmPerPage = 6;
 let numberOfPages;
 
 document.addEventListener("DOMContentLoaded", function() {   

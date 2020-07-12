@@ -51,24 +51,29 @@ a {
 } */
 
 /* ----------------------------------------BASE.HTML-------------------------------------- */
-.navigation{
-    height: 100px;
+.nav-wrapper{
+    /* height: 100px; */
     background-color: #182F1A;
-    display: flex;
-    padding: 10px 0;
 }
 
-.logo{
-    font-size: 150%;
-    width: 75%;
-    line-height: 75px;
+
+#logo{
+    /* max-height:  */
+    font-size: 250%;
     margin-left: 10px;
+    margin-top: 8px;
+    color: #DCAE0B;
 }
 
-.addmovie-container{
+.nav-text{
+    margin-top: 10px;
+    font-size: 160%;
+    line-height: 1.6em;
+}
+/* .addmovie-container{
     padding-top: 12px;
     width: 25%;
-}
+} */
 
 .add-film-box{
     width: 220px;

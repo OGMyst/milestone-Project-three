@@ -78,3 +78,32 @@ function changeActivePage(newPage){
     currentPageElement[0].classList.remove('active');
     parentOfList[(newPage - 1)].classList.add("active");
 }
+
+const searchBar = document.forms['search-films'].querySelector('input');
+const allfilms = document.querySelectorAll("#film-container .film-card")
+searchBar.addEventListener('keyup', (e) => {
+  const term = e.target.value.toLowerCase();
+  
+    if(term === ""){
+        for(i = 0; i < allfilms.length; i++){
+            $(allfilms[i]).addClass("hidden");
+            $(allfilms[i]).removeClass("current-films"); 
+            displayFilms (filmCards, filmPerPage, current_page);
+        }return 
+    } 
+
+  Array.from(allfilms).forEach((film) => {
+    const titleObject = $(film).find(".name-of-film");
+    let title = titleObject[0].innerHTML
+
+    if(title.toLowerCase().indexOf(term) != -1){
+      $(film).removeClass("hidden");
+      $(film).addClass("current-films");
+      console.log("still here")
+    }else {
+      $(film).addClass("hidden");
+      $(film).removeClass("current-films");
+    }
+    
+  });
+});

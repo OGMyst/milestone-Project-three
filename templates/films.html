@@ -21,7 +21,7 @@
     <div id="film-container" class="flex-center">
     <!--------------------------------------------------- FILM CARD ----------------------------------------------->
     {% for film in films %}
-    <div class="film-card hidden" id="{{film.film_name}}">
+    <div class="film-card hidden">
         <div class="poster-box">
             <a href="">
                 <img class="film-poster" src="{{film.theatrical_poster_url}}" alt="Poster Unavailable"/>
@@ -58,5 +58,4 @@
 </div>
 <script src="{{url_for('static', filename='js/paginate.js')}}"></script>
 <script src="{{url_for('static', filename='js/modal.js')}}"></script>
-<script src="{{url_for('static', filename='js/films.js')}}"></script>
 {% endblock %}

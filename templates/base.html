@@ -9,44 +9,27 @@
 </head>
 <body>
     <!-------------------------------- NAVBAR ------------------------------>
-<!-- <div class="navbar-fixed">
-    <nav>
-      <div class="nav-wrapper">
-        <a href="{{url_for('home')}}" class="brand-logo font-size mellow-yellow">PTT</a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="{{url_for('add_movie')}}" class="nav-text mellow-yellow">Add Movie</a></li>
-        </ul>
-      </div>
-    </nav>
-</div> -->
-
-  <nav>
-    <div class="nav-wrapper">
-      <a href="{{url_for('home')}}" id="logo" class="brand-logo font-size mellow-yellow">PTT</a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons mellow-yellow">Menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="{{url_for('add_movie')}}" class="nav-text mellow-yellow">Add Movie</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">Javascript</a></li>
-        <li><a href="mobile.html">Mobile</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <ul class="sidenav" id="mobile-demo">
-    <li><a href="{{url_for('add_movie')}}" class="nav-text mellow-yellow">Add Movie</a></li>
-  </ul>
-          
-    <!-- <div class="navigation">
-        <div class="logo">
-            <h1 class="materialize-override"><a href="{{url_for('home')}}" class="font-size mellow-yellow">PTT</a></h1>
-        </div>
-        <div class="addmovie-container flex-center">
-            <div class="maroon-box add-film-box">
-                <h1 class="materialize-override"><a href="{{url_for('add_movie')}}" class="font-size mellow-yellow">Add Movie</a></h1>
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+            <a href="{{url_for('home')}}" id="logo" class="brand-logo font-size mellow-yellow">PTT</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons mellow-yellow">Menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="{{url_for('home')}}" class="nav-text mellow-yellow">Home</a></li>
+                <li><a href="{{url_for('films')}}" class="nav-text mellow-yellow">Explore</a></li>
+                <li><a href="{{url_for('add_movie')}}" class="nav-text mellow-yellow">Add Movie</a></li>       
+                <li><a href="{{url_for('home')}}#top-of-calender" class="nav-text mellow-yellow">Calendar</a></li>
+            </ul>
             </div>
-        </div>
-    </div> -->
+        </nav>
+    </div>
+
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="{{url_for('home')}}" class="nav-text mellow-yellow">Home</a></li>
+        <li><a href="{{url_for('films')}}" class="nav-text mellow-yellow">Explore</a></li>
+        <li><a href="{{url_for('add_movie')}}" class="nav-text mellow-yellow">Add Movie</a></li>       
+        <li><a href="{{url_for('home')}}#top-of-calender" class="nav-text mellow-yellow">Calendar</a></li>
+    </ul>
 
     {% block content %} {% endblock %}
 

@@ -1,6 +1,11 @@
 function viewMoreModal(edit_film, delete_film, film_poster, producer, director, duration, film_name, genre, release_date, screenplay, story, starring, plot_summary){
     const film = {edit_film, delete_film, film_poster, producer, director, duration, film_name, genre, release_date, screenplay, story, starring, plot_summary};
+    // $(".sidenav-overlay").css({
+    //     display: 'block',
+    //     opacity: '1',
+    // });
     $("#modal-background").css("display", "flex");
+     
     displayFilmInfo(film);
 };
 

@@ -89,6 +89,17 @@ footer{
     margin-right: 10px;
 }
 /* -------------------------------INDEX.HTML--------------------------- */
+#lotr-background{
+    background-image: url("https://wallpapercave.com/wp/cufUHOI.jpg");
+    background-attachment: fixed;
+    overflow: hidden;
+    height: auto;
+    width: 100%;
+    background-position-x: -64px;
+    background-position-y: -64px;
+    background-repeat: no-repeat;
+}
+
 .title{
     text-align: center;
     margin-top: 150px;
@@ -528,6 +539,11 @@ input[type="search"]:focus:not(.browser-default){
     display: none;
 }
 /*------------------------------INDEX.HTML-------------------------------*/
+#lotr-background{
+    background-size:400%;
+    background-position-x: -900px;
+    background-position-y: 0px;
+}
 #month{
     min-width: 240px;
 }

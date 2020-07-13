@@ -5,11 +5,23 @@
 <div class="flex-center">
     <ul class="pagination" id="paginate">
     </ul>  
-</div>                 
-<div id="film-container" class="flex-center">
+</div>
+    <!------------------------------------------- SEARCH BAR ----------------------------------------->
+    <nav>
+        <div class="nav-wrapper">
+        <form id="search-films">
+                <div class="input-field">
+                    <input id="search" type="search" required>
+                    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                    <i class="material-icons">close</i>
+                </div>
+            </form>
+        </div>
+    </nav>               
+    <div id="film-container" class="flex-center">
     <!--------------------------------------------------- FILM CARD ----------------------------------------------->
     {% for film in films %}
-    <div class="film-card hidden">
+    <div class="film-card hidden" id="{{film.film_name}}">
         <div class="poster-box">
             <a href="">
                 <img class="film-poster" src="{{film.theatrical_poster_url}}" alt="Poster Unavailable"/>
@@ -46,4 +58,5 @@
 </div>
 <script src="{{url_for('static', filename='js/paginate.js')}}"></script>
 <script src="{{url_for('static', filename='js/modal.js')}}"></script>
+<script src="{{url_for('static', filename='js/films.js')}}"></script>
 {% endblock %}

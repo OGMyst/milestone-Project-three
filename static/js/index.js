@@ -120,6 +120,7 @@ function insertImagesToCalendar(edit_film, delete_film, film_poster, producer, d
             let div = eachOccupiedCell[j];   
 
             image.setAttribute("onclick",`viewMoreModal('${edit_film}', '${delete_film}', '${film_poster}', '${producer}', '${director}', '${duration}', '${film_name}', '${genre}', '${release_date}', '${screenplay}', '${story}', '${starring}', "${plot_summary}")`);
+            image.setAttribute("alt", `${film_name}`)
             image.classList.add("calendar-image", "grow")
             image.src = film_poster;
             div.append(image);                

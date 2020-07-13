@@ -565,6 +565,10 @@ textarea{
     width: inherit;
 }
 
+#search-form{
+    width: 50%;
+}
+
 .modal-card{
     width: 90%;
     max-height: 60%;

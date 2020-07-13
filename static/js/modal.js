@@ -1,9 +1,5 @@
 function viewMoreModal(edit_film, delete_film, film_poster, producer, director, duration, film_name, genre, release_date, screenplay, story, starring, plot_summary){
     const film = {edit_film, delete_film, film_poster, producer, director, duration, film_name, genre, release_date, screenplay, story, starring, plot_summary};
-    // $(".sidenav-overlay").css({
-    //     display: 'block',
-    //     opacity: '1',
-    // });
     $("#modal-background").css("display", "flex");
      
     displayFilmInfo(film);
@@ -52,7 +48,7 @@ function displayFilmInfo(film){
                                                 <p id="expanded-genre" class="expanded-card-text"> Genre: ${film.genre}</p>
                                             </div>
                                             <div id="expanded-duration-box" class="inline-info-boxes">
-                                                <p id="expanded-duration" class="expanded-card-text">Duration: ${film.duration}</p>
+                                                <p id="expanded-duration" class="expanded-card-text">Duration: ${film.duration} mins</p>
                                             </div>
                                             <div id="expanded-date-box" class="inline-info-boxes">
                                                 <p id="expanded-date" class="expanded-card-text">Date: ${film.release_date}</p>

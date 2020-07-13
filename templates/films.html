@@ -1,14 +1,14 @@
 {% extends 'base.html'%}{% block content %} 
-<div class="header">
-    <h1 class="mellow-yellow">Films</h1>
-</div>
-<div class="flex-center">
-    <ul class="pagination" id="paginate">
-    </ul>  
-</div>
+    <div class="header">
+        <h1 class="mellow-yellow">Films</h1>
+    </div>
+    <div class="flex-center">
+        <ul class="pagination" id="paginate">
+        </ul>  
+    </div>
     <!------------------------------------------- SEARCH BAR ----------------------------------------->
-    <nav>
-        <div class="nav-wrapper">
+    <nav id="searching-nav">
+        <div class="nav-wrapper" id="searching-wrapper">
         <form id="search-films">
                 <div class="input-field">
                     <input id="search" type="search" required>

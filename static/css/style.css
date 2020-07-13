@@ -39,26 +39,16 @@ a {
     border-radius: 10px;
 }
 
-/* nav{
-    background-color: inherit;
-    display: flex;
-    justify-content: center;
+nav{
     box-shadow: none;
 }
-
-.pagination li a{
-    display: block;
-} */
-
 /* ----------------------------------------BASE.HTML-------------------------------------- */
 .nav-wrapper{
-    /* height: 100px; */
     background-color: #182F1A;
 }
 
 
 #logo{
-    /* max-height:  */
     font-size: 250%;
     margin-left: 10px;
     margin-top: 8px;
@@ -70,10 +60,6 @@ a {
     font-size: 160%;
     line-height: 1.6em;
 }
-/* .addmovie-container{
-    padding-top: 12px;
-    width: 25%;
-} */
 
 .add-film-box{
     width: 220px;
@@ -310,6 +296,20 @@ textarea{
     cursor: pointer;
 }
 /* -------------------------------FILMS.HTML--------------------------- */
+#searching-nav{
+    padding: 10px 40% 0;
+    background-color: inherit;
+    height: 70px; 
+}
+
+#searching-wrapper{
+    border-radius: 10px;
+}
+
+input[type="search"]:focus:not(.browser-default){
+    border-radius: 10px;
+}
+
 #film-container{
     flex-wrap: wrap;
     padding: 40px 0px;

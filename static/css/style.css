@@ -95,8 +95,6 @@ footer{
     overflow: hidden;
     height: auto;
     width: 100%;
-    /* background-position-x: -64px;
-    background-position-y: -64px; */
     background-repeat: no-repeat;
     background-size:100%;
 }
@@ -528,8 +526,8 @@ input[type="search"]:focus:not(.browser-default){
 /*-----------------------------------------PHONE MEDIA QUERY-----------------------------------------*/
 /*------------------------------BASE.HTML-------------------------------*/
 @media only screen and (max-width: 767px){
-.logo{
-    width:30%;
+#logo{
+    margin-left: 0;
 }
 
 .addmovie-container{
@@ -569,6 +567,10 @@ input[type="search"]:focus:not(.browser-default){
 }
 
 /*------------------------------ADDFILM.HTML-------------------------------*/
+#add-movie-form{
+    overflow: scroll;
+}
+
 #add-more, #submit{
     width: 130px;
 }
@@ -586,6 +588,9 @@ input[type="search"]:focus:not(.browser-default){
     width: 50%;
 }
 
+#searching-nav{
+    padding: 10px 5% 0;
+}
 .modal-card{
     width: 90%;
     max-height: 60%;

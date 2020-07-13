@@ -95,9 +95,10 @@ footer{
     overflow: hidden;
     height: auto;
     width: 100%;
-    background-position-x: -64px;
-    background-position-y: -64px;
+    /* background-position-x: -64px;
+    background-position-y: -64px; */
     background-repeat: no-repeat;
+    background-size:100%;
 }
 
 .title{

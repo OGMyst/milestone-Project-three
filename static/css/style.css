@@ -1,7 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap: 400, 500, 600, 700|Josefin+Sans&display=swap|Balsamiq+Sans:400, 500, 600, 700');
 body{
-    margin: 0 auto;
+    margin: 0;
     font-family: 'Noto Serif', serif;
+    height: 100%;
+}
+
+html{
+    height: 100%;
 }
 
 .flex-center{
@@ -66,8 +71,8 @@ nav{
 }
 /* --------------------------FOOTER-------------------------- */
 footer{
+    margin-top:auto;
     display: flex;
-    margin: 0 0;
     padding: 0 10px;
     background-color: #182F1A;  
 }
@@ -92,7 +97,7 @@ footer{
     background-image: url("https://wallpapercave.com/wp/cufUHOI.jpg");
     background-attachment: fixed;
     overflow: hidden;
-    height: auto;
+    min-height: 100%;
     width: 100%;
     background-repeat: no-repeat;
     background-size:100%;
@@ -104,7 +109,7 @@ footer{
     margin-bottom: 40px;
     font-size: 200%;
     font-family: 'Josefin Sans', sans-serif;
-    text-shadow: 4px 4px 1px #000000
+    text-shadow: 2px 2px 2px #000000
 }
 
 .explore-container{
@@ -142,6 +147,8 @@ footer{
 #calendar{
     width: 90%;
     background-color: #E3E3E3;
+    border: 8px solid #182F1A;
+    border-radius: 10px;
 }
 
 #calendar-year,
@@ -214,6 +221,14 @@ footer{
     vertical-align: text-top;  
 }
 
+.bottom-row-cell{
+    border-bottom: none;
+}
+
+.end-row-cell{
+    border-right: none;
+}
+
 .calendar-cell-div{
     width: 100%;
 }
@@ -246,7 +261,7 @@ footer{
 }
 
 .header h1{
-    text-shadow: 4px 4px 1px #000000;
+  text-shadow:  2px 2px 2px #000000;
 }
 
 #add-movie-container{
@@ -258,6 +273,9 @@ footer{
     background-color: #E3E3E3;
     padding: 20px 10px 10px;
     border-radius: 10px 10px 0 0;
+    border-top: 8px solid #182F1A;
+    border-left: 8px solid #182F1A;
+    border-right: 8px solid #182F1A;
 }
 
 .input-field{
@@ -278,7 +296,9 @@ textarea{
     display: flex;
     width: 90%;
     background-color: #E3E3E3;
-    padding-bottom: 20px;   
+    padding-bottom: 20px;  
+    border-left: 8px solid #182F1A;
+    border-right: 8px solid #182F1A; 
 }
 
 #notification-box{
@@ -287,6 +307,10 @@ textarea{
     font-family: 'Balsamiq Sans', cursive;
     font-weight: 600;
     font-size: 120%;
+}
+
+#add-submit{
+   border-bottom: 8px solid #182F1A;
 }
 
 .add-submit-box{
@@ -332,7 +356,7 @@ input[type="search"]:focus:not(.browser-default){
     height: 175px;
     border-radius: 10px;
     background-color: #E3E3E3;
-    border: 2px solid #000000;
+    border: 3px solid #182F1A;
 }
 
 .poster-box{
@@ -399,7 +423,7 @@ input[type="search"]:focus:not(.browser-default){
     background: #E3E3E3;
     padding: 10px;
     border-radius: 10px;
-    border: 2px solid #000000;
+    border: 3px solid #182F1A;
     display: flex;
     position: relative;
 }

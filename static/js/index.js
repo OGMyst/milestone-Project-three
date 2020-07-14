@@ -17,6 +17,7 @@ let today = new Date();
 let month = today.getMonth();
 let year = today.getFullYear();
 let weekDays;
+let date = 1;
 
 function calendarMonthAndYear(){ 
     currentMonth = MONTHNAMES[month];
@@ -34,19 +35,22 @@ function daysOfTheWeek(){
 function showCalendar(month, year) {
 
     calendarMonthAndYear();
-
+    let numberOfDaysInWeek = 7;
     let firstDay = (new Date(year, month)).getDay();
     let daysInMonth = 32 - new Date(year, month, 32).getDate();
+    let row_count = Math.ceil((daysInMonth+firstDay) /numberOfDaysInWeek);
     let tbl = document.getElementById("calendar-days");
+     
     // clearing all previous cells
     tbl.innerHTML = "";
     // creating all cells
-    let date = 1;
-    for (let i = 0; i < 5; i++) {
+    
+    for (let i = 0; i < row_count; i++) {
         let row = document.createElement("tr");
         row.classList.add("calendar-row");
 
         for (let j = 1; j < 8; j++) {
+            let endofRow = j % 7
             if (i === 0 && j < firstDay) {
                 let cell = document.createElement("td");
                 let cellText = document.createTextNode("");
@@ -56,28 +60,43 @@ function showCalendar(month, year) {
             }
             else if (date > daysInMonth) {
                 break;
-            }
-            else {
-                let cell = document.createElement("td");
-                let div = document.createElement("div");
-                let pTag = document.createElement("p")
-                
-                let cellText = date;
-                cell.classList.add("calendar-cell");
-                
-                div.classList.add("calendar-cell-div")
-                cell.append(div);
-                div.append(pTag);
-                pTag.append(cellText);
-                pTag.classList.add("date-text");
-                row.appendChild(cell);
+            // }
+            // else if(i === (row_count - 1)){
+            //     createFilledCell(date, row);
+            //     cell.classList.add("bottom-row-cell")
+            }else {
+                createFilledCell(date, row, row_count, i, endofRow);
                 date++;
+                
             }
+            
         }
         tbl.appendChild(row); // appending each row into calendar body.
         
     }
     getFilmData();
+}
+
+function createFilledCell(date, row, row_count, i, endofRow){
+    let cell = document.createElement("td");
+    let div = document.createElement("div");
+    let pTag = document.createElement("p")
+    let cellText = date;
+    if(i === (row_count - 1)){
+        cell.classList.add("bottom-row-cell")
+    }
+
+    if(endofRow === 0){
+        cell.classList.add("end-row-cell")
+    }
+    cell.classList.add("calendar-cell");               
+    div.classList.add("calendar-cell-div")
+    cell.append(div);
+    div.append(pTag);
+    pTag.append(cellText);
+    pTag.classList.add("date-text");
+    row.appendChild(cell);
+                 
 }
 
 function nextmonth() {

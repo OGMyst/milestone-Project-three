@@ -1,4 +1,10 @@
-describe("showCalender()", function(){
+describe("Calendar", function(){
+
+    let numberOfDaysInWeek;
+    let firstDay;
+    let daysInMonth;
+    let row_count;
+    let tbl;
 
     //firstDay = the day of the week on which the first day of the month falls
     it("should return 1", function(){
@@ -30,4 +36,60 @@ describe("showCalender()", function(){
         let numberOfDays = document.getElementById("day-labels").childNodes
         expect(numberOfDays.length).toBe(7);
     });
+
+    it("should return 5", function(){
+        let rows = showCalendar(6, 2020);
+        expect(rows).toBe(5);
+    });
+
+    it("should return confirm message", function(){
+        let confirmEnd;
+        let row_count = 5
+        let filledCell;
+        for (let i = 0; i < row_count; i++) {
+            if(i === (row_count - 1)){
+                filledCell =  createFilledCell(confirmEnd)
+            };
+        }
+        expect(filledCell).toBe("code runs for end of row");
+    });
+
+    beforeEach(() =>{
+        numberOfDaysInWeek = 7;
+        firstDay = (new Date(year, month)).getDay();
+        daysInMonth = 32 - new Date(year, month, 32).getDate();
+        row_count = Math.ceil((daysInMonth+firstDay) /numberOfDaysInWeek);
+        tbl = document.getElementById("calendar-days");
+    });
+
+    it("should return 2", function(){
+        let emptyCells = [];
+        for (let i = 0; i < row_count; i++) {
+            for (let j = 1; j < 8; j++) {
+                if (i === 0 && j < firstDay) {
+                    emptyCells.push(j)
+                }
+            }
+        }
+        expect(emptyCells.length).toBe(2);
+    });
+
+    it("should return message and check if statement is only triggering on last day", function(){
+        let lastDay;
+        let dayCounter = 0;
+        for (let i = 0; i < row_count; i++) {
+            for (let j = 1; j < 8; j++) {
+                if (date > daysInMonth) {
+                    lastDay = "Last day in month reached"
+                }
+                else{
+                    dayCounter ++;
+                }
+                date++;
+            }
+        }
+        expect(lastDay).toBe("Last day in month reached");
+        expect(dayCounter).toEqual(daysInMonth);
+    });
+        
 });

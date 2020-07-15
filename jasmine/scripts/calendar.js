@@ -25,8 +25,21 @@ function daysOfTheWeek(){
     for(i = 0; i < 7; i++){
         weekDays = DAYS[i];
         document.getElementById("day-labels").innerHTML += "<div class='week-days flex-center'>" + weekDays + "</div>"
-        weekDaysTest +=DAYS[i];
-    }
-    return weekDaysTest
-    
+    }   
+};
+
+function showCalendar(month, year) {
+
+    calendarMonthAndYear();
+    let numberOfDaysInWeek = 7;
+    let firstDay = (new Date(year, month)).getDay();
+    let daysInMonth = 32 - new Date(year, month, 32).getDate();
+    let row_count = Math.ceil((daysInMonth+firstDay) /numberOfDaysInWeek);
+    let tbl = document.getElementById("calendar-days");
+    return row_count
+}
+
+function createFilledCell(confirmEnd){
+    confirmEnd = "code runs for end of row"
+    return confirmEnd     
 };

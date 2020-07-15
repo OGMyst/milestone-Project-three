@@ -136,13 +136,20 @@ function insertImagesToCalendar(edit_film, delete_film, film_poster, producer, d
             
         if(release_date === allDaysInMonth[j]){ 
             let image = document.createElement("img"); 
-            let div = eachOccupiedCell[j];   
-
+            let div = eachOccupiedCell[j]; 
+            let imageLimit =  $(div).children();
+            
             image.setAttribute("onclick",`viewMoreModal('${edit_film}', '${delete_film}', '${film_poster}', '${producer}', '${director}', '${duration}', '${film_name}', '${genre}', '${release_date}', '${screenplay}', '${story}', '${starring}', "${plot_summary}")`);
             image.setAttribute("alt", `${film_name}`)
             image.classList.add("calendar-image", "grow")
             image.src = film_poster;
-            div.append(image);                
+             
+            if(imageLimit.length < 3){
+                div.append(image);
+            }else{
+                image.classList.add("hidden");
+                div.append(image); 
+            }            
         } 
     }
 }

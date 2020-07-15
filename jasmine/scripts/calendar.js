@@ -11,12 +11,22 @@ let today = new Date();
 let month = today.getMonth();
 let year = today.getFullYear();
 let weekDays;
+let weekDaysTest;
 let date = 1;
 
 function calendarMonthAndYear(){ 
     currentMonth = MONTHNAMES[month];
     document.getElementById("month").innerHTML = "<h1>" + currentMonth + "</h1>";
     document.getElementById("year").innerHTML = "<h4>" + year + "</h4>";
-    console.log(document.getElementById("month").innerHTML)
     return currentMonth
+};
+
+function daysOfTheWeek(){    
+    for(i = 0; i < 7; i++){
+        weekDays = DAYS[i];
+        document.getElementById("day-labels").innerHTML += "<div class='week-days flex-center'>" + weekDays + "</div>"
+        weekDaysTest +=DAYS[i];
+    }
+    return weekDaysTest
+    
 };

@@ -24,4 +24,10 @@ describe("showCalender()", function(){
         expect(displayedMonth).toBe("<h1>July</h1>");
         expect(displayedYear).toBe("<h4>2020</h4>");
     });
+
+    it("should give days of the week", function(){
+        daysOfTheWeek();
+        let numberOfDays = document.getElementById("day-labels").childNodes
+        expect(numberOfDays.length).toBe(7);
+    });
 });

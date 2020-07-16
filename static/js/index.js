@@ -22,7 +22,7 @@ let date = 1;
 function calendarMonthAndYear(){ 
     currentMonth = MONTHNAMES[month];
     document.getElementById("month").innerHTML = "<h1>" + currentMonth + "</h1>";
-    document.getElementById("year").innerHTML = "<h4>" + year + "</h4>";    
+    document.getElementById("year").innerHTML = "<h4>" + year + "</h4>";   
 };
 
 function daysOfTheWeek(){    
@@ -60,10 +60,7 @@ function showCalendar(month, year) {
             }
             else if (date > daysInMonth) {
                 break;
-            // }
-            // else if(i === (row_count - 1)){
-            //     createFilledCell(date, row);
-            //     cell.classList.add("bottom-row-cell")
+
             }else {
                 createFilledCell(date, row, row_count, i, endofRow);
                 date++;
@@ -72,9 +69,9 @@ function showCalendar(month, year) {
             
         }
         tbl.appendChild(row); // appending each row into calendar body.
-        
     }
-    getFilmData();
+    getFilmData(daysInMonth);
+    date = 1;
 }
 
 function createFilledCell(date, row, row_count, i, endofRow){
@@ -96,7 +93,6 @@ function createFilledCell(date, row, row_count, i, endofRow){
     pTag.append(cellText);
     pTag.classList.add("date-text");
     row.appendChild(cell);
-                 
 }
 
 function nextmonth() {
@@ -121,13 +117,12 @@ function previousyear() {
     showCalendar(month, year);
 }
 
-function insertImagesToCalendar(edit_film, delete_film, film_poster, producer, director, duration, film_name, genre, release_date, screenplay, story, starring, plot_summary){
-    let numberOfDaysInMonth = document.getElementsByClassName("date-text");
+function insertImagesToCalendar(edit_film, delete_film, film_poster, producer, director, duration, film_name, genre, release_date, screenplay, story, starring, plot_summary, daysInMonth){
     let eachOccupiedCell = document.getElementsByClassName("calendar-cell-div");
     let formatedMonth = MONTHS_IN_DATE_FORMAT[month]    
     let allDaysInMonth = [];
 
-    for(i = 1; i <= numberOfDaysInMonth.length; i++){
+    for(i = 1; i <= daysInMonth; i++){
         eachDate = DAYS_IN_DATE_FORMAT[i] + "/" + formatedMonth + "/" + year; 
         allDaysInMonth.push(eachDate);
     }
@@ -154,7 +149,7 @@ function insertImagesToCalendar(edit_film, delete_film, film_poster, producer, d
     }
 }
 
-function getFilmData(){
+function getFilmData(daysInMonth){
     let filmData = document.getElementsByClassName("film-data")
     for(x=0; x < filmData.length; x++){
         let findIndividualInfo = $(filmData[x]).children()
@@ -171,7 +166,7 @@ function getFilmData(){
         let story = findIndividualInfo[10].innerHTML;
         let starring = findIndividualInfo[11].innerHTML;
         let plot_summary = findIndividualInfo[12].innerHTML;
-        insertImagesToCalendar(edit_film, delete_film, film_poster, producer, director, duration, film_name, genre, release_date, screenplay, story, starring, plot_summary)
+        insertImagesToCalendar(edit_film, delete_film, film_poster, producer, director, duration, film_name, genre, release_date, screenplay, story, starring, plot_summary, daysInMonth)
         
     }
     

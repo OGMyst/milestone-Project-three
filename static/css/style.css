@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap: 400, 500, 600, 700|Josefin+Sans&display=swap|Balsamiq+Sans:400, 500, 600, 700');
+@import url('https://fonts.googleapis.com/css2?family=Galada&display=swap');
 body{
     margin: 0;
     font-family: 'Noto Serif', serif;
@@ -401,6 +402,10 @@ input[type="search"]:focus:not(.browser-default){
     font-weight: 600;
     font-size: 100%;
 }
+
+.name-of-film{
+    font-weight: 700;
+}
 /*------------MODAL------------ */
 #confirm-modal-background,
 #modal-background{
@@ -415,15 +420,15 @@ input[type="search"]:focus:not(.browser-default){
     align-items: center;
     position: fixed;
     z-index: 2;
+    padding-bottom: 5%;
 }
 
 .modal-card{
     width: 60%;
-    max-height: 400px;
     background: #E3E3E3;
     padding: 10px;
     border-radius: 10px;
-    border: 3px solid #182F1A;
+    border: 5px solid #182F1A;
     display: flex;
     position: relative;
 }
@@ -473,13 +478,19 @@ input[type="search"]:focus:not(.browser-default){
 
 #expanded-card-title{
     font-weight: 600;
+    font-size: 200%;
+    font-family: 'Galada', cursive;
 }
+
 #expanded-summary-box{
     padding: 10px 0 20px;
 }
 
 #required-information-box{
     font-weight: 600;
+    padding: 5px 0;
+    border-top: 2px solid #000000;
+    border-bottom: 2px solid #000000;
 }
 
 .inline-info-boxes{

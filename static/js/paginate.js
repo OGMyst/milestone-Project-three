@@ -21,11 +21,9 @@ function displayFilms (films, films_per_page, pageNumber) {
 	}
 };
 
-function SetupPagination (films, films_per_page, current_page) {
+function SetupPagination (films, films_per_page) {
     let page_count = Math.ceil(films.length /films_per_page);
     numberOfPages = page_count;
-
-    
 
 	for (let i = 1; i < page_count + 1; i++) {
 		let pageSelectors = paginationButton(i);
@@ -38,8 +36,10 @@ function paginationButton (pageNumber) {
 	let pageSelector = document.createElement('li');
     let aTag = document.createElement('a');
 
-    if (current_page == pageNumber) pageSelector.classList.add('active');
-    pageSelector.classList.add('waves-effect')
+    if (current_page === pageNumber){
+        pageSelector.classList.add('active');
+    };
+    pageSelector.classList.add('waves-effect')  
     aTag.onclick = function() { 
         jumpToPage(pageNumber);
         };

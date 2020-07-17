@@ -99,7 +99,6 @@ searchBar.addEventListener('keyup', (e) => {
     if(title.toLowerCase().indexOf(term) != -1){
       $(film).removeClass("hidden");
       $(film).addClass("current-films");
-      console.log("still here")
     }else {
       $(film).addClass("hidden");
       $(film).removeClass("current-films");

@@ -16,7 +16,7 @@ function displayFilmInfo(film){
                                     <!--------------------POSTER SIDE---------------------->
                                     <div id="poster-side">
                                         <div id="expanded-poster-box">
-                                            <img src="${film.film_poster}"id="expanded-card-image" class="expanded-card-elements flex-center"/>
+                                            <img src="${film.film_poster}"id="expanded-card-image" class="expanded-card-elements flex-center" alt="Poster Unavailable"/>
                                             <div id="change-wrapper">
                                                 <div class="change-box">
                                                     <div class="change-film maroon-box">

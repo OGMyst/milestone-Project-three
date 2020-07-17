@@ -441,6 +441,12 @@ input[type="search"]:focus:not(.browser-default){
     max-width: 200px;
 }
 
+#expanded-card-image{
+    min-height: 200px;
+    color: #039be5;
+    font-weight: 600;
+}
+
 #change-wrapper{
     padding: 10px 0;
 
@@ -564,6 +570,14 @@ input[type="search"]:focus:not(.browser-default){
 @media only screen and (max-width: 767px){
 #logo{
     margin-left: 0;
+}
+
+.sidenav{
+    background-color: #182f1a;
+}
+
+.sidenav li > a{
+    color: #DCAE0B;
 }
 
 .addmovie-container{

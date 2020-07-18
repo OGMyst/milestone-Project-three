@@ -350,6 +350,10 @@ input[type="search"]:focus:not(.browser-default){
     padding: 40px 0px;
 }
 
+.pagination li a{
+    color: #06061A;
+}
+
 .film-card{
     margin: 0 2.75% 40px;
     display: flex;
@@ -626,6 +630,9 @@ input[type="search"]:focus:not(.browser-default){
     width: 130px;
 }
 
+#date-format{
+    display: none;
+}
 /*------------------------------FILMS.HTML-------------------------------*/
 .film-card{
     width:100%;

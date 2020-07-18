@@ -35,7 +35,7 @@
             </div>
             <div class="input-field col s6">
                 <input id="release_date" type="text" class="validate" name="release_date" value="{{film.release_date}}">
-                <label for="release_date">Release Date <em>(DD/MM/YYYY)</em></label>
+                <label for="release_date">Release Date <span id="date-format">(DD/MM/YYYY)</span></label>
             </div>
             <div class="input-field col s12">
                 <input id="movie_poster_url" type="text" class="validate" name="theatrical_poster_url" value="{{film.theatrical_poster_url}}">
@@ -76,7 +76,7 @@
         <div class="form-styling" id="add-submit">
                 <div class="add-submit-box flex-center">
                     <div id="add-more" class="maroon-box" onclick="showMoreInputs()">
-                        <p id="add-text" class="mellow-yellow">Add More</p>
+                        <p id="add-text" class="mellow-yellow">Extra Info</p>
                     </div>
                 </div>
                 <div class="add-submit-box flex-center">

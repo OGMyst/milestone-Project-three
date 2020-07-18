@@ -79,6 +79,7 @@ function createFilledCell(date, row, row_count, i, endofRow){
     let div = document.createElement("div");
     let pTag = document.createElement("p")
     let cellText = date;
+    pTag.setAttribute("onclick", `viewFilmsByDate({{url_for('date_of_film', date=film.release_date)}})`);
     if(i === (row_count - 1)){
         cell.classList.add("bottom-row-cell")
     }
@@ -117,10 +118,14 @@ function previousyear() {
     showCalendar(month, year);
 }
 
-function insertImagesToCalendar(edit_film, delete_film, film_poster, producer, director, duration, film_name, genre, release_date, screenplay, story, starring, plot_summary, daysInMonth){
+function insertImagesToCalendar(pushInfo, daysInMonth){
+    let filmInfo = pushInfo.split("$");
     let eachOccupiedCell = document.getElementsByClassName("calendar-cell-div");
     let formatedMonth = MONTHS_IN_DATE_FORMAT[month]    
     let allDaysInMonth = [];
+    let release_date = filmInfo[8];
+    let film_name = filmInfo[6];
+    let film_poster = filmInfo[2]
 
     for(i = 1; i <= daysInMonth; i++){
         eachDate = DAYS_IN_DATE_FORMAT[i] + "/" + formatedMonth + "/" + year; 
@@ -134,7 +139,7 @@ function insertImagesToCalendar(edit_film, delete_film, film_poster, producer, d
             let div = eachOccupiedCell[j]; 
             let imageLimit =  $(div).children();
             
-            image.setAttribute("onclick",`viewMoreModal('${edit_film}', '${delete_film}', '${film_poster}', '${producer}', '${director}', '${duration}', '${film_name}', '${genre}', '${release_date}', '${screenplay}', '${story}', '${starring}', "${plot_summary}")`);
+            image.setAttribute("onclick",`viewMoreModal('${filmInfo[0]}', '${filmInfo[1]}', '${filmInfo[2]}', '${filmInfo[3]}', '${filmInfo[4]}', '${filmInfo[5]}', '${filmInfo[6]}', '${filmInfo[7]}', '${filmInfo[8]}', '${filmInfo[9]}', '${filmInfo[10]}', "${filmInfo[11]} , '${filmInfo[12]}'")`);
             image.setAttribute("alt", `${film_name}`)
             image.classList.add("calendar-image", "grow")
             image.src = film_poster;
@@ -153,21 +158,12 @@ function getFilmData(daysInMonth){
     let filmData = document.getElementsByClassName("film-data")
     for(x=0; x < filmData.length; x++){
         let findIndividualInfo = $(filmData[x]).children()
-        let edit_film = findIndividualInfo[0].innerHTML;
-        let delete_film = findIndividualInfo[1].innerHTML;
-        let film_poster = findIndividualInfo[2].innerHTML;
-        let producer = findIndividualInfo[3].innerHTML;
-        let director = findIndividualInfo[4].innerHTML;
-        let duration = findIndividualInfo[5].innerHTML;
-        let film_name = findIndividualInfo[6].innerHTML;
-        let genre = findIndividualInfo[7].innerHTML;
-        let release_date = findIndividualInfo[8].innerHTML;
-        let screenplay = findIndividualInfo[9].innerHTML;
-        let story = findIndividualInfo[10].innerHTML;
-        let starring = findIndividualInfo[11].innerHTML;
-        let plot_summary = findIndividualInfo[12].innerHTML;
-        insertImagesToCalendar(edit_film, delete_film, film_poster, producer, director, duration, film_name, genre, release_date, screenplay, story, starring, plot_summary, daysInMonth)
-        
+        let pushInfo = [];
+
+        for(i=0; i<findIndividualInfo.length; i++){
+            pushInfo += (findIndividualInfo[i].innerHTML  + "$");        
+        }
+        insertImagesToCalendar(pushInfo, daysInMonth)
     }
     
 }

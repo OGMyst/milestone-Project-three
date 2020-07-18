@@ -143,11 +143,14 @@ function insertImagesToCalendar(pushInfo, daysInMonth){
             let image = document.createElement("img"); 
             let div = eachOccupiedCell[j]; 
             let imageLimit =  $(div).children();
+            let datePage = $(eachOccupiedCell[j]).find("a");
             
-            image.setAttribute("onclick",`viewMoreModal('${filmInfo[0]}', '${filmInfo[1]}', '${filmInfo[2]}', '${filmInfo[3]}', '${filmInfo[4]}', '${filmInfo[5]}', '${filmInfo[6]}', '${filmInfo[7]}', '${filmInfo[8]}', '${filmInfo[9]}', '${filmInfo[10]}', "${filmInfo[11]} ")`);
+            
+            image.setAttribute("onclick",`viewMoreModal('${filmInfo[0]}', '${filmInfo[1]}', '${filmInfo[2]}', '${filmInfo[3]}', '${filmInfo[4]}', '${filmInfo[5]}', '${filmInfo[6]}', '${filmInfo[7]}', '${filmInfo[8]}', '${filmInfo[9]}', '${filmInfo[10]}', "${filmInfo[11]}")`);
             image.setAttribute("alt", `${film_name}`)
             image.classList.add("calendar-image", "grow")
             image.src = film_poster
+            datePage[0].href = dateUrl
              
             if(imageLimit.length < 3){
                 div.append(image);

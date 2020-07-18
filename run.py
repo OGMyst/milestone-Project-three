@@ -40,8 +40,12 @@ def insert_film():
 
 @app.route('/date_of_film/<film_date>')
 def date_of_film(film_date):
-    films_by_date = mongo.db.tasks.find({"release_date": (film_date)})
-    return render_template('viewbydate.html', films=films_by_date)
+    new_date = film_date.replace("_", "/")
+    # films_by_date = mongo.db.film_info.find(the_date)
+    return render_template('viewbydate.html',
+                           films=mongo.db.film_info.find(
+                               {"release_date": new_date}),
+                           the_date=new_date)
 
 
 @app.route('/edit_film/<film_id>')

@@ -38,10 +38,10 @@ def insert_film():
     return redirect(url_for('add_movie'))
 
 
-@app.route('/date_of_film/<date>')
-def view_by_date(date):
-    films_by_date = mongo.db.tasks.find({"_id": ObjectId(date)})
-    return render_template('viewbydate.html', films=films_by_date,)
+@app.route('/date_of_film/<film_date>')
+def date_of_film(film_date):
+    films_by_date = mongo.db.tasks.find({"release_date": (film_date)})
+    return render_template('viewbydate.html', films=films_by_date)
 
 
 @app.route('/edit_film/<film_id>')

@@ -77,9 +77,9 @@ function showCalendar(month, year) {
 function createFilledCell(date, row, row_count, i, endofRow){
     let cell = document.createElement("td");
     let div = document.createElement("div");
+    let dateTag = document.createElement("a")
     let pTag = document.createElement("p")
     let cellText = date;
-    pTag.setAttribute("onclick", `viewFilmsByDate({{url_for('date_of_film', date=film.release_date)}})`);
     if(i === (row_count - 1)){
         cell.classList.add("bottom-row-cell")
     }
@@ -87,10 +87,12 @@ function createFilledCell(date, row, row_count, i, endofRow){
     if(endofRow === 0){
         cell.classList.add("end-row-cell")
     }
+
     cell.classList.add("calendar-cell");               
     div.classList.add("calendar-cell-div")
     cell.append(div);
-    div.append(pTag);
+    div.append(dateTag);
+    dateTag.append(pTag)
     pTag.append(cellText);
     pTag.classList.add("date-text");
     row.appendChild(cell);
@@ -126,6 +128,9 @@ function insertImagesToCalendar(pushInfo, daysInMonth){
     let release_date = filmInfo[8];
     let film_name = filmInfo[6];
     let film_poster = filmInfo[2]
+    let replaceReleaseDate = release_date.replaceAll("/", "_")
+    let dateUrl = (`/date_of_film/${replaceReleaseDate}`)
+    
 
     for(i = 1; i <= daysInMonth; i++){
         eachDate = DAYS_IN_DATE_FORMAT[i] + "/" + formatedMonth + "/" + year; 
@@ -139,10 +144,10 @@ function insertImagesToCalendar(pushInfo, daysInMonth){
             let div = eachOccupiedCell[j]; 
             let imageLimit =  $(div).children();
             
-            image.setAttribute("onclick",`viewMoreModal('${filmInfo[0]}', '${filmInfo[1]}', '${filmInfo[2]}', '${filmInfo[3]}', '${filmInfo[4]}', '${filmInfo[5]}', '${filmInfo[6]}', '${filmInfo[7]}', '${filmInfo[8]}', '${filmInfo[9]}', '${filmInfo[10]}', "${filmInfo[11]} , '${filmInfo[12]}'")`);
+            image.setAttribute("onclick",`viewMoreModal('${filmInfo[0]}', '${filmInfo[1]}', '${filmInfo[2]}', '${filmInfo[3]}', '${filmInfo[4]}', '${filmInfo[5]}', '${filmInfo[6]}', '${filmInfo[7]}', '${filmInfo[8]}', '${filmInfo[9]}', '${filmInfo[10]}', "${filmInfo[11]} ")`);
             image.setAttribute("alt", `${film_name}`)
             image.classList.add("calendar-image", "grow")
-            image.src = film_poster;
+            image.src = film_poster
              
             if(imageLimit.length < 3){
                 div.append(image);

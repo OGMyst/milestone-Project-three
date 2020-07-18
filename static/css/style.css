@@ -222,6 +222,12 @@ footer{
     vertical-align: text-top;  
 }
 
+.calendar-cell-div a{
+    font-size: 100%;
+    font-weight: 400;
+    color: #000000;
+}
+
 .bottom-row-cell{
     border-bottom: none;
 }

@@ -131,6 +131,8 @@ This site has been tested by family and friends and no errors have been found.
 
 The javascript has undergone unit testing and passes all tests
 
+
+The following tests have been used to ensure proper site functionality:
 * GTmetrix: To test on website loading times
 * W3C HTML Validator: This validator checks the markup validity of Web documents in HTML.
 * W3C CSS Validator: This validator checks the markup validity of Web documents in CSS.
@@ -138,7 +140,7 @@ The javascript has undergone unit testing and passes all tests
 
 ### **Bugs**
 
-#### **Over Sensitive Click Counter**
+#### **The alt fault**
 
 It was possible to accidentally lower your click counter number by continuosly clicking other cards whilst a 
 non-matching pair were waiting to flip face down again. This was fixed by moving the line of code, which lowered
@@ -173,7 +175,7 @@ thus saving many lines of repeated code. This was noticed quite late into the bu
 of javascript would have to be rewritten so it was decided that it could left since it made no difference in
 functionality in regards the site.
 
-The following tests have been used to ensure proper site functionality:
+
 
 
 

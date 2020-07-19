@@ -251,7 +251,18 @@ footer{
     margin-top: 3px;
     margin-left: 22px;
     width: 53px;
-    border: 3px solid #000000
+    min-height: 75px;
+    border: 3px solid #000000;
+    z-index: 1;
+    vertical-align: text-top;
+    text-align: center;
+    display: inline-block;
+    overflow-wrap: break-word;
+    overflow: hidden;
+    font-size: 80%;
+    color: #DCAE0B;
+    flex-wrap: wrap;
+    background-color: #182F1A;
 }
 
 .grow { 
@@ -452,9 +463,13 @@ input[type="search"]:focus:not(.browser-default){
 }
 
 #expanded-card-image{
-    min-height: 200px;
-    color: #039be5;
+    min-height: 290px;
+    color: #DCAE0B;
     font-weight: 600;
+    font-size: 150%;
+    text-align: center;
+    background-color: #182F1A;
+    border: 2px solid #000000;
 }
 
 #change-wrapper{

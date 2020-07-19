@@ -1,18 +1,18 @@
 document.addEventListener("DOMContentLoaded", function() { 
     daysOfTheWeek();
-    showCalendar(month, year)
+    showCalendar(month, year);
     
 });
 
 const DAYS_IN_DATE_FORMAT = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09",
                              "10", "11", "12", "13", "14", "15", "16", "17", "18", "19",
                              "20", "21", "22", "23", "24", "25", "26", "27", "28", "29",
-                             "30", "31"]
-const MONTHS_IN_DATE_FORMAT = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12",]    
+                             "30", "31"];
+const MONTHS_IN_DATE_FORMAT = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12",]; 
 const MONTHNAMES = ["January", "February", "March", "April",
                   "May", "June", "July", "August", "September",
                   "October", "November", "Decemeber"];
-const DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+const DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 let today = new Date();
 let month = today.getMonth();
 let year = today.getFullYear();
@@ -23,14 +23,14 @@ function calendarMonthAndYear(){
     currentMonth = MONTHNAMES[month];
     document.getElementById("month").innerHTML = "<h1>" + currentMonth + "</h1>";
     document.getElementById("year").innerHTML = "<h4>" + year + "</h4>";   
-};
+}
 
 function daysOfTheWeek(){    
     for(i = 0; i < 7; i++){
         weekDays = DAYS[i];
-        document.getElementById("day-labels").innerHTML += "<div class='week-days flex-center'>" + weekDays + "</div>"
+        document.getElementById("day-labels").innerHTML += "<div class='week-days flex-center'>" + weekDays + "</div>";
     }
-};
+}
 
 function showCalendar(month, year) {
 
@@ -50,11 +50,11 @@ function showCalendar(month, year) {
         row.classList.add("calendar-row");
 
         for (let j = 1; j < 8; j++) {
-            let endofRow = j % 7
+            let endofRow = j % 7;
             if (i === 0 && j < firstDay) {
                 let cell = document.createElement("td");
                 let cellText = document.createTextNode("");
-                cell.classList.add("calendar-cell")
+                cell.classList.add("calendar-cell");
                 cell.appendChild(cellText);
                 row.appendChild(cell);
             }
@@ -77,22 +77,22 @@ function showCalendar(month, year) {
 function createFilledCell(date, row, row_count, i, endofRow){
     let cell = document.createElement("td");
     let div = document.createElement("div");
-    let dateTag = document.createElement("a")
-    let pTag = document.createElement("p")
+    let dateTag = document.createElement("a");
+    let pTag = document.createElement("p");
     let cellText = date;
     if(i === (row_count - 1)){
-        cell.classList.add("bottom-row-cell")
+        cell.classList.add("bottom-row-cell");
     }
 
     if(endofRow === 0){
-        cell.classList.add("end-row-cell")
+        cell.classList.add("end-row-cell");
     }
 
     cell.classList.add("calendar-cell");               
-    div.classList.add("calendar-cell-div")
+    div.classList.add("calendar-cell-div");
     cell.append(div);
     div.append(dateTag);
-    dateTag.append(pTag)
+    dateTag.append(pTag);
     pTag.append(cellText);
     pTag.classList.add("date-text");
     row.appendChild(cell);
@@ -111,25 +111,25 @@ function previousmonth() {
 }
 
 function nextyear() {
-    year =  year + 1  
+    year =  year + 1;  
     showCalendar(month, year);
 }
 
 function previousyear() {
-    year =  year - 1
+    year =  year - 1;
     showCalendar(month, year);
 }
 
 function insertImagesToCalendar(pushInfo, daysInMonth){
     let filmInfo = pushInfo.split("$");
     let eachOccupiedCell = document.getElementsByClassName("calendar-cell-div");
-    let formatedMonth = MONTHS_IN_DATE_FORMAT[month]    
+    let formatedMonth = MONTHS_IN_DATE_FORMAT[month];    
     let allDaysInMonth = [];
     let release_date = filmInfo[8];
     let film_name = filmInfo[6];
-    let film_poster = filmInfo[2]
-    let replaceReleaseDate = release_date.replaceAll("/", "_")
-    let dateUrl = (`/date_of_film/${replaceReleaseDate}`)
+    let film_poster = filmInfo[2];
+    let replaceReleaseDate = release_date.replaceAll("/", "_");
+    let dateUrl = (`/date_of_film/${replaceReleaseDate}`);
     
 
     for(i = 1; i <= daysInMonth; i++){
@@ -147,10 +147,10 @@ function insertImagesToCalendar(pushInfo, daysInMonth){
             
             
             image.setAttribute("onclick",`viewMoreModal('${filmInfo[0]}', '${filmInfo[1]}', '${filmInfo[2]}', '${filmInfo[3]}', '${filmInfo[4]}', '${filmInfo[5]}', '${filmInfo[6]}', '${filmInfo[7]}', '${filmInfo[8]}', '${filmInfo[9]}', '${filmInfo[10]}', "${filmInfo[11]}")`);
-            image.setAttribute("alt", `${film_name}`)
-            image.classList.add("calendar-image", "grow")
-            image.src = film_poster
-            datePage[0].href = dateUrl
+            image.setAttribute("alt", `${film_name}`);
+            image.classList.add("calendar-image", "grow");
+            image.src = film_poster;
+            datePage[0].href = dateUrl;
              
             if(imageLimit.length < 3){
                 div.append(image);

@@ -6,8 +6,8 @@ document.addEventListener("DOMContentLoaded", function() {
 function showMoreInputs(){
     $("#additional-info").toggle("slow");
     $("#notification-box").toggle("slow");
-};
+}
 
 function submitForm() {
   document.forms[0].submit();
-};
+}

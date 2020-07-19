@@ -3,7 +3,7 @@ function viewMoreModal(edit_film, delete_film, film_poster, producer, director, 
     $("#modal-background").css("display", "flex");
      
     displayFilmInfo(film);
-};
+}
 
 function closeModal(){
     $("#modal-background").css("display", "none");
@@ -11,7 +11,7 @@ function closeModal(){
 
 function displayFilmInfo(film){
     let getModalBackground = document.getElementById("modal-background");
-    let pTagandSpanClass = `<p class="extra-info-text"> <span class="big-and-bold">`
+    let pTagandSpanClass = `<p class="extra-info-text"> <span class="big-and-bold">`;
     getModalBackground.innerHTML = `<div class="modal-card">
                                     <!--------------------POSTER SIDE---------------------->
                                     <div id="poster-side">
@@ -70,8 +70,8 @@ function displayFilmInfo(film){
 
                                     </div>
                                     <div id="close-modal" onclick="closeModal()">&times</div>
-                                </div>`
-};
+                                </div>`;
+}
 
 
 function confirmDeleteMessage(deleteFilm, name){
@@ -100,7 +100,7 @@ function confirmDeleteMessage(deleteFilm, name){
                 </div>
             </div>
         </div>`;
-};
+}
 
 function returnToModal(){
     $("#confirm-modal-background").css("display", "none");

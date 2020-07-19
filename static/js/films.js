@@ -5,7 +5,7 @@ let numberOfPages;
 
 document.addEventListener("DOMContentLoaded", function() {   
     displayFilms (filmCards, filmPerPage, current_page);
-    SetupPagination(filmCards, filmPerPage, current_page)
+    SetupPagination(filmCards, filmPerPage, current_page);
     
 });
 
@@ -19,7 +19,7 @@ function displayFilms (films, films_per_page, pageNumber) {
         $(films[i]).addClass("current-films");
         
 	}
-};
+}
 
 function SetupPagination (films, films_per_page) {
     let page_count = Math.ceil(films.length /films_per_page);
@@ -38,12 +38,12 @@ function paginationButton (pageNumber) {
 
     if (current_page === pageNumber){
         pageSelector.classList.add('active');
-    };
-    pageSelector.classList.add('waves-effect')  
+    }
+    pageSelector.classList.add('waves-effect');  
     aTag.onclick = function() { 
         jumpToPage(pageNumber);
         };
-    aTag.innerHTML = pageNumber
+    aTag.innerHTML = pageNumber;
     $(pageSelector).append(aTag);
 
 	return pageSelector;
@@ -62,17 +62,17 @@ function jumpToPage(pageNumber){
 function hideCurrentFilms(currentFilms){
     for(i = 0; i < currentFilms.length; i++){  
         $(currentFilms[i]).addClass("hidden");       
-    };
+    }
 }
 
 function removeCurrentFilmsClass(currentFilms){
     for(i = 0; i < currentFilms.length; i++){  
         $(currentFilms[i]).removeClass("current-films");       
-    };
+    }
 }
 
 function changeActivePage(newPage){
-    let currentPageElement = document.getElementsByClassName("active")
+    let currentPageElement = document.getElementsByClassName("active");
     let parentOfList = document.getElementById("paginate").children;
     
     currentPageElement[0].classList.remove('active');
@@ -80,7 +80,7 @@ function changeActivePage(newPage){
 }
 
 const searchBar = document.forms['search-films'].querySelector('input');
-const allfilms = document.querySelectorAll("#film-container .film-card")
+const allfilms = document.querySelectorAll("#film-container .film-card");
 searchBar.addEventListener('keyup', (e) => {
   const term = e.target.value.toLowerCase();
   
@@ -89,12 +89,12 @@ searchBar.addEventListener('keyup', (e) => {
             $(allfilms[i]).addClass("hidden");
             $(allfilms[i]).removeClass("current-films"); 
             displayFilms (filmCards, filmPerPage, current_page);
-        }return 
+        }return;
     } 
 
   Array.from(allfilms).forEach((film) => {
     const titleObject = $(film).find(".name-of-film");
-    let title = titleObject[0].innerHTML
+    let title = titleObject[0].innerHTML;
 
     if(title.toLowerCase().indexOf(term) != -1){
       $(film).removeClass("hidden");

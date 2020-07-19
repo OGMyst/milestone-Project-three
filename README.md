@@ -75,17 +75,22 @@ would use pop ups to instruct the user. The site behind the pop ups in the mocku
 
 ### **Surface**
 
-The colours for the site were picked with the aim of relaxing the user and creating a low intensity enviroment. The 
-off-white background is less sharp than pure white. The sky blue is very subtle and doesn't jump out of the page.
+The color themes were based off the well known books and film series The Lord of the rings. The colors chosen were green, gold, blue, and maroon.
+The link to the lord of the rings comes from the title of the website which is a reference to a popular film review site rotten tomatoes but also 
+to a line from the lord of the rings films. The colors are taken primarily from the clothes worn by Theoden and his kingdom. The green is also the
+color of the cloaks worn by the fellowship of the ring. The colors blend well together but are distinctive enough so that everything is clear. 
 
 ### **Technologies**
 
 - HTML - To create a basic site
 - CSS - To create a nice style and to stand-out
 - JavaScript - The engine to create user interaction
-- FontAwesome - For Card suit icons
-- Animate.css - To make interesting transtitions 
-- Figma - To create a wireframe
+- FontAwesome - For footer icons
+- MaterializeCSS - To help create elements such as the forms, sidebar and pagination 
+- Google Fonts - To create an interesting variety of fonts
+- Figma - To create wireframes
+- Python - To connect the database to the front-end
+- MongoDB - The Database for the website
 
 ### **JavaScript Libraries**
 
@@ -94,39 +99,42 @@ off-white background is less sharp than pure white. The sky blue is very subtle 
 
 ## Features
 
-The landing page features an embedded video which is displayed when the tutorial button is clicked. The tutorial
-is supplemented by a info button on the game which summarises the rules should the player ever need to quickly
-check them. A shuffle button on the game page allows users to start a new round should they realise they are 
-going to lose their current one. The game features CSS animations which transition from the board to the results 
-screen upon winning or losing. 
+- This website features a calendar which shows upcoming films added by users. The images grow on hover, shows a modal to display
+more information about the film. In case of more than two films being released on the same date the user can click on the the 
+date and a page with all films for that date. 
+
+- The menu collapses into a sidebar on mobile 
+
+- The explore page for films features pagination and a searchbar
+
+- The Navbar takes the user to all pages including the calendar but not the individual release date pages. 
+
+- Users can add, edit and delete information for films
 
 ### Features Left to Impliment
 
-There is room for harder diffiulties, I had an idea for a card which would change positions of all unflipped 
-cards. This card could cause some frustration as the player loses a lot of progress and lose through no 
-fault of the player. Another feature would be needed to mitigate this frustration and allow the player to 
-make tactical decisions. A reveal skill with a limited number of uses could help players see the next card 
-at a critical point. The footer currently hold links that only take the user to the respective site's main 
-page and not a personal page. As I build up a folio of sites to display and a social media presence, these
-links will get linked to those pages instead.
+- Login authentication. This will allow users to have their own personal calendar as well as a community one.
 
-
+- Film reviews. With login authentication users could create reviews which only they could edit and delete.
 
 ## Testing
 
-All internal links work. The tutorial video loads properly
+All internal links work. 
 
 The site is responsive over different screen sizes with custom layouts where appropriate. The site has been tested on 
 Mozilla Firefox, Google Chrome and safari and works as intended.The site was tested on an android phone, Iphone, 
-tablet, Ipad, laptop, Macbook and desktop. All site functions work as intended.
+tablet, Ipad, laptop, and desktop. All site functions work as intended.
 
 The console displays no errors during site testing
 
-The shuffle() function in the game.js file has undergone unit testing and passes all tests. The unit testing was added
-last in the project so does not follow good coding practice. 
+This site has been tested by family and friends and no errors have been found. 
 
-The site was submitted for peer review at Code Institute and was reviewed by two people, a fellow student and alumni. 
-Issues they found have been fixed and suggestions have been addressed. 
+The javascript has undergone unit testing and passes all tests
+
+* GTmetrix: To test on website loading times
+* W3C HTML Validator: This validator checks the markup validity of Web documents in HTML.
+* W3C CSS Validator: This validator checks the markup validity of Web documents in CSS.
+* JSHint: A static code analysis tool for JavaScript.
 
 ### **Bugs**
 
@@ -167,10 +175,7 @@ functionality in regards the site.
 
 The following tests have been used to ensure proper site functionality:
 
-* GTmetrix: To test on website loading times
-* W3C HTML Validator: This validator checks the markup validity of Web documents in HTML.
-* W3C CSS Validator: This validator checks the markup validity of Web documents in CSS.
-* JSHint: A static code analysis tool for JavaScript.
+
 
 
 ## **Deployment**

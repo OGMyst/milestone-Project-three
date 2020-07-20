@@ -1,8 +1,19 @@
+$( document ).ready(function() {
+    console.log( "ready!" );
+    $.ajax({
+        url: '/api/get-films',
+        success: function(data) {
+            console.log(data);
+        }
+    });
+});
+
 document.addEventListener("DOMContentLoaded", function() { 
     daysOfTheWeek();
-    showCalendar(month, year);
-    
+    showCalendar(month, year);  
 });
+
+
 
 const DAYS_IN_DATE_FORMAT = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09",
                              "10", "11", "12", "13", "14", "15", "16", "17", "18", "19",
@@ -176,3 +187,12 @@ function getFilmData(daysInMonth){
     }
     
 }
+
+function loadData() {
+    console.log("hello")
+    $.ajax({
+      url: `/api/get-films`
+    }).done(function(response) {
+      console.log(response);
+    });
+  }

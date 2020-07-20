@@ -2,6 +2,8 @@ import os
 from flask import Flask, render_template, url_for, redirect, request
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+import json
+from bson import json_util
 
 if os.path.exists("env.py"):
     import env
@@ -19,6 +21,12 @@ mongo = PyMongo(app)
 @app.route('/')
 def home():
     return render_template("index.html", film=mongo.db.film_info.find())
+
+
+@app.route('/api/get-films')
+def get_films():
+    films = mongo.db.film_info.find()
+    return json.dumps(films, default=json_util.default)
 
 
 @app.route('/add_movie')

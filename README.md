@@ -56,9 +56,9 @@ The calendar is the focus of the website and other pages are additions to enable
 
 ### **Structure**
 
-The site is made up of five pages. The landing page contains the calendar and a nav bar. From the calendar the user can open 
+The site is made up of five pages. The landing page contains the calendar. From the calendar the user can open 
 a film modal to give extra info about a specific film. This modal is also accesible from the explore page. The explore page 
-is for users wanting to search for specific films that they may not know the release date for or simply prefer this version on navigation.
+is for users wanting to search for specific films that they may not know the release date for or simply prefer this version of navigation.
 There is a page to display films for days where there are more than two films released that day. In this case the film posters would
 distort the calendar cells so another page is necessary to make these films accesible without changing the format of the calendar.
 
@@ -119,17 +119,17 @@ date and a page with all films for that date.
 
 ## Testing
 
-All internal links work. 
+- All internal links work. 
 
-The site is responsive over different screen sizes with custom layouts where appropriate. The site has been tested on 
+- The site is responsive over different screen sizes with custom layouts where appropriate. The site has been tested on 
 Mozilla Firefox, Google Chrome and safari and works as intended.The site was tested on an android phone, Iphone, 
 tablet, Ipad, laptop, and desktop. All site functions work as intended.
 
-The console displays no errors during site testing
+- The console displays no errors during site testing
 
-This site has been tested by family and friends and no errors have been found. 
+- This site has been tested by family and friends and no errors have been found. 
 
-The javascript has undergone unit testing and passes all tests
+- The javascript has undergone unit testing and passes all tests
 
 
 The following tests have been used to ensure proper site functionality:
@@ -142,42 +142,34 @@ The following tests have been used to ensure proper site functionality:
 
 #### **The alt fault**
 
-It was possible to accidentally lower your click counter number by continuosly clicking other cards whilst a 
-non-matching pair were waiting to flip face down again. This was fixed by moving the line of code, which lowered
-the click counter number by 1, to the point where the rest of the board was locked making the cards unflippable.
-There is still a issue where a player can click on a single card, even whilst flipped, and it will lower the 
-click counter.
+In cases where a film poster wasn't avaiable the alt text was not being restricted to the width of 53px. On
+days with two films present, the second poster was being pushed onto a new line and distorting the calendar layout.
+I tried fixing this by nesting the image inside a div with display flex but this created two divs in the case of 
+two films and the second would get pushed onto a new row. I could have fixed this by changing the logic two put
+all films inside their own singular div however I decided it was easier to change the image display property to 
+inline-block. This fixed the issue. 
 
-#### **Layers**
+#### **Modal**
 
-Initially I tried to place the cards using a flex box but this became difficult to impliment very quickly. 
-I discovered CSS grid which works much better and has auto-spacing between each box saving me some work. 
+I initially designed for the modal to be only accesible from the films page. As the site developed it became clear
+that the modal should also be accesible from the calendar as well. This took a lot changes of code since the 
+modal framework was in the HTML file and the javascript was tailor made to how that framework which wouldn't work in
+the index.html file. I changed it so that the javascript file constructed the entire modal, incidentally making the 
+method of how the data provided by the database was collected, and could be attached to any file which had the modal-background
+id. 
 
-#### **Losing on Zero**
+#### **Paginate**
 
-There was an issue where even if the click counter reached zero the player still wouldn't lose. This was Initially
-fixed by changing the if statement from "===" to "==" and the problem resolved. However my mentor explained this 
-was not a fail safe solution as it left room for the value being checked against the number zero could still pass
-even though it was not the value I was looking for. He advised to add parseInt() around each argument and revert 
-back to using "===" to ensure the exact value was passing the condition.
-
-#### **Video Playback
-
-There is an issue in connecting to Youtube to the site. The error X-Frames-options appears and after reading about 
-X-Frames it seemed the best solution was to host the tutorial locally rather than through Youtube. Although it is
-usually bad practice to host large files in this way, in this case it doesn't have a noticeable effect on load time. 
-Even with the video GT Matrix shows the site loads in 0.6s and has a high test percantage. 
-
-#### **Excessive Code**
-
-It was noted that the HTML code used to form the cards in game.html could have been generated by JavaScript
-thus saving many lines of repeated code. This was noticed quite late into the build which meant a large section
-of javascript would have to be rewritten so it was decided that it could left since it made no difference in
-functionality in regards the site.
+The arrows for the pagination was going up by two on every click and there was an issue that I couldn't disable 
+the onclick function and fix the issue with the pages going up two. This issue took so long in trying to resolve
+that I decided to remove the arrows and have the numbers for pagination as I didn't feel the arrows were necessary. 
 
 
+#### **Growing but not covering**
 
-
+The film posters being displayed were given a class to make them grow on hover. However the dates from other cells 
+were still displaying even though the date in the cell of the poster was not. This was fixed by giving the image a 
+z-index = 1. 
 
 
 ## **Deployment**
@@ -198,7 +190,7 @@ other available browsers. When executed the main screen will be shown and the op
 
 ### **Content**
 
-All content on this site were written by me.
+All content on this site was written by me.
 
 ### **Media**
 
@@ -206,8 +198,12 @@ All images were taken from [commons.wikimedia.org](commons.wikimedia.org)
 
 ## **Acknowledgements**
 
-The flipCard() code was taken from [https://github.com/code-sketch/memory-game](https://github.com/code-sketch/memory-game)
+Code for building the calendar was taken from [here](https://github.com/niinpatel/calendarHTML-Javascript)
 
-Code for the ripple effect was taken from [https://medium.com/@leonardo.monteiro.fernandes/css-techniques-for-material-ripple-effect-3f0ece3062a0](https://medium.com/@leonardo.monteiro.fernandes/css-techniques-for-material-ripple-effect-3f0ece3062a0)
+Inspiration for making the modal came from [here](https://www.youtube.com/watch?v=ptI8g-05VM0)
 
-Inspiration for the project came from [https://github.com/ProjectsByJackHe/Sudoku-Solver](https://github.com/ProjectsByJackHe/Sudoku-Solver)
+Code to make the posters grow on hover came from [here](https://travis.media/how-to-make-an-item-grow-on-hover-with-css/)
+
+Code to help make the pagination came from [here](https://github.com/TylerPottsDev/vanillajs-pagination)
+
+Code to make the search bar functionality came from  [here](https://www.youtube.com/watch?v=3NG8zy0ywIk)

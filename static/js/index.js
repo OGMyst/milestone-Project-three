@@ -27,12 +27,14 @@ let year = today.getFullYear();
 let weekDays;
 let date = 1;
 
+//Adds month and year to the header of the calendar. Used for calendar navigation
 function calendarMonthAndYear(){ 
     currentMonth = MONTHNAMES[month];
     document.getElementById("month").innerHTML = "<h1>" + currentMonth + "</h1>";
     document.getElementById("year").innerHTML = "<h4>" + year + "</h4>";   
 }
 
+//Creates headers for each day of the week
 function daysOfTheWeek(){    
     for(i = 0; i < 7; i++){
         weekDays = DAYS[i];
@@ -51,14 +53,19 @@ function showCalendar(month, year, films) {
      
     // clearing all previous cells
     calendarTable.innerHTML = "";
-    // creating all cells
     
+    //Creates all rows
     for (let i = 0; i < row_count; i++) {
         let row = document.createElement("tr");
         row.classList.add("calendar-row");
-
+        /*
+        Creates an empty cell for each day before the day of the week on which the first day of the month falls.
+        At the end of the function the date increments up, once the date exceeds the days in the month break is used to get out of the loop.
+        Once a row is populated with 7 cells it is added to the calendar
+        Last step is to add the posters and data to the calendar.
+        */
         for (let j = 1; j < 8; j++) {
-            let endofRow = j % 7;
+            let endofRow = j % 7; // This is used to create give the cell at the end of  
             if (i === 0 && j < firstDay) {
                 let cell = document.createElement("td");
                 let cellText = document.createTextNode("");
@@ -76,12 +83,17 @@ function showCalendar(month, year, films) {
             }
             
         }
-        calendarTable.appendChild(row); // appending each row into calendar body.
+        calendarTable.appendChild(row);
     }
     insertImagesToCalendar(films, daysInMonth, month);
     date = 1;
 }
 
+/*
+This function adds the required elements to cells. 
+The separate classes are to make sure that cells that lie at the end of a row or on the bottom row don't have a border left/bottom respectively.
+This is to ensure that the borders of the cells don't add to the border of the whole calendar. 
+*/
 function createFilledCell(date, row, row_count, i, endofRow){
     let calendarCell = document.createElement("td");
     let calendarCellDiv = document.createElement("div");
@@ -152,15 +164,23 @@ function previousyear() {
     });
 }
 
+/*
+This function takes data from the films variable and adds them to the appropriate day of the month.
+In case of more than 2 films released on a single day only the first 2 posters will be shown.
+A link is provided to take the user to a page to show all films release on a given day.
+var x - goes through each film in films
+var j - to check each film release date against each date in the month
+onclick has to have all arguments added manually because of the way MongoDB handles objectId
+*/
 function insertImagesToCalendar(films, daysInMonth, month){
     for(x = 0; x < films.length; x++){
         let filmsReleaseDate = films[x].release_date;
-        let filmReleaseMonth = filmsReleaseDate.slice(3,5).replace("0","");
-        if((filmReleaseMonth-1) === month){
+        let filmReleaseMonth = parseInt(filmsReleaseDate.slice(3,5)-1); // -1 is to match "month" variable format 
+        if((filmReleaseMonth) === month){
             let eachOccupiedCell = document.getElementsByClassName("calendar-cell-div");
             let formatedMonth = MONTHS_IN_DATE_FORMAT[month];    
             let allDaysInMonth = [];
-            let formatDate = films[x].release_date.replaceAll("/", "_")
+            let formatDate = films[x].release_date.replaceAll("/", "_") // To put it into a usable URL format 
             let dateUrl = (`/date_of_film/${formatDate}`);
 
             for(i = 1; i <= daysInMonth; i++){
@@ -173,7 +193,6 @@ function insertImagesToCalendar(films, daysInMonth, month){
                     let calendarCellDiv = eachOccupiedCell[j]; 
                     let imageLimit =  $(calendarCellDiv).children();
                     let datePage = $(eachOccupiedCell[j]).find("a");
-                        
                         
                     calendarCellImage.setAttribute("onclick",`viewMoreModal('/edit_film/${films[x]._id}', '/delete_film/${films[x]._id}', '${films[x].theatrical_poster_url}', '${films[x].producer}', '${films[x].director}', '${films[x].duration}', '${films[x].film_name}', '${films[x].genre}', '${films[x].release_date}', '${films[x].screenplay}', '${films[x].story}', '${films[x].starring}', "${films[x].plot_summary}")`);
                     calendarCellImage.setAttribute("alt", `${films[x].film_name}`);

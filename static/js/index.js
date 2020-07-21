@@ -1,19 +1,16 @@
-$( document ).ready(function() {
-    console.log( "ready!" );
+let films = [];
+
+document.addEventListener("DOMContentLoaded", function() { 
     $.ajax({
         url: '/api/get-films',
         success: function(data) {
-            console.log(data);
+            films = JSON.parse(data)
+            daysOfTheWeek();
+            showCalendar(month, year, films);  
         }
     });
+    
 });
-
-document.addEventListener("DOMContentLoaded", function() { 
-    daysOfTheWeek();
-    showCalendar(month, year);  
-});
-
-
 
 const DAYS_IN_DATE_FORMAT = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09",
                              "10", "11", "12", "13", "14", "15", "16", "17", "18", "19",
@@ -43,17 +40,17 @@ function daysOfTheWeek(){
     }
 }
 
-function showCalendar(month, year) {
+function showCalendar(month, year, films) {
 
     calendarMonthAndYear();
     let numberOfDaysInWeek = 7;
     let firstDay = (new Date(year, month)).getDay();
     let daysInMonth = 32 - new Date(year, month, 32).getDate();
     let row_count = Math.ceil((daysInMonth+firstDay) /numberOfDaysInWeek);
-    let tbl = document.getElementById("calendar-days");
+    let calendarTable = document.getElementById("calendar-days");
      
     // clearing all previous cells
-    tbl.innerHTML = "";
+    calendarTable.innerHTML = "";
     // creating all cells
     
     for (let i = 0; i < row_count; i++) {
@@ -79,9 +76,9 @@ function showCalendar(month, year) {
             }
             
         }
-        tbl.appendChild(row); // appending each row into calendar body.
+        calendarTable.appendChild(row); // appending each row into calendar body.
     }
-    getFilmData(daysInMonth);
+    insertImagesToCalendar(films, daysInMonth, month);
     date = 1;
 }
 
@@ -112,87 +109,86 @@ function createFilledCell(date, row, row_count, i, endofRow){
 function nextmonth() {
     year = (month === 11) ? year + 1 : year;
     month = (month + 1) % 12;
-    showCalendar(month, year);
+    $.ajax({
+        url: '/api/get-films',
+        success: function(data) {
+            films = JSON.parse(data)
+        showCalendar(month, year);
+        }
+    });
 }
 
 function previousmonth() {
     year = (month === 0) ? year - 1 : year;
     month = (month === 0) ? 11 : month - 1;
-    showCalendar(month, year);
+    $.ajax({
+        url: '/api/get-films',
+        success: function(data) {
+            films = JSON.parse(data)
+        showCalendar(month, year);
+        }
+    });
 }
 
 function nextyear() {
     year =  year + 1;  
-    showCalendar(month, year);
+    $.ajax({
+        url: '/api/get-films',
+        success: function(data) {
+            films = JSON.parse(data)
+        showCalendar(month, year);
+        }
+    });
 }
 
 function previousyear() {
     year =  year - 1;
-    showCalendar(month, year);
-}
-
-function insertImagesToCalendar(pushInfo, daysInMonth){
-    let filmInfo = pushInfo.split("$");
-    let eachOccupiedCell = document.getElementsByClassName("calendar-cell-div");
-    let formatedMonth = MONTHS_IN_DATE_FORMAT[month];    
-    let allDaysInMonth = [];
-    let release_date = filmInfo[8];
-    let film_name = filmInfo[6];
-    let film_poster = filmInfo[2];
-    let replaceReleaseDate = release_date.replaceAll("/", "_");
-    let dateUrl = (`/date_of_film/${replaceReleaseDate}`);
-    
-
-    for(i = 1; i <= daysInMonth; i++){
-        eachDate = DAYS_IN_DATE_FORMAT[i] + "/" + formatedMonth + "/" + year; 
-        allDaysInMonth.push(eachDate);
-    }
-
-    for(j = 1; j <= allDaysInMonth.length; j++){
-            
-        if(release_date === allDaysInMonth[j]){ 
-            let image = document.createElement("img"); 
-            let div = eachOccupiedCell[j]; 
-            let imageLimit =  $(div).children();
-            let datePage = $(eachOccupiedCell[j]).find("a");
-            
-            
-            image.setAttribute("onclick",`viewMoreModal('${filmInfo[0]}', '${filmInfo[1]}', '${filmInfo[2]}', '${filmInfo[3]}', '${filmInfo[4]}', '${filmInfo[5]}', '${filmInfo[6]}', '${filmInfo[7]}', '${filmInfo[8]}', '${filmInfo[9]}', '${filmInfo[10]}', '${filmInfo[11]}', "${filmInfo[12]}")`);
-            image.setAttribute("alt", `${film_name}`);
-            image.classList.add("calendar-image", "grow");
-            image.src = film_poster;
-            datePage[0].href = dateUrl;
-            
-
-            if(imageLimit.length < 3){
-                div.append(image);
-            }else{
-                image.classList.add("hidden");
-                div.append(image); 
-            }            
-        } 
-    }
-}
-
-function getFilmData(daysInMonth){
-    let filmData = document.getElementsByClassName("film-data")
-    for(x=0; x < filmData.length; x++){
-        let findIndividualInfo = $(filmData[x]).children()
-        let pushInfo = [];
-
-        for(i=0; i<findIndividualInfo.length; i++){
-            pushInfo += (findIndividualInfo[i].innerHTML  + "$");        
-        }
-        insertImagesToCalendar(pushInfo, daysInMonth)
-    }
-    
-}
-
-function loadData() {
-    console.log("hello")
     $.ajax({
-      url: `/api/get-films`
-    }).done(function(response) {
-      console.log(response);
+        url: '/api/get-films',
+        success: function(data) {
+            films = JSON.parse(data)
+        showCalendar(month, year);
+        }
     });
-  }
+}
+
+function insertImagesToCalendar(films, daysInMonth, month){
+    for(x = 0; x < films.length; x++){
+        let filmsReleaseDate = films[x].release_date;
+        let filmReleaseMonth = filmsReleaseDate.slice(3,5).replace("0","");
+        if((filmReleaseMonth-1) === month){
+            let eachOccupiedCell = document.getElementsByClassName("calendar-cell-div");
+            let formatedMonth = MONTHS_IN_DATE_FORMAT[month];    
+            let allDaysInMonth = [];
+            let dateUrl = (`/date_of_film/${films[x].release_date}`);
+
+            for(i = 1; i <= daysInMonth; i++){
+                eachDate = DAYS_IN_DATE_FORMAT[i] + "/" + formatedMonth + "/" + year; 
+                allDaysInMonth.push(eachDate);
+            }
+            for(j = 1; j <= allDaysInMonth.length; j++){
+                if(films[x].release_date === allDaysInMonth[j]){ 
+                    let image = document.createElement("img"); 
+                    let div = eachOccupiedCell[j]; 
+                    let imageLimit =  $(div).children();
+                    let datePage = $(eachOccupiedCell[j]).find("a");
+                        
+                        
+                    image.setAttribute("onclick",`viewMoreModal('/edit_film/${films[x]._id}', '/delete_film/${films[x]._id}', '${films[x].theatrical_poster_url}', '${films[x].producer}', '${films[x].director}', '${films[x].duration}', '${films[x].film_name}', '${films[x].genre}', '${films[x].release_date}', '${films[x].screenplay}', '${films[x].story}', '${films[x].starring}', "${films[x].plot_summary}")`);
+                    image.setAttribute("alt", `${films[x].film_name}`);
+                    image.classList.add("calendar-image", "grow");
+                    image.src = films[x].theatrical_poster_url;
+                    datePage[0].href = dateUrl;
+                        
+
+                    if(imageLimit.length < 3){
+                        div.append(image);
+                    }else{
+                        image.classList.add("hidden");
+                        div.append(image); 
+                    }            
+                } 
+            }
+        }
+    }
+}

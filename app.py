@@ -25,7 +25,7 @@ def home():
 
 @app.route('/api/get-films')
 def get_films():
-    films = mongo.db.film_info.find()
+    films = list(mongo.db.film_info.find())
     return json.dumps(films, default=json_util.default)
 
 

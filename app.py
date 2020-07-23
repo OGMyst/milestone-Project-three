@@ -65,7 +65,6 @@ def search(page_number):
                            film_count=number_of_films,
                            page_limit=page_count + 1,
                            current_page=int(page_number))
-# json.dumps(query, default=json_util.default)
 
 
 @app.route('/insert_film', methods=['POST'])

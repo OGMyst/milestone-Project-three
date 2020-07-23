@@ -1,0 +1,40 @@
+{% extends 'base.html'%}{% block content %} 
+    <div class="header">
+        <h1 class="mellow-yellow">{{the_date}}</h1>
+    </div>
+    <div id="film-container" class="flex-center">
+        {% for film in films%}
+        <div class="film-card ">
+            <div class="poster-box">
+                <a href="">
+                    <img class="film-poster" src="{{film.theatrical_poster_url}}" alt="Poster Unavailable"/>
+                </a>
+            </div>
+            <div class="film-info">
+                <p class="name-of-film">{{film.film_name}}</p>
+                <p class="genre-of-film">{{film.genre}}</p>
+                <p class="duration-of-film ">{{film.duration}} mins</p>
+                <p class="date-of-film ">{{film.release_date}}</p> 
+                <p class="plot-summary hidden">{{film.plot_summary}}</p> 
+                <p class="director hidden">{{film.director}}</p>
+                <p class="producer hidden">{{film.producer}}</p>
+                <p class="screenplay hidden">{{film.screenplay}}</p>
+                <p class="story hidden">{{film.story}}</p>
+                <p class="starring hidden">{{film.starring}}</p>
+                <div class="view-more-box">
+                    <div class="view-more maroon-box" onclick="viewMoreModal(`{{url_for('edit_film', film_id=film._id)}}`, `{{url_for('delete_film',film_id=film._id)}}`, '{{film.theatrical_poster_url}}', '{{film.producer}}', '{{film.director}}', '{{film.duration}}', '{{film.film_name}}', '{{film.genre}}', '{{film.release_date}}', '{{film.screenplay}}', '{{film.story}}', '{{film.starring}}', `{{film.plot_summary}}`)">
+                        <h1 class="view-more-text mellow-yellow">View More</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        <!------------------------------------------------------- MODAL ---------------------------------------------->
+        <div id="modal-background">
+        </div>
+        <!-- CONFIRM DELETE MODAL -->
+        <div id="confirm-modal-background">
+        </div>
+    </div>
+    <script src="{{url_for('static', filename='js/modal.js')}}"></script>
+{% endblock %}

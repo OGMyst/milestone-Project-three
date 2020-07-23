@@ -20,7 +20,7 @@
     <!------------------------------------------- SEARCH BAR ----------------------------------------->
     <nav id="searching-nav">
         <div class="nav-wrapper" id="searching-wrapper">
-            <form id="search-films"  action="{{ url_for('search', page_number=1) }}" method="POST">
+            <form id="search-films"  action="{{ url_for('search') }}" method="POST">
                 <div class="input-field">
                     <input id="search" type="search" name="search" required>
                     <label class="label-icon" for="search"><i class="material-icons">search</i></label>

@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css"/>
+    <!-- <script src="{{url_for('static', filename='libraries/jquery-3.5.0.js')}}"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script> 
 </head>
 <body>
     <!-------------------------------- NAVBAR ------------------------------>
@@ -17,7 +19,7 @@
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons mellow-yellow">menu</i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="{{url_for('home')}}" class="nav-text mellow-yellow">Home</a></li>
-                <li><a href="{{url_for('films')}}" class="nav-text mellow-yellow">Explore</a></li>
+                <li><a href="{{url_for('films', page_number=1)}}" class="nav-text mellow-yellow">Explore</a></li>
                 <li><a href="{{url_for('add_movie')}}" class="nav-text mellow-yellow">Add Movie</a></li>       
                 <li><a href="{{url_for('home')}}#top-of-calender" class="nav-text mellow-yellow">Calendar</a></li>
             </ul>
@@ -27,7 +29,7 @@
 
     <ul class="sidenav" id="mobile-demo">
         <li><a href="{{url_for('home')}}" class="nav-text mellow-yellow">Home</a></li>
-        <li><a href="{{url_for('films')}}" class="nav-text mellow-yellow">Explore</a></li>
+        <li><a href="{{url_for('films', page_number=page_number)}}" class="nav-text mellow-yellow">Explore</a></li>
         <li><a href="{{url_for('add_movie')}}" class="nav-text mellow-yellow">Add Movie</a></li>       
         <li><a href="{{url_for('home')}}#top-of-calender" class="nav-text mellow-yellow">Calendar</a></li>
     </ul>
@@ -48,8 +50,6 @@
         </div>
     </footer>
     <script src="https://kit.fontawesome.com/318689fbdb.js"></script>
-    <script src="{{url_for('static', filename='libraries/jquery-3.5.0.js')}}"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
     $(document).ready(function(){

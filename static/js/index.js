@@ -86,7 +86,7 @@ function showCalendar(month, year, films) {
         calendarTable.appendChild(row);
     }
     insertImagesToCalendar(films, daysInMonth, month);
-    date = 1;
+    date = 1; //Reset to original value so logic will work when next called
 }
 
 /*
@@ -116,6 +116,55 @@ function createFilledCell(date, row, row_count, i, endofRow){
     cellTextTag.append(cellText);
     cellTextTag.classList.add("date-text");
     row.appendChild(calendarCell);
+}
+
+/*
+This function takes data from the films variable and adds them to the appropriate day of the month.
+In case of more than 2 films released on a single day only the first 2 posters will be shown.
+A link is provided to take the user to a page to show all films release on a given day.
+var x - goes through each film in films
+var j - to check each film release date against each date in the month
+onclick has to have all arguments added manually because of the way MongoDB handles objectId
+*/
+function insertImagesToCalendar(films, daysInMonth, month){
+    for(x = 0; x < films.length; x++){
+        let filmsReleaseDate = films[x].release_date;
+        let filmReleaseMonth = parseInt(filmsReleaseDate.slice(3,5)-1); // -1 is to match "month" variable format 
+        if((filmReleaseMonth) === month){
+            let eachOccupiedCell = document.getElementsByClassName("calendar-cell-div");
+            let formatedMonth = MONTHS_IN_DATE_FORMAT[month];    
+            let allDaysInMonth = [];
+            let formatDate = films[x].release_date.replaceAll("/", "_") // To put it into a usable URL format 
+            let dateUrl = (`/date_of_film/${formatDate}`); //Link for days with 2+ films
+
+            for(i = 1; i <= daysInMonth; i++){
+                eachDate = DAYS_IN_DATE_FORMAT[i] + "/" + formatedMonth + "/" + year; 
+                allDaysInMonth.push(eachDate);
+            }
+            for(j = 1; j <= allDaysInMonth.length; j++){
+                if(films[x].release_date === allDaysInMonth[j]){ 
+                    let calendarCellImage = document.createElement("img"); 
+                    let calendarCellDiv = eachOccupiedCell[j]; 
+                    let imageLimit =  $(calendarCellDiv).children();
+                    let datePage = $(eachOccupiedCell[j]).find("a");
+                        
+                    calendarCellImage.setAttribute("onclick",`viewMoreModal('/edit_film/${films[x]._id}', '/delete_film/${films[x]._id}', '${films[x].theatrical_poster_url}', '${films[x].producer}', '${films[x].director}', '${films[x].duration}', '${films[x].film_name}', '${films[x].genre}', '${films[x].release_date}', '${films[x].screenplay}', '${films[x].story}', '${films[x].starring}', "${films[x].plot_summary}")`);
+                    calendarCellImage.setAttribute("alt", `${films[x].film_name}`);
+                    calendarCellImage.classList.add("calendar-image", "grow");
+                    calendarCellImage.src = films[x].theatrical_poster_url;
+                    datePage[0].href = dateUrl;
+                        
+
+                    if(imageLimit.length < 3){
+                        calendarCellDiv.append(calendarCellImage);
+                    }else{
+                        calendarCellImage.classList.add("hidden"); //On days where 2+ films are released, excess films are hidden
+                        calendarCellDiv.append(calendarCellImage); 
+                    }            
+                } 
+            }
+        }
+    }
 }
 
 function nextmonth() {
@@ -162,53 +211,4 @@ function previousyear() {
         showCalendar(month, year);
         }
     });
-}
-
-/*
-This function takes data from the films variable and adds them to the appropriate day of the month.
-In case of more than 2 films released on a single day only the first 2 posters will be shown.
-A link is provided to take the user to a page to show all films release on a given day.
-var x - goes through each film in films
-var j - to check each film release date against each date in the month
-onclick has to have all arguments added manually because of the way MongoDB handles objectId
-*/
-function insertImagesToCalendar(films, daysInMonth, month){
-    for(x = 0; x < films.length; x++){
-        let filmsReleaseDate = films[x].release_date;
-        let filmReleaseMonth = parseInt(filmsReleaseDate.slice(3,5)-1); // -1 is to match "month" variable format 
-        if((filmReleaseMonth) === month){
-            let eachOccupiedCell = document.getElementsByClassName("calendar-cell-div");
-            let formatedMonth = MONTHS_IN_DATE_FORMAT[month];    
-            let allDaysInMonth = [];
-            let formatDate = films[x].release_date.replaceAll("/", "_") // To put it into a usable URL format 
-            let dateUrl = (`/date_of_film/${formatDate}`);
-
-            for(i = 1; i <= daysInMonth; i++){
-                eachDate = DAYS_IN_DATE_FORMAT[i] + "/" + formatedMonth + "/" + year; 
-                allDaysInMonth.push(eachDate);
-            }
-            for(j = 1; j <= allDaysInMonth.length; j++){
-                if(films[x].release_date === allDaysInMonth[j]){ 
-                    let calendarCellImage = document.createElement("img"); 
-                    let calendarCellDiv = eachOccupiedCell[j]; 
-                    let imageLimit =  $(calendarCellDiv).children();
-                    let datePage = $(eachOccupiedCell[j]).find("a");
-                        
-                    calendarCellImage.setAttribute("onclick",`viewMoreModal('/edit_film/${films[x]._id}', '/delete_film/${films[x]._id}', '${films[x].theatrical_poster_url}', '${films[x].producer}', '${films[x].director}', '${films[x].duration}', '${films[x].film_name}', '${films[x].genre}', '${films[x].release_date}', '${films[x].screenplay}', '${films[x].story}', '${films[x].starring}', "${films[x].plot_summary}")`);
-                    calendarCellImage.setAttribute("alt", `${films[x].film_name}`);
-                    calendarCellImage.classList.add("calendar-image", "grow");
-                    calendarCellImage.src = films[x].theatrical_poster_url;
-                    datePage[0].href = dateUrl;
-                        
-
-                    if(imageLimit.length < 3){
-                        calendarCellDiv.append(calendarCellImage);
-                    }else{
-                        calendarCellImage.classList.add("hidden");
-                        calendarCellDiv.append(calendarCellImage); 
-                    }            
-                } 
-            }
-        }
-    }
 }

@@ -36,24 +36,7 @@
         </div>
     </div>
     
-    {% for film in film %}
-    <div class="hidden film-data">
-        <p>{{url_for('edit_film', film_id=film._id)}}</p>
-        <p>{{url_for('delete_film',film_id=film._id)}}</p>
-        <p class="posters-for-calendar">{{film.theatrical_poster_url}}</p>
-        <p>{{film.producer}}</p>
-        <p>{{film.director}}</p>
-        <p>{{film.duration}}</p>
-        <p>{{film.film_name}}</p>
-        <p>{{film.genre}}</p>
-        <p class="dates-for-calendar">{{film.release_date}}</p>
-        <p>{{film.screenplay}}</p>
-        <p>{{film.story}}</p>
-        <p>{{film.starring}}</p>
-        <p>{{film.plot_summary}}</p>
-    </div>
-    {% endfor %}
-    
+    <!--------- MODAL --------->
     <div id="modal-background">
     </div>
 

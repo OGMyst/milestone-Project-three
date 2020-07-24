@@ -174,7 +174,7 @@ function nextmonth() {
         url: '/api/get-films',
         success: function(data) {
             films = JSON.parse(data)
-        showCalendar(month, year);
+        showCalendar(month, year, films);
         }
     });
 }
@@ -186,7 +186,7 @@ function previousmonth() {
         url: '/api/get-films',
         success: function(data) {
             films = JSON.parse(data)
-        showCalendar(month, year);
+        showCalendar(month, year, films);
         }
     });
 }
@@ -197,7 +197,7 @@ function nextyear() {
         url: '/api/get-films',
         success: function(data) {
             films = JSON.parse(data)
-        showCalendar(month, year);
+        showCalendar(month, year, films);
         }
     });
 }
@@ -208,7 +208,7 @@ function previousyear() {
         url: '/api/get-films',
         success: function(data) {
             films = JSON.parse(data)
-        showCalendar(month, year);
+        showCalendar(month, year, films);;
         }
     });
 }

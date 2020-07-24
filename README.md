@@ -85,9 +85,9 @@ distort the calendar cells so another page is necessary to make these films acce
 
 Using figma the following wireframes were made:
 
-[Desktop](https://github.com/OGMyst/Milestone-project-two/blob/master/assets/mockups/MS2%20-%20Card%20Catch%20Desktop.pdf)
+[Desktop](https://github.com/OGMyst/milestone-Project-three/blob/master/static/Mockups/desktop.pdf)
 
-[Phone](https://github.com/OGMyst/Milestone-project-two/blob/master/assets/mockups/MS2%20-%20Card%20Catch%20Phone.pdf)
+[Phone](https://github.com/OGMyst/milestone-Project-three/blob/master/static/Mockups/phone.pdf)
 
 These mockups reflect the original design for the project for a film review site. I kept the themes and general layout as
 they both fitted with the new focus but I also hope to add film reviews to the site later and I would like to use the same

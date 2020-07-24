@@ -156,6 +156,13 @@ tablet, Ipad, laptop, and desktop. All site functions work as intended.
 
 - The javascript has undergone unit testing and passes all tests
 
+- The site was was not made with TDD as I was still figuring out concepts of
+how best to implement my ideas. The tests were added after completing the code.
+
+- Not all functions were tested. I left those functions that only contained simple commands,
+such as "classList.add", untested. I felt they were too basic to test as
+it is very clear to see if they are working as intended or not.   
+
 
 The following tests have been used to ensure proper site functionality:
 * GTmetrix: To test on website loading times

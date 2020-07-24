@@ -11,8 +11,6 @@ A live Demo version can be found [here](https://po-tay-toes.herokuapp.com/)
 
 ## Table of Contents:
 
-<!--ts-->
-
 1. [UX](#UX)
     1. [Goals](#Goals)
     2. [User Stories](#User-stories)
@@ -32,10 +30,10 @@ A live Demo version can be found [here](https://po-tay-toes.herokuapp.com/)
     1. [Instructions](#Instructions)
     2. [Deployment to Heroku](#Deployment-to-Heroku)
 6. [Credits](#Credits)
-    1. [Media](#Media)
-    2. [Code](#Code)
+    1. [Content](#Content)
+    2. [Media](#Media)
     3. [Acknowledgment](#Acknowledgment)
- <!--te-->
+
 ## UX
 
 ### **Goals:**
@@ -273,26 +271,11 @@ To make the deployment of this application to `Heroku` you will need to do the f
 
 | KEY            | VALUE         |
 |----------------|---------------|
-| AWS_ACCESS_KEY_ID | `<your aws access key>`  |
-| AWS_SECRET_ACCESS_KEY | `<your aws secret access key>`  |
-| DATABASE_URL| `<your postgres database url>`  |
+| Port | `<5000>`  |
+| IP | `<0.0.0.0>`  |
+| MONGO_URI| `<MONGO_URI>`  |
 
-
-12. Add a development (postgres) database:
-  ```
-  $ heroku addons:add heroku-postgresql:dev
-    heroku addons:add heroku-postgresql:dev
-    Adding heroku-postgresql on deploy_django... done, v13 (free)
-    Attached as HEROKU_POSTGRESQL_COPPER_URL
-    Database has been created and is available
-    ! This database is empty. If upgrading, you can transfer
-    ! data from another database with pgbackups:restore.
-    Use `heroku addons:docs heroku-postgresql` to view documentation.
-
-  $ heroku pg:promote HEROKU_POSTGRESQL_COPPER_URL
-    Promoting HEROKU_POSTGRESQL_COPPER_URL to DATABASE_URL... done
-   ```
-13. After adding the config into your dashboard add the following commands.
+12.  After adding the config into your dashboard add the following commands.
   - `$ heroku login`
   - `heroku git:remote -a test-app-to-deploy`
   - `$ git push heroku master`

@@ -72,7 +72,7 @@ def search(page_number):
 def insert_film():
     films = mongo.db.film_info
     films.insert_one(request.form.to_dict())
-    return redirect(url_for('add_movie'))
+    return redirect(url_for('films', page_number=1))
 
 
 @app.route('/date_of_film/<film_date>')
@@ -113,7 +113,7 @@ def update_film(film_id):
 @app.route('/delete_film/<film_id>')
 def delete_film(film_id):
     mongo.db.film_info.remove({'_id': ObjectId(film_id)})
-    return redirect(url_for('films'))
+    return redirect(url_for('films', page_number=1))
 
 
 @app.route('/home')

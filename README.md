@@ -1,10 +1,4 @@
-# Milestone Project 3
-***
-
-## Table of Contents:
-
 # **Po - Tay - Toes!**
-
 
 ## **Milestone project 3: Data Centric Development - Code Institute**
 
@@ -15,6 +9,33 @@ A site to record and see all upcoming movies that you are excited to see
 A live Demo version can be found [here](https://po-tay-toes.herokuapp.com/)
 
 
+## Table of Contents:
+
+<!--ts-->
+
+1. [UX](#UX)
+    1. [Goals](#Goals)
+    2. [User Stories](#User-stories)
+    3. [Strategy](#Strategy)
+    4. [Scope](#Scope)
+    4. [Structure](#Structure)
+    4. [Skeleton](#Skeleton)
+    4. [Surface](#Surface)
+2. [Technologies](#Technologies)
+    1. [Tools](#Tools)
+    2. [Libraries and frameworks](#Libraries-and-frameworks)
+    3. [Languages](#Languages)
+3. [Features](#Features)
+    1. [Features left to implement](#Features-left-to-implement) 
+4. [Testing](#Testing)
+5. [Deployment](#Deployment)
+    1. [Instructions](#Instructions)
+    2. [Deployment to Heroku](#Deployment-to-Heroku)
+6. [Credits](#Credits)
+    1. [Media](#Media)
+    2. [Code](#Code)
+    3. [Acknowledgment](#Acknowledgment)
+ <!--te-->
 ## UX
 
 ### **Goals:**
@@ -80,22 +101,27 @@ The link to the lord of the rings comes from the title of the website which is a
 to a line from the lord of the rings films. The colors are taken primarily from the clothes worn by Theoden and his kingdom. The green is also the
 color of the cloaks worn by the fellowship of the ring. The colors blend well together but are distinctive enough so that everything is clear. 
 
-### **Technologies**
+## **Technologies**
 
-- HTML - To create a basic site
-- CSS - To create a nice style and to stand-out
-- JavaScript - The engine to create user interaction
-- FontAwesome - For footer icons
-- MaterializeCSS - To help create elements such as the forms, sidebar and pagination 
-- Google Fonts - To create an interesting variety of fonts
-- Figma - To create wireframes
-- Python - To connect the database to the front-end
-- MongoDB - The Database for the website
+### Tools
 
-### **JavaScript Libraries**
+  - [Heroku](https://www.heroku.com/) For hosting the application and deployment.
+  - [Github](https://github.com/) To share and store code remotely.
+  - [Git](https://git-scm.com/) To manage version control.
+  - [MongoDB](https://www.mongodb.com/), The Database for the website
+  - [Canva](https://www.canva.com/) was used to design images on the web.
+  - [Figma](https://www.figma.com) For the wireframes design.
 
-- Jquery - To toggle classes and display
+### Libraries and frameworks
 
+  - [Flask](https://flask.palletsprojects.com/en/1.1.x/) python micro web framework used to create this project.
+  - [MaterializeCSS](https://materializecss.com/) a CSS library used to develop this site.
+  - [FontAwesome](https://fontawesome.com/) For social media icons
+  - [Google fonts](https://fonts.google.com/) to bring custom font styling.
+
+### Languages
+
+  - This project uses HTML, CSS, Javascript and Python programming languages.
 
 ## Features
 
@@ -107,9 +133,9 @@ date and a page with all films for that date.
 
 - The explore page for films features pagination and a searchbar
 
-- The Navbar takes the user to all pages including the calendar but not the individual release date pages. 
+- The Navbar takes the user to all pages but not the individual release date pages
 
-- Users can add, edit and delete information for films
+- The site has CRUD functionality for information on the films
 
 ### Features Left to Impliment
 
@@ -172,19 +198,106 @@ were still displaying even though the date in the cell of the poster was not. Th
 z-index = 1. 
 
 
-## **Deployment**
+## Deployment
 
-This site is hosted using GitHub pages, deployed directly from the master branch. The deployed site will update 
-automatically upon new commits to the master branch. In order for the site to deploy correctly on GitHub pages, 
-the landing page must be named index.html.
+### Instructions
+  1. Download a copy of this repository from the link https://github.com/OGMyst/milestone-Project-three as a download zip file. Or at your terminal do the following git command:
 
-To run locally, you can clone this repository directly into the editor of your choice by entering 
-git clone https://github.com/ogmyst/Milestone-project-two.git into your terminal. To cut ties with this GitHub 
-repository, type git remote rm origin into the terminal.
+      ```
+      $ git clone https://github.com/OGMyst/milestone-Project-three
+      ```
+  2. If you downloaded the project as a zip file, unzip it and add it in your directory.
+  3. To not run in some unexpected behaviours during development, a virtual environment is advised to be used before the project be installed in your machine. So create a virtual environment with the command:
 
-When the code is downloaded as a .zip it can be unzipped and runned by opening the unzipped folder and then execute 
-index.html The code will be executed in the browser that is set as main browser, this can be Chrome or one of the 
-other available browsers. When executed the main screen will be shown and the options can be chosen.
+      ```
+     $ python -m venv venv
+      ```
+ 4. After you already created the virtual environment folder you need to activate it:
+
+      ```
+      $ source venv/bin/activate
+      ```
+    5. Install requirements.txt file.
+
+      ```
+      $ pip install -r requirements.txt
+      ```
+    6. Create an `env.py` file to store environment variable keys.
+
+     ```
+     import os
+
+    os.environ["SECRET_KEY"] = ('<Your secret key>')
+    os.environ["MONGO_URI"] = ('<Your MongoDb URI>')
+    os.environ["MONGO_DBNAME"] = ('<Your MongoDb database name>'))
+
+    7. Add a git ignore file to not submit sensitive data to Github repository.
+
+     ```
+     $ touch .gitignore
+     ```
+     - Then add the `env.py` to the `.gitignore` file.
+
+     ```
+     $ git update-index --assume-unchanged env.py
+     ```
+     - Depending where the the `env.py` is locate the path will change.
+
+### Deployment to Heroku
+
+To make the deployment of this application to `Heroku` you will need to do the following steps.
+
+  1. Signup for [Heroku](https://signup.heroku.com/)
+  2. Install [Heroku-CLI](https://devcenter.heroku.com/articles/heroku-cli)
+  3. After installing `Heroku toolbelt` add the following code into your termial and login into your account you already create.
+     ```
+     $ heroku login
+      Enter your Heroku credentials.
+      Email: your@email.com
+      Password (typing will be hidden):
+      Authentication successful.
+     ```
+  4. Save all the requirements into the `requirements.txt` as mentioned before with the command:
+     ```
+     $ pip freeze > requirements.txt
+     ```
+  5. Create a file named `Procfile` and add the following config.
+     ```
+     web: python app.py
+     ```
+ 6. After all the setup is done `git add .`, `git commit` and `git push` your application to a repository you created on Github.
+ 7. In your `Heroku`account click new and create new app.
+ 9. Select your region and create a name for your project.
+10. In your `Heroku` settings click `reveal config vars`.
+11. Add the following config variables:
+
+| KEY            | VALUE         |
+|----------------|---------------|
+| AWS_ACCESS_KEY_ID | `<your aws access key>`  |
+| AWS_SECRET_ACCESS_KEY | `<your aws secret access key>`  |
+| DATABASE_URL| `<your postgres database url>`  |
+
+
+12. Add a development (postgres) database:
+  ```
+  $ heroku addons:add heroku-postgresql:dev
+    heroku addons:add heroku-postgresql:dev
+    Adding heroku-postgresql on deploy_django... done, v13 (free)
+    Attached as HEROKU_POSTGRESQL_COPPER_URL
+    Database has been created and is available
+    ! This database is empty. If upgrading, you can transfer
+    ! data from another database with pgbackups:restore.
+    Use `heroku addons:docs heroku-postgresql` to view documentation.
+
+  $ heroku pg:promote HEROKU_POSTGRESQL_COPPER_URL
+    Promoting HEROKU_POSTGRESQL_COPPER_URL to DATABASE_URL... done
+   ```
+13. After adding the config into your dashboard add the following commands.
+  - `$ heroku login`
+  - `heroku git:remote -a test-app-to-deploy`
+  - `$ git push heroku master`
+
+14. On your `Heroku` dashboard click on `open app` button and check if the application is running correctly.
 
 ## **Credits**
 

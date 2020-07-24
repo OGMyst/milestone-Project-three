@@ -58,9 +58,10 @@ def search(page_number):
                                                           get_search})
     page_count = int((number_of_films // films_per_page) +
                      (number_of_films % films_per_page))
-    filter_start = (int(page_number) - 1) * films_per_page
-    filter_films = mongo.db.film_info.find({"film_name": get_search}).skip(
-        filter_start).limit(films_per_page)
+    filter_films = mongo.db.film_info.aggregate([
+        {"$search": {"text": {"path": "film_name",
+                              "query": get_search}}}, {
+                              "$limit": (films_per_page)}])
     return render_template('films.html', films=filter_films,
                            film_count=number_of_films,
                            page_limit=page_count + 1,

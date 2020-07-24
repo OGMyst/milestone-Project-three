@@ -89,8 +89,9 @@ Using figma the following wireframes were made:
 
 [Phone](https://github.com/OGMyst/Milestone-project-two/blob/master/assets/mockups/MS2%20-%20Card%20Catch%20Phone.pdf)
 
-It was decided that it would streamline the site if the tutorial had a video rather than a playable tutorial level which
-would use pop ups to instruct the user. The site behind the pop ups in the mockups is the basis for the design site.
+These mockups reflect the original design for the project for a film review site. I kept the themes and general layout as
+they both fitted with the new focus but I also hope to add film reviews to the site later and I would like to use the same
+layout.
 
 ### **Surface**
 
@@ -299,7 +300,3 @@ Code for building the calendar was taken from [here](https://github.com/niinpate
 Inspiration for making the modal came from [here](https://www.youtube.com/watch?v=ptI8g-05VM0)
 
 Code to make the posters grow on hover came from [here](https://travis.media/how-to-make-an-item-grow-on-hover-with-css/)
-
-Code to help make the pagination came from [here](https://github.com/TylerPottsDev/vanillajs-pagination)
-
-Code to make the search bar functionality came from  [here](https://www.youtube.com/watch?v=3NG8zy0ywIk)

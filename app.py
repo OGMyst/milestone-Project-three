@@ -35,37 +35,36 @@ def add_movie():
     return render_template('addmovie.html')
 
 
-@app.route('/films/<page_number>')
-def films(page_number):
-    films_per_page = 6
-    number_of_films = mongo.db.film_info.count_documents({})
-    page_count = int((number_of_films // films_per_page) +
-                     (number_of_films % films_per_page))
-    filter_start = (int(page_number) - 1) * films_per_page
-    filter_films = mongo.db.film_info.find().skip(filter_start).limit(
-        films_per_page)
-    return render_template('films.html', films=filter_films,
-                           film_count=number_of_films,
-                           page_limit=page_count + 1,
-                           current_page=int(page_number))
-
-
-@app.route("/search/<page_number>", methods=["POST", "GET"])
-def search(page_number):
-    get_search = request.form.get("search")
-    films_per_page = 6
-    number_of_films = mongo.db.film_info.count_documents({"film_name":
-                                                          get_search})
-    page_count = int((number_of_films // films_per_page) +
-                     (number_of_films % films_per_page))
-    filter_films = mongo.db.film_info.aggregate([
-        {"$search": {"text": {"path": "film_name",
-                              "query": get_search}}}, {
-                              "$limit": (films_per_page)}])
-    return render_template('films.html', films=filter_films,
-                           film_count=number_of_films,
-                           page_limit=page_count + 1,
-                           current_page=int(page_number))
+@app.route('/films')
+def films():
+    page_number = request.args.get('page_number') if request.args.get('page_number') else 1
+    keyword = request.args.get('search')
+    if keyword is None:
+        films_per_page = 6
+        number_of_films = mongo.db.film_info.count_documents({})
+        page_count = int((number_of_films // films_per_page) +
+                         (number_of_films % films_per_page))
+        filter_start = (int(page_number) - 1) * films_per_page
+        filter_films = mongo.db.film_info.find().skip(filter_start).limit(
+            films_per_page)
+        return render_template('films.html', films=filter_films,
+                               film_count=number_of_films,
+                               page_limit=page_count + 1,
+                               current_page=int(page_number))
+    else:
+        films_per_page = 6
+        number_of_films = mongo.db.film_info.count_documents({"film_name":
+                                                             keyword})
+        page_count = int((number_of_films // films_per_page) +
+                         (number_of_films % films_per_page))
+        filter_films = mongo.db.film_info.aggregate([
+            {"$search": {"text": {"path": "film_name",
+                                  "query": keyword}}}, {
+                                  "$limit": (films_per_page)}])
+        return render_template('films.html', films=filter_films,
+                               film_count=number_of_films,
+                               page_limit=page_count + 1,
+                               current_page=1)
 
 
 @app.route('/insert_film', methods=['POST'])

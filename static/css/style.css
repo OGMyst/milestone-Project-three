@@ -259,6 +259,7 @@ footer{
     color: #DCAE0B;
     flex-wrap: wrap;
     background-color: #182F1A;
+    cursor: pointer;
 }
 
 .grow { 

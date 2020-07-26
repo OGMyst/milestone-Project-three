@@ -142,6 +142,9 @@ date and a page with all films for that date.
 
 - Film reviews. With login authentication users could create reviews which only they could edit and delete.
 
+- Add a limit to the pagination. Currently the numbers being displayed does not have a limit so eventually 
+a limit of how many page links in the pagination need to be limited and range introduced
+
 ## Testing
 
 - All internal links work. 
@@ -194,7 +197,9 @@ id.
 
 The arrows for the pagination was going up by two on every click and there was an issue that I couldn't disable 
 the onclick function and fix the issue with the pages going up two. This issue took so long in trying to resolve
-that I decided to remove the arrows and have the numbers for pagination as I didn't feel the arrows were necessary. 
+that I decided to remove the arrows and have the numbers for pagination as I didn't feel the arrows were necessary.
+The functionality changed for pagination so instead of sorting all films only the films to be displayed are being 
+called.  
 
 
 #### **Growing but not covering**

@@ -625,28 +625,30 @@ ul:not(.browser-default){
 }
 }
 
-
-
 /*-----------------------------------------TABLET LANDSCAPE MEDIA QUERY-----------------------------------------*/
-@media only screen and (max-height: 1025px){
-    #lotr-background{
+@media only screen and (max-height: 1025px) and (max-width: 770px){
+#lotr-background{
     background-size:240%;
     background-position-x: -800px;
     background-position-y: 50px;
-    }
+}
 
-    .sidenav{
-        background-color: #182F1A;
-    }
+.sidenav{
+    background-color: #182F1A;
+}
 
-    .sidenav li > a{
-        color: #DCAE0B;
-    }
+.sidenav li > a{
+    color: #DCAE0B;
+}
 
-    .modal-card{
+.modal-card{
     width: 90%;
     max-height: 60%;
     overflow: scroll;
+}
+
+#searching-nav {
+    padding: 10px 25% 0;
 }
 }
 
@@ -776,35 +778,35 @@ ul:not(.browser-default){
 
 /*-----------------------------------------PHONE LANDSCAPE MEDIA QUERY-----------------------------------------*/
 @media only screen and (max-height: 400px){
-    #lotr-background{
+#lotr-background{
     background-size:120%;
     background-position-x: -60px;
     background-position-y: 50px;
-    }
+}
 
-    .pagination{
-        width:30%;
-        display: flex;
-        justify-content: center;
-    }
+.pagination{
+    width:30%;
+    display: flex;
+    justify-content: center;
+}
 
-    #searching-nav{
-        padding: 10px 20% 0;
-    }
+#searching-nav{
+    padding: 10px 20% 0;
+}
 
-    .sidenav{
-        background-color: #182F1A;
-    }
+.sidenav{
+    background-color: #182F1A;
+}
 
-    .sidenav li > a{
-        color: #DCAE0B;
-    }
+.sidenav li > a{
+    color: #DCAE0B;
+}
 
-    .film-card{
-        width: 60%;
-    }
+.film-card{
+    width: 60%;
+}
 
-    .modal-card{
+.modal-card{
     width: 90%;
     max-height: 60%;
     display: flex;

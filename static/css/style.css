@@ -625,11 +625,11 @@ ul:not(.browser-default){
 }
 }
 
-/*-----------------------------------------TABLET LANDSCAPE MEDIA QUERY-----------------------------------------*/
-@media only screen and (max-height: 1025px) and (max-width: 800px){
+/*-----------------------------------------TABLET PORTRAIT MEDIA QUERY-----------------------------------------*/
+@media only screen and (max-height: 1300px) and (max-width: 820px){
 #lotr-background{
-    background-size:240%;
-    background-position-x: -800px;
+    background-size:280%;
+    background-position-x: -1000px;
     background-position-y: 50px;
 }
 

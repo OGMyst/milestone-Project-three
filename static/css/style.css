@@ -365,10 +365,11 @@ input[type="search"]:focus:not(.browser-default){
 }
 
 .mobile-pagination{
-    display: hidden;
+    display: none;
 }
 
 .pagination{
+    margin-top: 0;
     padding: 10px 20px;
     border: 3px solid #182F1A;
     border-radius: 10px;
@@ -602,9 +603,42 @@ ul:not(.browser-default){
     font-size: 200%;
 }
 
-/*-----------------------------------------PHONE MEDIA QUERY-----------------------------------------*/
+
+/*-----------------------------------------TABLET MEDIA QUERY-----------------------------------------*/
 /*------------------------------BASE.HTML-------------------------------*/
-@media only screen and (max-width: 767px){
+@media only screen and (max-width: 1025px){
+    #lotr-background{
+        background-size: 135%;
+        background-position-x: -200px;
+    }
+
+    .calendar-image{
+    margin-bottom: 4px;
+}
+
+.mobile-pagination{
+    display: none;
+}
+
+.film-card{
+    width:40%;
+}
+}
+
+
+
+/*-----------------------------------------TABLET LANDSCAPE MEDIA QUERY-----------------------------------------*/
+@media only screen and (max-height: 1025px){
+    #lotr-background{
+    background-size:240%;
+    background-position-x: -60px;
+    background-position-y: 50px;
+    }
+}
+
+/*-----------------------------------------PHONE PORTRAIT MEDIA QUERY-----------------------------------------*/
+/*------------------------------BASE.HTML-------------------------------*/
+@media only screen and (max-width: 400px){
 #logo{
     margin-left: 0;
 }
@@ -682,7 +716,7 @@ ul:not(.browser-default){
 }
 
 #searching-nav{
-    padding: 10px 5% 0;
+    padding: 10px 3% 0;
 }
 
 .mobile-pagination{
@@ -726,23 +760,33 @@ ul:not(.browser-default){
 }
 }
 
-/*-----------------------------------------TABLET MEDIA QUERY-----------------------------------------*/
-/*------------------------------BASE.HTML-------------------------------*/
-@media only screen and (max-width: 1025px){
+/*-----------------------------------------PHONE LANDSCAPE MEDIA QUERY-----------------------------------------*/
+@media only screen and (max-height: 400px){
     #lotr-background{
-        background-size: 135%;
-        background-position-x: -200px;
+    background-size:120%;
+    background-position-x: -60px;
+    background-position-y: 50px;
     }
 
-    .calendar-image{
-    margin-bottom: 4px;
-}
+    .pagination{
+        width:30%;
+        display: flex;
+        justify-content: center;
+    }
 
-.mobile-pagination{
-    display: none;
-}
+    #searching-nav{
+        padding: 10px 20% 0;
+    }
 
-.film-card{
-    width:40%;
-}
+    .sidenav{
+        background-color: #182F1A;
+    }
+
+    .sidenav li > a{
+        color: #DCAE0B;
+    }
+
+    .film-card{
+        width: 60%;
+    }
 }

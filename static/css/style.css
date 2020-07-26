@@ -631,9 +631,23 @@ ul:not(.browser-default){
 @media only screen and (max-height: 1025px){
     #lotr-background{
     background-size:240%;
-    background-position-x: -60px;
+    background-position-x: -800px;
     background-position-y: 50px;
     }
+
+    .sidenav{
+        background-color: #182F1A;
+    }
+
+    .sidenav li > a{
+        color: #DCAE0B;
+    }
+
+    .modal-card{
+    width: 90%;
+    max-height: 60%;
+    overflow: scroll;
+}
 }
 
 /*-----------------------------------------PHONE PORTRAIT MEDIA QUERY-----------------------------------------*/
@@ -789,4 +803,11 @@ ul:not(.browser-default){
     .film-card{
         width: 60%;
     }
+
+    .modal-card{
+    width: 90%;
+    max-height: 60%;
+    display: flex;
+    overflow: scroll;
+}
 }

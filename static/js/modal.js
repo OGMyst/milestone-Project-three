@@ -1,7 +1,6 @@
 function viewMoreModal(edit_film, delete_film, film_poster, producer, director, duration, film_name, genre, release_date, screenplay, story, starring, plot_summary){
     const film = {edit_film, delete_film, film_poster, producer, director, duration, film_name, genre, release_date, screenplay, story, starring, plot_summary};
-    $("#modal-background").css("display", "flex");
-     
+    $("#modal-background").css("display", "flex");     
     displayFilmInfo(film);
 }
 

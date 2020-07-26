@@ -127,6 +127,7 @@ var j - to check each film release date against each date in the month
 onclick has to have all arguments added manually because of the way MongoDB handles objectId
 */
 function insertImagesToCalendar(films, daysInMonth, month){
+    
     for(x = 0; x < films.length; x++){
         let filmsReleaseDate = films[x].release_date;
         let filmReleaseMonth = parseInt(filmsReleaseDate.slice(3,5)-1); // -1 is to match "month" variable format 
@@ -147,8 +148,8 @@ function insertImagesToCalendar(films, daysInMonth, month){
                     let calendarCellDiv = eachOccupiedCell[j]; 
                     let imageLimit =  $(calendarCellDiv).children();
                     let datePage = $(eachOccupiedCell[j]).find("a");
-                        
-                    calendarCellImage.setAttribute("onclick",`viewMoreModal('/edit_film/${films[x]._id}', '/delete_film/${films[x]._id}', '${films[x].theatrical_poster_url}', '${films[x].producer}', '${films[x].director}', '${films[x].duration}', '${films[x].film_name}', '${films[x].genre}', '${films[x].release_date}', '${films[x].screenplay}', '${films[x].story}', '${films[x].starring}', "${films[x].plot_summary}")`);
+
+                    calendarCellImage.setAttribute("onclick",`viewMoreModal('/edit_film/${films[x]._id.$oid}', '/delete_film/${films[x]._id.$oid}', '${films[x].theatrical_poster_url}', '${films[x].producer}', '${films[x].director}', '${films[x].duration}', '${films[x].film_name}', '${films[x].genre}', '${films[x].release_date}', '${films[x].screenplay}', '${films[x].story}', '${films[x].starring}', "${films[x].plot_summary}")`);
                     calendarCellImage.setAttribute("alt", `${films[x].film_name}`);
                     calendarCellImage.classList.add("calendar-image", "grow");
                     calendarCellImage.src = films[x].theatrical_poster_url;

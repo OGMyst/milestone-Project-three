@@ -39,32 +39,31 @@ def add_movie():
 def films():
     page_number = request.args.get('page_number') if request.args.get('page_number') else 1
     keyword = request.args.get('search')
-    if keyword is None:
-        films_per_page = 6
-        number_of_films = mongo.db.film_info.count_documents({})
-        page_count = int((number_of_films // films_per_page) +
-                         (number_of_films % films_per_page))
-        filter_start = (int(page_number) - 1) * films_per_page
+    films_per_page = 6
+    filter_start = (int(page_number) - 1) * films_per_page
+
+    if keyword is None:       
+        number_of_films = mongo.db.film_info.count_documents({})        
         filter_films = mongo.db.film_info.find().skip(filter_start).limit(
             films_per_page)
-        return render_template('films.html', films=filter_films,
-                               film_count=number_of_films,
-                               page_limit=page_count + 1,
-                               current_page=int(page_number))
     else:
-        films_per_page = 6
         number_of_films = mongo.db.film_info.count_documents({"film_name":
                                                              keyword})
-        page_count = int((number_of_films // films_per_page) +
-                         (number_of_films % films_per_page))
         filter_films = mongo.db.film_info.aggregate([
             {"$search": {"text": {"path": "film_name",
                                   "query": keyword}}}, {
                                   "$limit": (films_per_page)}])
-        return render_template('films.html', films=filter_films,
+    
+    page_count = (number_of_films // films_per_page)
+    is_remainder = (number_of_films % films_per_page)
+    
+    if is_remainder != 0:
+        page_count += 1
+
+    return render_template('films.html', films=filter_films,
                                film_count=number_of_films,
                                page_limit=page_count + 1,
-                               current_page=1)
+                               current_page=int(page_number))
 
 
 @app.route('/insert_film', methods=['POST'])
@@ -77,7 +76,7 @@ def insert_film():
 @app.route('/date_of_film/<film_date>')
 def date_of_film(film_date):
     new_date = film_date.replace("_", "/")
-    return render_template('viewbydate.html',
+    return render_template('films.html',
                            films=mongo.db.film_info.find(
                                {"release_date": new_date}),
                            the_date=new_date)
@@ -112,7 +111,7 @@ def update_film(film_id):
 @app.route('/delete_film/<film_id>')
 def delete_film(film_id):
     mongo.db.film_info.remove({'_id': ObjectId(film_id)})
-    return redirect(url_for('films', page_number=1))
+    return redirect(url_for('films'))
 
 
 @app.route('/home')

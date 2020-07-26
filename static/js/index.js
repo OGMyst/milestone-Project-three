@@ -1,15 +1,8 @@
 let films = [];
 
 document.addEventListener("DOMContentLoaded", function() { 
-    $.ajax({
-        url: '/api/get-films',
-        success: function(data) {
-            films = JSON.parse(data)
-            daysOfTheWeek();
-            showCalendar(month, year, films);  
-        }
-    });
-    
+    ajaxRequestAndCreateCalendar(month, year);
+    daysOfTheWeek();    
 });
 
 const DAYS_IN_DATE_FORMAT = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09",
@@ -26,6 +19,16 @@ let month = today.getMonth();
 let year = today.getFullYear();
 let weekDays;
 let date = 1;
+
+function ajaxRequestAndCreateCalendar(month, year){
+     $.ajax({
+        url: '/api/get-films',
+        success: function(data) {
+            films = JSON.parse(data)
+            showCalendar(month, year, films);  
+        }
+    });
+}
 
 //Adds month and year to the header of the calendar. Used for calendar navigation
 function calendarMonthAndYear(){ 
@@ -79,9 +82,7 @@ function showCalendar(month, year, films) {
             }else {
                 createFilledCell(date, row, row_count, i, endofRow);
                 date++;
-                
             }
-            
         }
         calendarTable.appendChild(row);
     }
@@ -171,45 +172,21 @@ function insertImagesToCalendar(films, daysInMonth, month){
 function nextmonth() {
     year = (month === 11) ? year + 1 : year;
     month = (month + 1) % 12;
-    $.ajax({
-        url: '/api/get-films',
-        success: function(data) {
-            films = JSON.parse(data)
-        showCalendar(month, year, films);
-        }
-    });
+    ajaxRequestAndCreateCalendar(month, year);
 }
 
 function previousmonth() {
     year = (month === 0) ? year - 1 : year;
     month = (month === 0) ? 11 : month - 1;
-    $.ajax({
-        url: '/api/get-films',
-        success: function(data) {
-            films = JSON.parse(data)
-        showCalendar(month, year, films);
-        }
-    });
+    ajaxRequestAndCreateCalendar(month, year);
 }
 
 function nextyear() {
     year =  year + 1;  
-    $.ajax({
-        url: '/api/get-films',
-        success: function(data) {
-            films = JSON.parse(data)
-        showCalendar(month, year, films);
-        }
-    });
+    ajaxRequestAndCreateCalendar(month, year);
 }
 
 function previousyear() {
     year =  year - 1;
-    $.ajax({
-        url: '/api/get-films',
-        success: function(data) {
-            films = JSON.parse(data)
-        showCalendar(month, year, films);;
-        }
-    });
+    ajaxRequestAndCreateCalendar(month, year);
 }

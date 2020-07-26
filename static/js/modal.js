@@ -72,7 +72,6 @@ function displayFilmInfo(film){
                                 </div>`;
 }
 
-
 function confirmDeleteMessage(deleteFilm, name){
     $("#confirm-modal-background").css("display", "flex");
     $("#modal-background").css("display", "none");

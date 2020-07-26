@@ -626,7 +626,7 @@ ul:not(.browser-default){
 }
 
 /*-----------------------------------------TABLET LANDSCAPE MEDIA QUERY-----------------------------------------*/
-@media only screen and (max-height: 1025px) and (max-width: 770px){
+@media only screen and (max-height: 1025px) and (max-width: 800px){
 #lotr-background{
     background-size:240%;
     background-position-x: -800px;
@@ -650,11 +650,17 @@ ul:not(.browser-default){
 #searching-nav {
     padding: 10px 25% 0;
 }
+
+.pagination{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+}
 }
 
 /*-----------------------------------------PHONE PORTRAIT MEDIA QUERY-----------------------------------------*/
 /*------------------------------BASE.HTML-------------------------------*/
-@media only screen and (max-width: 400px){
+@media only screen and (max-width: 450px){
 #logo{
     margin-left: 0;
 }

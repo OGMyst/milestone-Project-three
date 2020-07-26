@@ -656,7 +656,7 @@ ul:not(.browser-default){
     margin-bottom: 2px;
 }
 
-/*------------------------------ADDFILM.HTML-------------------------------*/
+/*------------------------------ADDMOVIE.HTML-------------------------------*/
 #add-movie-form{
     overflow: scroll;
 }
@@ -723,5 +723,26 @@ ul:not(.browser-default){
 
 #confirm-card{
     width: 80%;
+}
+}
+
+/*-----------------------------------------TABLET MEDIA QUERY-----------------------------------------*/
+/*------------------------------BASE.HTML-------------------------------*/
+@media only screen and (max-width: 1025px){
+    #lotr-background{
+        background-size: 135%;
+        background-position-x: -200px;
+    }
+
+    .calendar-image{
+    margin-bottom: 4px;
+}
+
+.mobile-pagination{
+    display: none;
+}
+
+.film-card{
+    width:40%;
 }
 }

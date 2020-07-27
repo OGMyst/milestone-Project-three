@@ -4,6 +4,8 @@
 
 A site to record and see all upcoming movies that you are excited to see
 
+<img src="static/images/MS3-Demo.png" >
+
 ## Demo 
 
 A live Demo version can be found [here](https://po-tay-toes.herokuapp.com/)
@@ -208,6 +210,12 @@ The film posters being displayed were given a class to make them grow on hover. 
 were still displaying even though the date in the cell of the poster was not. This was fixed by giving the image a 
 z-index = 1. 
 
+#### **Iphone and Ipad Display**
+
+On Iphones and Ipads the bacgkround attachment fixed property does not seem to take effect. The screen size is well within the 
+limit of the media query and on android phones the image adjusts as intended. This means that there is a white 
+background for part of the page. I was unable to fix this bug as it seems to be an issue with iphone and ipad, on 
+macbook the image displays as intended across different browsers and I couldn't work out what the issue was. 
 
 ## Deployment
 

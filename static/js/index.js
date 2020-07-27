@@ -136,7 +136,7 @@ function insertImagesToCalendar(films, daysInMonth, month){
             let eachOccupiedCell = document.getElementsByClassName("calendar-cell-div");
             let formatedMonth = MONTHS_IN_DATE_FORMAT[month];    
             let allDaysInMonth = [];
-            let formatDate = films[x].release_date.replaceAll("/", "_") // To put it into a usable URL format 
+            let formatDate = films[x].release_date.split("/").join("_") // To put it into a usable URL format 
             let dateUrl = (`/date_of_film/${formatDate}`); //Link for days with 2+ films
 
             for(i = 1; i <= daysInMonth; i++){

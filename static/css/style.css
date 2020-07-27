@@ -603,7 +603,15 @@ ul:not(.browser-default){
     font-size: 200%;
 }
 
+.failed-search-box{
+    padding: 20px;
+    text-align: center;
+    display: block;
+}
 
+#failed-text{
+    margin-bottom: 20px;
+}
 /*-----------------------------------------TABLET MEDIA QUERY-----------------------------------------*/
 /*------------------------------BASE.HTML-------------------------------*/
 @media only screen and (max-width: 1025px){

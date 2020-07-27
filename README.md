@@ -147,6 +147,10 @@ date and a page with all films for that date.
 - Add a limit to the pagination. Currently the numbers being displayed does not have a limit so eventually 
 a limit of how many page links in the pagination need to be limited and range introduced
 
+- Improved search. Currently the user needs to search using the full name of the film, adding search capabilities
+to return films which contained the search word was deemed to complicated to fit into this project and should 
+be added at a later date.
+
 ## Testing
 
 - All internal links work. 
@@ -216,6 +220,7 @@ On Iphones and Ipads the bacgkround attachment fixed property does not seem to t
 limit of the media query and on android phones the image adjusts as intended. This means that there is a white 
 background for part of the page. I was unable to fix this bug as it seems to be an issue with iphone and ipad, on 
 macbook the image displays as intended across different browsers and I couldn't work out what the issue was. 
+
 
 ## Deployment
 

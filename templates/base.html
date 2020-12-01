@@ -26,7 +26,7 @@
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons mellow-yellow">menu</i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="{{url_for('home')}}" class="nav-text mellow-yellow">Home</a></li>
-                <li><a href="{{url_for('films', page_number=1)}}" onclick="gtag('click', 'main_nav_link')" class="nav-text mellow-yellow">Explore</a></li>
+                <li><a href="{{url_for('films', page_number=1)}}" class="nav-text mellow-yellow">Explore</a></li>
                 <li><a href="{{url_for('add_movie')}}" class="nav-text mellow-yellow">Add Movie</a></li>       
             </ul>
             </div>
@@ -59,5 +59,29 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="{{url_for('static', filename='js/main.js')}}"></script>
 
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
+
+    <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+        apiKey: "AIzaSyC9Mpb-6TwMybqdx0TDxpJxQ-lJrec3ivc",
+        authDomain: "ms3-proper-test.firebaseapp.com",
+        databaseURL: "https://ms3-proper-test.firebaseio.com",
+        projectId: "ms3-proper-test",
+        storageBucket: "ms3-proper-test.appspot.com",
+        messagingSenderId: "970909885132",
+        appId: "1:970909885132:web:a3b6bcfede6b7b33191869",
+        measurementId: "G-JZ2RM0L4BM"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    </script>
 </body>
 </html>

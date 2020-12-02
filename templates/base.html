@@ -100,20 +100,22 @@
     firebase.analytics();
     </script>
     <script>
-    ga(function(tracker) {
-    ga("require", "ec");
-    ga("ec:addProduct", {
-    "id": "9bdd2",
-    "name": "Compton T-Shirt",
-    "price": "44.00",
-    "brand": "Compton",
-    "category": "T-Shirts",
-    "position": "1"
-    });
-    ga("ec:setAction", "click", {
-    "list": "homepage"
-    });
-    ga("send", "event", "homepage", "click", "");
+    $(document).ready(function() {
+        ga(function(tracker) {
+        ga("require", "ec");
+        ga("ec:addProduct", {
+        "id": "9bdd2",
+        "name": "Compton T-Shirt",
+        "price": "44.00",
+        "brand": "Compton",
+        "category": "T-Shirts",
+        "position": "1"
+        });
+        ga("ec:setAction", "click", {
+        "list": "homepage"
+        });
+        ga("send", "event", "homepage", "click", "");
+        });
     });
 </script>
 </body>

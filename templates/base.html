@@ -41,7 +41,8 @@
                 <li><a href="{{url_for('home')}}" class="nav-text mellow-yellow">Home</a></li>
                 <li>
                     <a href="{{url_for('films', page_number=1)}}" class="nav-text mellow-yellow"
-                        onclick="ga('send', 'event', 'Ecommerce','Add to basket', 'Tshirt', 15);">
+                        onclick="ga('require', 'ec')
+                        ga('send', 'event', 'Ecommerce','Add to basket', 'Tshirt', 15);">
                     Explore
                     </a></li>
                 <li><a href="{{url_for('add_movie')}}" class="nav-text mellow-yellow">Add Movie</a></li>       

@@ -48,7 +48,7 @@
                     onclick="ga('send', 'event', 'click', 'nav');">
                     Explore
                     </a></li>
-                <li><a href="{{url_for('add_movie')}}" class="nav-text mellow-yellow" onclick="ga('send', 'event', 'click', 'nav');">Add Movie</a></li>       
+                <li><a href="{{url_for('add_movie')}}" class="nav-text mellow-yellow" onclick="ecTest()">Add Movie</a></li>       
             </ul>
             </div>
         </nav>
@@ -104,8 +104,8 @@
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
     </script>
-    <!-- <script>
-    $(document).ready(function() {
+    <script>
+    function ecTest {
         ga(function(tracker) {
         ga("require", "ec");
         ga("ec:addProduct", {
@@ -122,6 +122,6 @@
         ga("send", "event", "homepage", "click", "");
         });
     });
-</script> -->
+</script>
 </body>
 </html>

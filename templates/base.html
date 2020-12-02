@@ -38,13 +38,13 @@
             <a href="{{url_for('home')}}" id="logo" class="brand-logo font-size mellow-yellow">PTT</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons mellow-yellow">menu</i></a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="{{url_for('home')}}" class="nav-text mellow-yellow">Home</a></li>
+                <li><a href="{{url_for('home')}}" class="nav-text mellow-yellow" onclick="ga('send', 'event', 'click', 'home');">Home</a></li>
                 <li>
                     <a id="homepage-9bdd2-1" href="{{url_for('films', page_number=1)}}" class="nav-text mellow-yellow"
-                    onclick="ga('send', 'event', 'click');">
+                    onclick="ga('send', 'event', 'click', 'films');">
                     Explore
                     </a></li>
-                <li><a href="{{url_for('add_movie')}}" class="nav-text mellow-yellow">Add Movie</a></li>       
+                <li><a href="{{url_for('add_movie')}}" class="nav-text mellow-yellow" onclick="ga('send', 'event', 'click', 'add_movie');">Add Movie</a></li>       
             </ul>
             </div>
         </nav>
@@ -100,7 +100,7 @@
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
     </script>
-    <script>
+    <!-- <script>
     $(document).ready(function() {
         ga(function(tracker) {
         ga("require", "ec");
@@ -118,6 +118,6 @@
         ga("send", "event", "homepage", "click", "");
         });
     });
-</script>
+</script> -->
 </body>
 </html>

@@ -20,7 +20,9 @@
 
         ga('create', 'UA-184381418-1 ', 'auto');
         ga('send', 'pageview');
-        ga('send', 'event', 'videos', 'play');
+        ga('send', 'event', 'videos', 'play', {
+            hitCallback: function() {}
+        });
     </script>
     <!-- End Google Analytics -->
 
